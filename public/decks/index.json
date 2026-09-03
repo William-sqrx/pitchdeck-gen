@@ -7,7 +7,7 @@
    "slides": 11,
    "accent": {
     "hex": "2563EB",
-    "name": "blue"
+    "name": "navy / clean"
    },
    "themeId": "ink",
    "themeName": "navy / clean",
@@ -21,8 +21,8 @@
    "slug": "sara-teo",
    "slides": 12,
    "accent": {
-    "hex": "0F766E",
-    "name": "teal"
+    "hex": "A8571B",
+    "name": "cream / serif"
    },
    "themeId": "paper",
    "themeName": "cream / serif",
@@ -36,8 +36,8 @@
    "slug": "smile-huang",
    "slides": 10,
    "accent": {
-    "hex": "B45309",
-    "name": "bronze"
+    "hex": "2DD4BF",
+    "name": "all-dark / teal"
    },
    "themeId": "slate",
    "themeName": "all-dark / teal",
@@ -51,8 +51,8 @@
    "slug": "veronica-lee",
    "slides": 11,
    "accent": {
-    "hex": "7C3AED",
-    "name": "violet"
+    "hex": "B91C1C",
+    "name": "white / editorial"
    },
    "themeId": "editorial",
    "themeName": "white / editorial",
@@ -66,8 +66,8 @@
    "slug": "delia-tanuwidjaja",
    "slides": 12,
    "accent": {
-    "hex": "BE123C",
-    "name": "crimson"
+    "hex": "1D4ED8",
+    "name": "blue-grey / technical"
    },
    "themeId": "blueprint",
    "themeName": "blue-grey / technical",
@@ -81,8 +81,8 @@
    "slug": "william-jacob-wijaya",
    "slides": 10,
    "accent": {
-    "hex": "15803D",
-    "name": "green"
+    "hex": "10814A",
+    "name": "bold block / green"
    },
    "themeId": "block",
    "themeName": "bold block / green",
@@ -96,8 +96,8 @@
    "slug": "yixun-li-ethan",
    "slides": 11,
    "accent": {
-    "hex": "2563EB",
-    "name": "blue"
+    "hex": "6D28D9",
+    "name": "off-white / violet"
    },
    "themeId": "mono",
    "themeName": "off-white / violet",
@@ -111,8 +111,8 @@
    "slug": "nicole-lim",
    "slides": 12,
    "accent": {
-    "hex": "0F766E",
-    "name": "teal"
+    "hex": "2F6B45",
+    "name": "deep green / serif"
    },
    "themeId": "forest",
    "themeName": "deep green / serif",
@@ -126,8 +126,8 @@
    "slug": "lis-lim",
    "slides": 11,
    "accent": {
-    "hex": "B45309",
-    "name": "bronze"
+    "hex": "B0203C",
+    "name": "split / crimson"
    },
    "themeId": "crimson",
    "themeName": "split / crimson",
@@ -141,8 +141,8 @@
    "slug": "jia-chai-low",
    "slides": 12,
    "accent": {
-    "hex": "7C3AED",
-    "name": "violet"
+    "hex": "C9A227",
+    "name": "midnight / gold"
    },
    "themeId": "midnight",
    "themeName": "midnight / gold",
@@ -156,8 +156,8 @@
    "slug": "feijin-chen",
    "slides": 10,
    "accent": {
-    "hex": "BE123C",
-    "name": "crimson"
+    "hex": "D2691E",
+    "name": "white grid / orange"
    },
    "themeId": "grid",
    "themeName": "white grid / orange",

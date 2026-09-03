@@ -31,7 +31,10 @@ async function buildOne(name) {
       deck.meta.presenter = name;
       fs.writeFileSync(path.join(OUT, slug(name) + '.json'), JSON.stringify(deck, null, 1));
       console.log(`  ✓ ${name.padEnd(24)} ${deck.slides.length} slides · ${approach.theme.name} · ${approach.structure.label}`);
-      return { name, slug: slug(name), slides: deck.slides.length, accent: approach.accent,
+      // The listing must show the deck's OWN palette, not the accent axis, or
+      // the colour dot on the page disagrees with the file people download.
+      return { name, slug: slug(name), slides: deck.slides.length,
+               accent: { hex: approach.theme.accent, name: approach.theme.name },
                themeId: approach.themeId, themeName: approach.theme.name,
                structureId: approach.structureId, structureLabel: approach.structure.label,
                title: deck.meta.title || '', angle: approach.angle };

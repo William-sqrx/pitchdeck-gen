@@ -24,12 +24,14 @@ async function buildOne(name) {
     try {
       const deck = await generateDeck({ scenario: SCENARIO, presenter: name, approach, lang: LANG });
       deck.accent = approach.accent.hex;
+      deck.themeId = approach.themeId;
       deck.approach = approach;
       if (!deck.meta) deck.meta = {};
       deck.meta.presenter = name;
       fs.writeFileSync(path.join(OUT, slug(name) + '.json'), JSON.stringify(deck, null, 1));
-      console.log(`  ✓ ${name.padEnd(24)} ${deck.slides.length} slides · ${approach.accent.name}`);
+      console.log(`  ✓ ${name.padEnd(24)} ${deck.slides.length} slides · ${approach.theme.name}`);
       return { name, slug: slug(name), slides: deck.slides.length, accent: approach.accent,
+               themeId: approach.themeId, themeName: approach.theme.name,
                title: deck.meta.title || '', angle: approach.angle };
     } catch (e) {
       console.log(`  ! ${name} attempt ${attempt} failed: ${e.message}`);

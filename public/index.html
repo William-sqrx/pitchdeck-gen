@@ -71,6 +71,7 @@
 </div>
 
 <script src="/vendor/pptxgen.bundle.js"></script>
+<script src="/themes.js"></script>
 <script>
 const CACHE = {};
 
@@ -166,15 +167,20 @@ async function toggleScripts(entry, box, btn){
 })();
 
 /* ---------- PPTX ---------- */
-const INK='0F172A', MUTED='64748B', LIGHT='F1F5F9', WHITE='FFFFFF', RULE='E2E8F0';
-const FONT='Arial';
-const W=13.333, H=7.5, MX=0.85;
+const W = 13.333, H = 7.5, MX = 0.85;
 
 function txt(a){ return (a==null?'':String(a)); }
 function arr(a){ return Array.isArray(a)?a:[]; }
 
+function themeOf(deck) {
+  const list = (typeof THEMES !== 'undefined' && THEMES) || [];
+  const byId = list.find(t => t.id === deck.themeId);
+  return byId || list[0];
+}
+
 function buildPptx(deck) {
-  const ACCENT = /^[0-9A-Fa-f]{6}$/.test(txt(deck.accent)) ? txt(deck.accent) : '2563EB';
+  const T = themeOf(deck);
+  const A = T.accent;
   const pptx = new PptxGenJS();
   pptx.layout = 'LAYOUT_WIDE';
   const m = deck.meta || {};
@@ -184,17 +190,105 @@ function buildPptx(deck) {
 
   const slides = arr(deck.slides);
   const total = slides.length;
+  const dark = isDark(T.bg);
 
-  const chrome = (slide, title, idx) => {
-    slide.addShape('rect', { x:MX, y:0.62, w:0.5, h:0.055, fill:{color:ACCENT} });
-    slide.addText(txt(title), {
-      x:MX, y:0.85, w:W-MX*2, h:0.95, fontFace:FONT, fontSize:29, bold:true,
-      color:INK, valign:'top', lineSpacing:34,
+  /* ---- page furniture: differs per theme, so two decks never read alike ---- */
+  function chrome(sl, title, n) {
+    sl.background = { color: T.bg };
+    let ty = 0.85, tx = MX, tw = W - MX*2;
+
+    if (T.chrome === 'bar') {
+      sl.addShape('rect', { x:MX, y:0.62, w:0.5, h:0.055, fill:{color:A} });
+    } else if (T.chrome === 'rule') {
+      ty = 0.72;
+    } else if (T.chrome === 'sidebar') {
+      sl.addShape('rect', { x:0, y:0, w:0.22, h:H, fill:{color:A} });
+      tx = MX + 0.25; tw = W - tx - MX;
+    } else if (T.chrome === 'number') {
+      sl.addText(String(n).padStart(2,'0'), {
+        x:MX, y:0.6, w:1.1, h:0.6, fontFace:T.head, fontSize:30, bold:true, color:A, valign:'top',
+      });
+      tx = MX + 1.15; tw = W - tx - MX; ty = 0.68;
+    }
+
+    sl.addText(txt(title), {
+      x:tx, y:ty, w:tw, h:1.0, fontFace:T.head, fontSize:T.titleSize, bold:true,
+      color:T.ink, valign:'top', lineSpacing:Math.round(T.titleSize * 1.18),
     });
-    slide.addText(txt(m.client) + (txt(m.client) ? '   ·   ' : '') + idx + ' / ' + total, {
-      x:MX, y:H-0.62, w:W-MX*2, h:0.3, fontFace:FONT, fontSize:10, color:MUTED, align:'right',
+
+    if (T.chrome === 'rule') {
+      sl.addShape('rect', { x:tx, y:1.92, w:tw, h:0.02, fill:{color:A} });
+    }
+
+    sl.addText(txt(m.client) + (txt(m.client) ? '   ·   ' : '') + n + ' / ' + total, {
+      x:MX, y:H-0.62, w:W-MX*2, h:0.3, fontFace:T.text, fontSize:10, color:T.muted,
+      align: T.chrome === 'sidebar' ? 'left' : 'right',
     });
-  };
+    return { tx, tw };
+  }
+
+  function coverish(sl, title, subtitle, footL, footR, isCover) {
+    const style = T.coverStyle;
+    sl.background = { color: T.coverBg };
+    const onDark = isDark(T.coverBg);
+    const ink = T.coverInk, sub = T.coverSub;
+    let tx = MX, tw = W - MX*2 - 1.2, ty = isCover ? 2.7 : 1.9, align = 'left';
+
+    if (style === 'block') {
+      sl.addShape('rect', { x:MX, y:ty-0.35, w:0.72, h:0.07, fill:{color:onDark ? A : T.coverInk} });
+    } else if (style === 'band') {
+      sl.addShape('rect', { x:0, y:ty-0.55, w:W, h:0.05, fill:{color:A} });
+    } else if (style === 'edge') {
+      sl.addShape('rect', { x:0, y:0, w:0.32, h:H, fill:{color:A} });
+      tx = MX + 0.4; tw = W - tx - MX - 1.0;
+    } else if (style === 'split') {
+      // Guard against a theme whose accent equals its cover background: the
+      // two halves would paint the same colour and the split would vanish.
+      const panel = (A.toUpperCase() === T.coverBg.toUpperCase()) ? T.ink : A;
+      sl.addShape('rect', { x:0, y:0, w:W*0.38, h:H, fill:{color:panel} });
+      sl.addShape('rect', { x:W*0.38, y:0, w:W*0.62, h:H, fill:{color:T.coverBg} });
+      tx = W*0.38 + 0.7; tw = W - tx - 0.7;
+    } else if (style === 'center') {
+      align = 'center'; tx = 1.3; tw = W - 2.6; ty = isCover ? 2.5 : 2.0;
+      sl.addShape('rect', { x:W/2-0.36, y:ty-0.45, w:0.72, h:0.05, fill:{color:A} });
+    }
+
+    sl.addText(txt(title), {
+      x:tx, y:ty, w:tw, h:2.0, fontFace:T.head, fontSize:isCover ? T.coverSize : T.coverSize - 8,
+      bold:true, color:ink, valign:'top', align, lineSpacing:Math.round((isCover ? T.coverSize : T.coverSize-8) * 1.16),
+    });
+    if (txt(subtitle)) {
+      sl.addText(txt(subtitle), {
+        x:tx, y:ty + (isCover ? 1.9 : 1.5), w:Math.min(tw, W-tx-1.0), h:1.0,
+        fontFace:T.text, fontSize:16, color:sub, align, lineSpacing:25,
+      });
+    }
+    if (txt(footL)) sl.addText(txt(footL), { x:tx, y:H-1.05, w:6, h:0.35, fontFace:T.text, fontSize:13, color:sub, align });
+    if (txt(footR)) sl.addText(txt(footR), { x:W-MX-5, y:H-1.05, w:5, h:0.35, fontFace:T.text, fontSize:13, color:sub, align:'right' });
+  }
+
+  function bulletList(sl, items, x, w, top) {
+    const step = 0.85;
+    items.slice(0, 5).forEach((b, j) => {
+      const y = top + j*step;
+      if (T.bullet === 'square') {
+        sl.addShape('rect', { x, y:y+0.17, w:0.13, h:0.13, fill:{color:A} });
+      } else if (T.bullet === 'dot') {
+        sl.addShape('ellipse', { x, y:y+0.16, w:0.15, h:0.15, fill:{color:A} });
+      } else if (T.bullet === 'dash') {
+        sl.addShape('rect', { x, y:y+0.22, w:0.26, h:0.035, fill:{color:A} });
+      } else if (T.bullet === 'arrow') {
+        sl.addText('▸', { x:x-0.04, y:y-0.04, w:0.4, h:0.4, fontFace:T.text, fontSize:17, color:A });
+      } else if (T.bullet === 'number') {
+        sl.addText(String(j+1), { x, y:y-0.04, w:0.35, h:0.4, fontFace:T.head, fontSize:15, bold:true, color:A });
+      }
+      const inset = T.bullet === 'dash' ? 0.5 : 0.45;
+      sl.addText(txt(b), {
+        x:x+inset, y:y-0.04, w:w-inset-0.2, h:0.72,
+        fontFace:T.text, fontSize:18, color:T.ink, valign:'top', lineSpacing:25,
+      });
+    });
+  }
 
   slides.forEach((s, i) => {
     const sl = pptx.addSlide();
@@ -202,112 +296,145 @@ function buildPptx(deck) {
     const n = i + 1;
 
     if (layout === 'title') {
-      sl.background = { color: INK };
-      sl.addShape('rect', { x:MX, y:2.35, w:0.72, h:0.07, fill:{color:ACCENT} });
-      sl.addText(txt(s.title) || txt(m.title), {
-        x:MX, y:2.7, w:W-MX*2-1.2, h:1.9, fontFace:FONT, fontSize:44, bold:true,
-        color:WHITE, valign:'top', lineSpacing:52,
+      coverish(sl, txt(s.title) || txt(m.title), txt(s.subtitle) || txt(m.subtitle),
+        txt(m.presenter), txt(m.client) ? 'Prepared for ' + txt(m.client) : '', true);
+
+    } else if (layout === 'closing') {
+      coverish(sl, txt(s.title), txt(s.subtitle), '', '', false);
+      const onDark = isDark(T.coverBg);
+      const bx = T.coverStyle === 'split' ? W*0.38 + 0.7 : (T.coverStyle === 'edge' ? MX + 0.4 : MX);
+      const bw = W - bx - MX - 0.5;
+      arr(s.bullets).slice(0, 4).forEach((b, j) => {
+        const y = 4.35 + j*0.62;
+        sl.addText(String(j+1), { x:bx, y, w:0.4, h:0.42, fontFace:T.head, fontSize:15, bold:true,
+          color: onDark ? A : T.coverInk });
+        sl.addText(txt(b), { x:bx+0.45, y, w:bw, h:0.42, fontFace:T.text, fontSize:16, color:T.coverInk, valign:'top' });
       });
-      sl.addText(txt(s.subtitle) || txt(m.subtitle), {
-        x:MX, y:4.6, w:W-MX*2-2.2, h:1.0, fontFace:FONT, fontSize:17, color:'AFC0DB', lineSpacing:26,
-      });
-      if (txt(m.presenter)) {
-        sl.addText(txt(m.presenter), { x:MX, y:H-1.05, w:6, h:0.35, fontFace:FONT, fontSize:13, color:'8FA3C4' });
-      }
-      if (txt(m.client)) {
-        sl.addText('Prepared for ' + txt(m.client), {
-          x:W-MX-5, y:H-1.05, w:5, h:0.35, fontFace:FONT, fontSize:13, color:'8FA3C4', align:'right',
-        });
-      }
 
     } else if (layout === 'quote') {
-      sl.background = { color: LIGHT };
-      sl.addText('“', { x:MX-0.15, y:1.5, w:2, h:1.4, fontFace:'Georgia', fontSize:112, color:ACCENT, bold:true });
+      sl.background = { color: T.quoteBg };
+      const onDark = isDark(T.quoteBg);
+      const qInk = onDark ? T.coverInk : T.ink;
+      const qMut = onDark ? T.coverSub : T.muted;
+      sl.addText('“', { x:MX-0.15, y:1.5, w:2, h:1.4, fontFace:'Georgia', fontSize:112, color:A, bold:true });
       sl.addText(txt(s.quote) || txt(s.title), {
-        x:MX+0.05, y:2.95, w:W-MX*2-1.0, h:2.3, fontFace:FONT, fontSize:31, italic:true,
-        color:INK, valign:'top', lineSpacing:44,
+        x:MX+0.05, y:2.95, w:W-MX*2-1.0, h:2.3, fontFace:T.head, fontSize:30, italic:true,
+        color:qInk, valign:'top', lineSpacing:43,
       });
       sl.addText('— ' + (txt(s.attribution) || txt(m.client)), {
-        x:MX+0.05, y:5.5, w:W-MX*2, h:0.4, fontFace:FONT, fontSize:14, color:MUTED,
+        x:MX+0.05, y:5.5, w:W-MX*2, h:0.4, fontFace:T.text, fontSize:14, color:qMut,
       });
       sl.addText(txt(m.client) + '   ·   ' + n + ' / ' + total, {
-        x:MX, y:H-0.62, w:W-MX*2, h:0.3, fontFace:FONT, fontSize:10, color:MUTED, align:'right',
+        x:MX, y:H-0.62, w:W-MX*2, h:0.3, fontFace:T.text, fontSize:10, color:qMut, align:'right',
       });
 
     } else if (layout === 'three') {
-      chrome(sl, s.title, n);
+      const { tx, tw } = chrome(sl, s.title, n);
       const cards = arr(s.cards).slice(0, 3);
-      const gap = 0.35, cw = (W - MX*2 - gap*(cards.length-1)) / Math.max(cards.length, 1);
+      const gap = 0.35, cw = (tw - gap*(cards.length-1)) / Math.max(cards.length, 1);
       cards.forEach((c, j) => {
-        const x = MX + j*(cw+gap);
-        sl.addShape('roundRect', { x, y:2.55, w:cw, h:3.3, fill:{color:LIGHT}, line:{color:RULE,width:1}, rectRadius:0.09 });
-        sl.addShape('rect', { x:x+0.42, y:3.0, w:0.34, h:0.05, fill:{color:ACCENT} });
+        const x = tx + j*(cw+gap);
+        let hy = 3.22, by = 4.1;
+        if (T.cards === 'filled') {
+          sl.addShape('roundRect', { x, y:2.55, w:cw, h:3.3, fill:{color:T.panel}, line:{color:T.rule,width:1}, rectRadius:0.09 });
+          sl.addShape('rect', { x:x+0.42, y:3.0, w:0.34, h:0.05, fill:{color:A} });
+        } else if (T.cards === 'outline') {
+          sl.addShape('rect', { x, y:2.55, w:cw, h:3.3, fill:{color:T.bg}, line:{color:A,width:1.25} });
+          sl.addShape('rect', { x:x+0.42, y:3.0, w:0.34, h:0.05, fill:{color:A} });
+        } else if (T.cards === 'top-rule') {
+          sl.addShape('rect', { x, y:2.55, w:cw, h:0.045, fill:{color:A} });
+          hy = 2.95; by = 3.85;
+        } else if (T.cards === 'numbered') {
+          sl.addText(String(j+1).padStart(2,'0'), {
+            x, y:2.5, w:1.2, h:0.7, fontFace:T.head, fontSize:34, bold:true, color:A, valign:'top',
+          });
+          hy = 3.35; by = 4.2;
+        }
+        const pad = (T.cards === 'filled' || T.cards === 'outline') ? 0.42 : 0;
         sl.addText(txt(c.heading), {
-          x:x+0.42, y:3.22, w:cw-0.84, h:0.85, fontFace:FONT, fontSize:19, bold:true, color:INK, valign:'top', lineSpacing:24,
+          x:x+pad, y:hy, w:cw-pad*2, h:0.85, fontFace:T.head, fontSize:18, bold:true,
+          color:T.ink, valign:'top', lineSpacing:23,
         });
         sl.addText(txt(c.body), {
-          x:x+0.42, y:4.1, w:cw-0.84, h:1.6, fontFace:FONT, fontSize:14, color:'475569', valign:'top', lineSpacing:21,
+          x:x+pad, y:by, w:cw-pad*2, h:1.6, fontFace:T.text, fontSize:14,
+          color:T.body, valign:'top', lineSpacing:21,
         });
       });
 
     } else if (layout === 'metrics') {
-      chrome(sl, s.title, n);
+      const { tx, tw } = chrome(sl, s.title, n);
       const ms = arr(s.metrics).slice(0, 3);
-      const cw = (W - MX*2) / Math.max(ms.length, 1);
+      const gap = T.metrics === 'boxed' ? 0.3 : 0;
+      const cw = (tw - gap*(ms.length-1)) / Math.max(ms.length, 1);
       ms.forEach((mm, j) => {
-        const x = MX + j*cw;
-        if (j > 0) sl.addShape('rect', { x:x-0.02, y:3.0, w:0.012, h:2.15, fill:{color:RULE} });
+        const x = tx + j*(cw+gap);
+        if (T.metrics === 'boxed') {
+          sl.addShape('rect', { x, y:2.7, w:cw, h:2.6, fill:{color:T.panel}, line:{color:T.rule,width:1} });
+        } else if (T.metrics === 'plain' && j > 0) {
+          sl.addShape('rect', { x:x-0.02, y:3.0, w:0.012, h:2.15, fill:{color:T.rule} });
+        }
+        const pad = T.metrics === 'boxed' ? 0.4 : 0.1;
         sl.addText(txt(mm.value), {
-          x:x+0.1, y:2.95, w:cw-0.4, h:1.25, fontFace:FONT, fontSize:56, bold:true, color:ACCENT, valign:'top',
+          x:x+pad, y:2.95, w:cw-pad*2, h:1.25, fontFace:T.head, fontSize:metricSize(txt(mm.value), cw-pad*2),
+          bold:true, color:A, valign:'top',
         });
+        if (T.metrics === 'underline') {
+          sl.addShape('rect', { x:x+pad, y:4.22, w:1.5, h:0.035, fill:{color:A} });
+        }
         sl.addText(txt(mm.label), {
-          x:x+0.1, y:4.4, w:cw-0.5, h:1.3, fontFace:FONT, fontSize:15, color:'475569', valign:'top', lineSpacing:22,
+          x:x+pad, y:T.metrics === 'underline' ? 4.45 : 4.4, w:cw-pad*2, h:1.3,
+          fontFace:T.text, fontSize:15, color:T.body, valign:'top', lineSpacing:22,
         });
-      });
-
-    } else if (layout === 'closing') {
-      sl.background = { color: INK };
-      sl.addShape('rect', { x:MX, y:1.55, w:0.72, h:0.07, fill:{color:ACCENT} });
-      sl.addText(txt(s.title), {
-        x:MX, y:1.9, w:W-MX*2-1.5, h:1.3, fontFace:FONT, fontSize:38, bold:true, color:WHITE, valign:'top', lineSpacing:46,
-      });
-      if (txt(s.subtitle)) {
-        sl.addText(txt(s.subtitle), { x:MX, y:3.2, w:W-MX*2-2.2, h:0.7, fontFace:FONT, fontSize:16, color:'AFC0DB', lineSpacing:24 });
-      }
-      arr(s.bullets).slice(0, 4).forEach((b, j) => {
-        const y = 4.05 + j*0.62;
-        sl.addText(String(j+1), { x:MX, y, w:0.4, h:0.42, fontFace:FONT, fontSize:15, bold:true, color:ACCENT });
-        sl.addText(txt(b), { x:MX+0.45, y, w:W-MX*2-1.0, h:0.42, fontFace:FONT, fontSize:16, color:WHITE, valign:'top' });
       });
 
     } else if (layout === 'agenda') {
-      chrome(sl, s.title, n);
+      const { tx, tw } = chrome(sl, s.title, n);
       arr(s.bullets).slice(0, 5).forEach((b, j) => {
         const y = 2.55 + j*0.86;
-        sl.addText(String(j+1).padStart(2,'0'), { x:MX, y, w:0.62, h:0.55, fontFace:FONT, fontSize:17, bold:true, color:ACCENT });
-        sl.addText(txt(b), { x:MX+0.72, y:y-0.02, w:W-MX*2-1.0, h:0.6, fontFace:FONT, fontSize:19, color:INK, valign:'top' });
-        sl.addShape('rect', { x:MX, y:y+0.6, w:W-MX*2, h:0.008, fill:{color:RULE} });
+        sl.addText(String(j+1).padStart(2,'0'), {
+          x:tx, y, w:0.62, h:0.55, fontFace:T.head, fontSize:17, bold:true, color:A,
+        });
+        sl.addText(txt(b), {
+          x:tx+0.72, y:y-0.02, w:tw-0.8, h:0.6, fontFace:T.text, fontSize:18, color:T.ink, valign:'top',
+        });
+        sl.addShape('rect', { x:tx, y:y+0.6, w:tw, h:0.008, fill:{color:T.rule} });
       });
 
-    } else { // bullets (default)
-      chrome(sl, s.title, n);
-      let y = 2.5;
+    } else { // bullets
+      const { tx, tw } = chrome(sl, s.title, n);
+      let top = 2.5;
       if (txt(s.subtitle)) {
-        sl.addText(txt(s.subtitle), { x:MX, y:1.95, w:W-MX*2-1.0, h:0.5, fontFace:FONT, fontSize:16, color:MUTED, valign:'top' });
-        y = 2.95;
-      }
-      arr(s.bullets).slice(0, 5).forEach((b, j) => {
-        sl.addShape('rect', { x:MX, y:y + j*0.85 + 0.17, w:0.13, h:0.13, fill:{color:ACCENT} });
-        sl.addText(txt(b), {
-          x:MX+0.42, y:y + j*0.85 - 0.04, w:W-MX*2-0.6, h:0.7, fontFace:FONT, fontSize:19, color:INK, valign:'top', lineSpacing:26,
+        sl.addText(txt(s.subtitle), {
+          x:tx, y:2.02, w:tw-0.6, h:0.5, fontFace:T.text, fontSize:16, color:T.muted, valign:'top',
         });
-      });
+        top = 2.95;
+      }
+      bulletList(sl, arr(s.bullets), tx, tw, top);
     }
 
     if (txt(s.script)) sl.addNotes(txt(s.script));
   });
 
   return pptx;
+}
+
+// Metric values are model-written, so "Monday" turns up next to "3x". Size the
+// value to the column it has to sit in rather than letting it wrap onto its label.
+function metricSize(value, widthInches) {
+  const len = Math.max(1, String(value).length);
+  // 0.74em per character covers the widest face in use (Tahoma / Courier New),
+  // and 0.25in comes off for PptxGenJS's internal text-box insets. Measured
+  // against "Monday", which wrapped onto its own label at a looser estimate.
+  const usable = Math.max(0.5, widthInches - 0.25);
+  const fit = (usable * 72) / (0.74 * len);
+  return Math.max(20, Math.min(54, Math.floor(fit)));
+}
+
+function isDark(hex) {
+  const h = String(hex || '').replace('#','');
+  if (h.length !== 6) return false;
+  const r = parseInt(h.slice(0,2),16), g = parseInt(h.slice(2,4),16), b = parseInt(h.slice(4,6),16);
+  return (0.299*r + 0.587*g + 0.114*b) < 140;
 }
 
 function fileName(deck) {

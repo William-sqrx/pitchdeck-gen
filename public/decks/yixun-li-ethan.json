@@ -141,7 +141,7 @@
    "script": "Our recommendation is to make this practical and measurable. We propose one success metric: the movement in the best-to-worst store manager sales gap, which you described as 3x today. We are not asking you to buy four tools and hope they add up. We are asking you to approve one operating-system proposal that compares two stores, captures what the best one does, teaches it through Harbor Wiki, and identifies what the worst one is missing. If we agree the stores now, we can review that metric together on 3 December 2026."
   }
  ],
- "accent": "2563EB",
+ "accent": "6D28D9",
  "approach": {
   "angle": "Frame it as one operating system rather than four tools. The products are worth more joined up than bought separately, and that is the whole pitch.",
   "device": "Contrast two stores - the best and the worst - and close the gap between them on stage.",
@@ -152,5 +152,6 @@
    "name": "blue"
   },
   "slides": 11
- }
+ },
+ "themeId": "mono"
 }

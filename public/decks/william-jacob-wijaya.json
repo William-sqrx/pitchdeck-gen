@@ -131,7 +131,7 @@
    "script": "If RetailCo waits another quarter, the same pattern continues: Monday spreadsheets explain last week, new hires learn inconsistently for six weeks, the 3x manager gap remains hard to decode, and scheduling remains a coordination burden. We recommend the smallest credible first step. Pick a small set of representative stores, support their managers with Spacesight, Echo, and Harbor Wiki, and use Alivia to turn that into a formal pilot proposal with the scheduling open item clearly documented. We prove the operating model first, then decide how to scale it."
   }
  ],
- "accent": "15803D",
+ "accent": "10814A",
  "approach": {
   "angle": "Take the store manager's point of view. They are the pivot between what head office wants and what actually happens, and today they are unsupported.",
   "device": "Follow one new hire from day one to competent, letting the products appear as they are needed.",
@@ -142,5 +142,6 @@
    "name": "green"
   },
   "slides": 10
- }
+ },
+ "themeId": "block"
 }

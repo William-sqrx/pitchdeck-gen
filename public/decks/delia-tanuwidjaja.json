@@ -180,7 +180,7 @@
    "script": "The practical next question is ownership. We need to know who on RetailCo’s side owns the frontline operating system across stores, onboarding, coaching, visibility, and the scheduling dependency. Once that owner is named, we propose a first working session focused on the week-six standard for a new hire. From there, we can map the Spacesight, Echo, and Harbor Wiki workflows, identify the scheduling open items, and use Alivia to package the proposal. Our ask today is simple: who owns this, and when do we convene that first session?"
   }
  ],
- "accent": "BE123C",
+ "accent": "1D4ED8",
  "approach": {
   "angle": "Take the frontline employee's point of view. A new hire's first six weeks is the sharpest version of every problem the COO raised.",
   "device": "Start from the end state you are promising and work backwards to today.",
@@ -191,5 +191,6 @@
    "name": "crimson"
   },
   "slides": 12
- }
+ },
+ "themeId": "blueprint"
 }

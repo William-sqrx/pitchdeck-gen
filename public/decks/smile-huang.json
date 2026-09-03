@@ -136,7 +136,7 @@
    "script": "We are asking for one decision today: approve the joined proposal direction, with Spacesight for floor visibility, Echo for frontline conversations, Harbor Wiki for reusable best practice, and Alivia to package the implementation proposal. The week after, we would confirm the target stores and the specific operating questions we want evidence to answer. We would set up the product workstreams and define what good looks like for managers and new hires. We would also make the scheduling boundary explicit by agreeing whether RetailCo wants an integration path or a separate workforce-management evaluation."
   }
  ],
- "accent": "B45309",
+ "accent": "2DD4BF",
  "approach": {
   "angle": "Lead with the cost of the status quo. Invent no numbers you were not given, but make the reader feel what a week of blind operating costs across the estate.",
   "device": "Before-and-after: the COO's week today, then the COO's week with this in place.",
@@ -147,5 +147,6 @@
    "name": "bronze"
   },
   "slides": 10
- }
+ },
+ "themeId": "slate"
 }

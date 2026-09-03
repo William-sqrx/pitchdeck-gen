@@ -142,7 +142,7 @@
    "script": "We are asking for one decision today: choose the first adoption rhythm RetailCo wants to prove. That means agreeing which stores participate first, who sponsors the change, how managers will coach from Spacesight and Echo, and which onboarding topics AI Wiki should cover first. The week after, we turn this into a store-ready plan: priority locations, manager routines, example capture, Wiki structure, and the scheduling questions that need integration discovery. Alivia will package that into the formal proposal so the initiative is not just technically sound, but operationally adoptable."
   }
  ],
- "accent": "BE123C",
+ "accent": "D2691E",
  "approach": {
   "angle": "Lead with adoption. All of this fails if the frontline will not use it, so make change management the spine of the proposal.",
   "device": "Before-and-after: the COO's week today, then the COO's week with this in place.",
@@ -153,5 +153,6 @@
    "name": "crimson"
   },
   "slides": 10
- }
+ },
+ "themeId": "grid"
 }

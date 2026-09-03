@@ -162,7 +162,7 @@
    "script": "Our ask is to start small and make the risk visible in a controlled way. We propose Pilot Cell A: two top-performing stores, two bottom-performing stores, and one onboarding-heavy store. That gives us a practical comparison without pretending the whole APAC estate can change at once. We would use Spacesight to see the floor, Echo to hear the customer conversations, Harbor Wiki to capture what the best stores do, and Alivia to finalize the proposal, scope, and scheduling open item. If the signal is useful, we then discuss how it scales across 120 stores."
   }
  ],
- "accent": "B45309",
+ "accent": "B0203C",
  "approach": {
   "angle": "Frame it as risk. Not knowing what happens across the estate is an exposure - brand, compliance, customer experience - not just an inconvenience.",
   "device": "Follow one store through a single day, before and after.",
@@ -173,5 +173,6 @@
    "name": "bronze"
   },
   "slides": 11
- }
+ },
+ "themeId": "crimson"
 }

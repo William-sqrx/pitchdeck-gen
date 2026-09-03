@@ -174,7 +174,7 @@
    "script": "We are asking for a focused two-week discovery with the operations team. In that window, we would confirm the store workflows, select representative locations, understand the current spreadsheet reporting, review onboarding materials, and map the scheduling handoffs that create coordination pain. We would also define where Spacesight, Echo, and Harbor Wiki create the strongest first proof points. At the end, Alivia would turn the findings into a concrete RetailCo proposal: what to implement in 30 days, what to codify by 60 days, and what to scale by 90 days."
   }
  ],
- "accent": "7C3AED",
+ "accent": "C9A227",
  "approach": {
   "angle": "Argue standardisation: the stores are running as many different businesses as there are branches. Make consistency the prize and the products the means.",
   "device": "Structure as 30 / 60 / 90 days - three horizons of what changes.",
@@ -185,5 +185,6 @@
    "name": "violet"
   },
   "slides": 12
- }
+ },
+ "themeId": "midnight"
 }

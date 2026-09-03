@@ -174,7 +174,7 @@
    "script": "Our ask is intentionally narrow. Before we talk about all 120 APAC stores, we should run this proposal against one real RetailCo store. We would use Alivia to shape the proposal, apply Spacesight to see what is happening on the floor, use Echo to understand what staff actually say to customers, and create an AI Wiki layer that captures the practices worth reusing. At the same time, we would document the scheduling pain as an adjacent requirement rather than pretending it is solved by these tools. If the loop works in one store, the scale conversation becomes grounded."
   }
  ],
- "accent": "0F766E",
+ "accent": "2F6B45",
  "approach": {
   "angle": "Lead with the Monday-morning test: what the COO knows on Monday today, versus what they would know under this proposal.",
   "device": "Structure around the things the customer said, but re-ordered by what you can fix fastest.",
@@ -185,5 +185,6 @@
    "name": "teal"
   },
   "slides": 12
- }
+ },
+ "themeId": "forest"
 }

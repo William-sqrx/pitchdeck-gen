@@ -167,7 +167,7 @@
    "script": "Our recommendation is to begin with a two-week discovery alongside your operations team. We would select representative APAC stores and managers, review the current reporting, onboarding, and scheduling workflows, and define the right pilot scope for Spacesight, Echo, and Harbor Wiki. The output would be an Alivia proposal that shows exactly what changes in 30, 60, and 90 days, and what remains an open scheduling item. We can then make a grounded decision together, based on RetailCo’s own stores and RetailCo’s own best people."
   }
  ],
- "accent": "0F766E",
+ "accent": "A8571B",
  "approach": {
   "angle": "The real problem is variance, not average performance. Argue that the customer already has the answers - they live in the best store managers - and the job is replication.",
   "device": "Structure as 30 / 60 / 90 days - three horizons of what changes.",
@@ -178,5 +178,6 @@
    "name": "teal"
   },
   "slides": 12
- }
+ },
+ "themeId": "paper"
 }

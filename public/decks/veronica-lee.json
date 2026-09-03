@@ -156,7 +156,7 @@
    "script": "Our ask is to begin with Phase 1: a narrow pilot in a handful of stores over several weeks, focused on the loop rather than a full estate deployment. At the checkpoint, we review four things together: whether Spacesight reduced the Monday blind spot, whether Echo surfaced repeatable behaviours, whether Harbor Wiki made those behaviours usable for onboarding, and what we learned about scheduling coordination. If the proof is strong, Alivia helps turn that evidence into the Phase 2 rollout proposal. If a gap remains, we name it before scaling."
   }
  ],
- "accent": "7C3AED",
+ "accent": "B91C1C",
  "approach": {
   "angle": "Argue speed to value: a narrow pilot in a handful of stores that proves the loop in weeks, not a platform programme that lands next year.",
   "device": "Problem, then what it actually costs, then what fixes it, then proof. Repeat tightly.",
@@ -167,5 +167,6 @@
    "name": "violet"
   },
   "slides": 11
- }
+ },
+ "themeId": "editorial"
 }

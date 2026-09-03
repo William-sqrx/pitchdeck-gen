@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "client": "RetailCo",
+  "title": "RetailCo Store Operating System",
+  "subtitle": "Closing the gap between the best store and the worst store",
+  "presenter": "Yixun LI (Ethan)"
+ },
+ "slides": [
+  {
+   "layout": "title",
+   "title": "RetailCo Store Operating System",
+   "subtitle": "Spacesight, Echo, Harbor Wiki, and Alivia joined as one proposal",
+   "script": "We are not here to pitch four separate tools to four separate symptoms. We are here to build one operating system for 120 APAC stores and 2,000 frontline staff. The goal is simple: take what is already working in the best store, make it visible, make it teachable, and make it repeatable in the stores that are falling behind. Spacesight shows us what happens on the floor, Echo shows us what is said to customers, Harbor Wiki turns those patterns into playbooks, and Alivia packages the joined-up proposal."
+  },
+  {
+   "layout": "quote",
+   "quote": "I have no idea what actually happens on my shop floor. I get a spreadsheet on Monday about last week.",
+   "attribution": "RetailCo COO",
+   "script": "We want to start with your words because they define the operating problem. A Monday spreadsheet about last week is not a control system. It is a rear-view mirror. By the time we see the issue, the queue has already formed, the customer has already left, the new hire has already learned the wrong habit, and the manager has already improvised. Our proposal is to move RetailCo from delayed reporting to same-day operational evidence, then connect that evidence to coaching and onboarding so the organization can act while the week is still happening."
+  },
+  {
+   "layout": "agenda",
+   "title": "The gap we will close on stage",
+   "bullets": [
+    "Compare the best store with the worst store",
+    "Capture what each store actually does",
+    "Turn winning behaviors into shared playbooks",
+    "Name the scheduling gap honestly",
+    "Agree one success metric and review date"
+   ],
+   "script": "We will use one contrast throughout: the best store and the worst store. Today those managers are separated by a 3x sales performance difference, and the important question is not whether one person is talented. The question is what the best store does differently, how quickly we can see it, and how reliably we can teach it. So we will walk from observation, to conversation, to knowledge, to proposal. We will also call out scheduling clearly, because it matters, and we should not pretend a vision or wiki product is a roster engine."
+  },
+  {
+   "layout": "metrics",
+   "title": "RetailCo's operating reality",
+   "metrics": [
+    {
+     "value": "120",
+     "label": "stores across APAC"
+    },
+    {
+     "value": "2,000",
+     "label": "frontline staff"
+    },
+    {
+     "value": "3x",
+     "label": "best-to-worst manager sales gap"
+    }
+   ],
+   "script": "These numbers tell us why the answer has to be a system. With 120 stores, we cannot manage by anecdote. With 2,000 frontline staff, we cannot depend on whoever happens to be working that day to pass along the right habits. And with a 3x gap between the best and worst store managers, the value is not only in measuring performance after the fact. The value is in discovering the operating behaviors behind that gap, then making them available to every store manager, shift lead, and new hire as part of daily work."
+  },
+  {
+   "layout": "three",
+   "title": "One operating system, three connected loops",
+   "cards": [
+    {
+     "heading": "See",
+     "body": "Spacesight makes floor activity visible while the week is still happening."
+    },
+    {
+     "heading": "Hear",
+     "body": "Echo captures and scores the customer conversations that drive conversion."
+    },
+    {
+     "heading": "Teach",
+     "body": "Harbor Wiki bottles proven behaviors into searchable, repeatable playbooks."
+    }
+   ],
+   "script": "The reason we join these products is that each one answers a different part of the same management question. Spacesight tells us what customers and staff are doing on the floor. Echo tells us what staff are actually saying when customers engage. Harbor Wiki turns the best observed behaviors and best conversations into shared guidance. Bought separately, these are useful tools. Joined together, they become an operating loop: see the behavior, hear the interaction, identify what works, and teach it back into the network before another six-week onboarding cycle creates another version of the same problem."
+  },
+  {
+   "layout": "bullets",
+   "title": "Store A: the best manager becomes measurable",
+   "subtitle": "Spacesight and Echo reveal the habits behind the 3x gap",
+   "bullets": [
+    "Floor coverage patterns by time and zone",
+    "Customer approach moments and missed opportunities",
+    "Conversation examples tied to outcomes",
+    "Behaviors ready for Harbor Wiki playbooks"
+   ],
+   "script": "In the best store, we do not want to simply admire the manager. We want to instrument what that manager and team actually do. Spacesight helps us see coverage, movement, service moments, and the difference between busy and effective. Echo helps us hear the language staff use with customers, including how they open conversations, handle objections, and close next steps. Then we connect those signals. The result is not a personality profile of a star manager. It is a practical record of behaviors RetailCo can reuse across APAC."
+  },
+  {
+   "layout": "bullets",
+   "title": "Store B: the worst manager stops being a mystery",
+   "subtitle": "The same operating system shows what is missing",
+   "bullets": [
+    "Monday spreadsheet replaced by current evidence",
+    "Floor behavior compared against proven patterns",
+    "Customer conversations scored against examples",
+    "Coaching focused on specific missing behaviors"
+   ],
+   "script": "In the worst store, the operating system gives us a fairer and more useful view than a late spreadsheet. We are not guessing whether the issue is traffic, coverage, coaching, customer approach, or manager rhythm. Spacesight shows what is happening on the floor. Echo shows whether customer conversations are consistent with what works in the best store. Harbor Wiki gives the manager a concrete reference point instead of vague feedback. That means coaching can move from opinions after results arrive to specific behaviors that can be corrected during the week."
+  },
+  {
+   "layout": "three",
+   "title": "Six-week onboarding becomes a guided path",
+   "cards": [
+    {
+     "heading": "From chance",
+     "body": "New hires no longer depend entirely on whoever is working that day."
+    },
+    {
+     "heading": "To evidence",
+     "body": "They learn from real examples captured by Spacesight and Echo."
+    },
+    {
+     "heading": "To lookup",
+     "body": "Harbor Wiki gives staff one place to find the RetailCo way."
+    }
+   ],
+   "script": "Your onboarding pain is really a knowledge-transfer pain. Today a new hire spends six weeks absorbing whatever the shift happens to teach. If the best person is present, they learn strong habits. If the wrong person is present, weak habits get copied. Harbor Wiki changes that by becoming the place where the RetailCo way is stored and searched. The difference is that the wiki is not written from theory. It is fed by what Spacesight reveals on the floor and what Echo captures in real conversations, so onboarding reflects the best stores, not the loudest opinions."
+  },
+  {
+   "layout": "quote",
+   "quote": "Scheduling our store staff is a pain — getting one roster set takes coordination across many people and teams.",
+   "attribution": "RetailCo COO",
+   "script": "We should be direct about scheduling. Spacesight, Echo, and Harbor Wiki do not replace a workforce management or rostering platform. What they can do is make scheduling decisions better informed, because we can understand floor demand patterns, service pressure, and the behaviors needed on each shift. Alivia then captures this honestly in the client proposal as an adjacent integration workstream, not as a hidden promise. So the roster pain is not ignored. We separate what this operating system solves now from where it should connect to RetailCo’s scheduling process next."
+  },
+  {
+   "layout": "bullets",
+   "title": "Alivia turns the operating system into the proposal",
+   "subtitle": "One joined-up RetailCo plan, not four disconnected deployments",
+   "bullets": [
+    "Scope Spacesight, Echo, and Harbor Wiki together",
+    "Define the best-store and worst-store comparison",
+    "Document scheduling as an integration requirement",
+    "Set the review metric and governance cadence"
+   ],
+   "script": "Alivia matters because the proposal itself should reflect the operating system idea. We do not want one workstream selling cameras, another selling conversation scoring, and another selling knowledge management. We want a single RetailCo proposal that defines how the data flows, what questions each product answers, and how store managers use the result. Alivia packages that clearly: Spacesight for floor visibility, Echo for conversation evidence, Harbor Wiki for repeatable practice, and scheduling as a named adjacent requirement. That keeps the program joined up from the first decision."
+  },
+  {
+   "layout": "closing",
+   "title": "Our ask: measure the gap, then review it together",
+   "subtitle": "Single success metric: movement in the best-to-worst store manager sales gap, currently 3x",
+   "bullets": [
+    "Agree the two comparison stores",
+    "Build the joined-up Alivia proposal",
+    "Review the metric on 3 December 2026"
+   ],
+   "script": "Our recommendation is to make this practical and measurable. We propose one success metric: the movement in the best-to-worst store manager sales gap, which you described as 3x today. We are not asking you to buy four tools and hope they add up. We are asking you to approve one operating-system proposal that compares two stores, captures what the best one does, teaches it through Harbor Wiki, and identifies what the worst one is missing. If we agree the stores now, we can review that metric together on 3 December 2026."
+  }
+ ],
+ "accent": "2563EB",
+ "approach": {
+  "angle": "Frame it as one operating system rather than four tools. The products are worth more joined up than bought separately, and that is the whole pitch.",
+  "device": "Contrast two stores - the best and the worst - and close the gap between them on stage.",
+  "opener": "Open on the customer's own words - put their quote on screen before anything else.",
+  "close": "Close by proposing a single success metric and the date you would review it against.",
+  "accent": {
+   "hex": "2563EB",
+   "name": "blue"
+  },
+  "slides": 11
+ }
+}

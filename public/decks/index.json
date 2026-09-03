@@ -1,0 +1,126 @@
+{
+ "builtAt": "2026-09-03T07:14:05.267Z",
+ "decks": [
+  {
+   "name": "Jasper GOH",
+   "slug": "jasper-goh",
+   "slides": 11,
+   "accent": {
+    "hex": "2563EB",
+    "name": "blue"
+   },
+   "title": "Closing the Same-Day Loop",
+   "angle": "The real problem is not missing data, it is that nothing reaches the COO in time to act. Argue for closing the loop from floor to decision inside a single day."
+  },
+  {
+   "name": "Sara TEO",
+   "slug": "sara-teo",
+   "slides": 12,
+   "accent": {
+    "hex": "0F766E",
+    "name": "teal"
+   },
+   "title": "Replicating RetailCo’s Best Stores",
+   "angle": "The real problem is variance, not average performance. Argue that the customer already has the answers - they live in the best store managers - and the job is replication."
+  },
+  {
+   "name": "Smile HUANG",
+   "slug": "smile-huang",
+   "slides": 10,
+   "accent": {
+    "hex": "B45309",
+    "name": "bronze"
+   },
+   "title": "From Last Week’s Spreadsheet to This Week’s Shop Floor",
+   "angle": "Lead with the cost of the status quo. Invent no numbers you were not given, but make the reader feel what a week of blind operating costs across the estate."
+  },
+  {
+   "name": "Veronica LEE",
+   "slug": "veronica-lee",
+   "slides": 11,
+   "accent": {
+    "hex": "7C3AED",
+    "name": "violet"
+   },
+   "title": "Prove the Frontline Loop in Weeks",
+   "angle": "Argue speed to value: a narrow pilot in a handful of stores that proves the loop in weeks, not a platform programme that lands next year."
+  },
+  {
+   "name": "Delia TANUWIDJAJA",
+   "slug": "delia-tanuwidjaja",
+   "slides": 13,
+   "accent": {
+    "hex": "BE123C",
+    "name": "crimson"
+   },
+   "title": "RetailCo Frontline Operating System",
+   "angle": "Take the frontline employee's point of view. A new hire's first six weeks is the sharpest version of every problem the COO raised."
+  },
+  {
+   "name": "William Jacob WIJAYA",
+   "slug": "william-jacob-wijaya",
+   "slides": 10,
+   "accent": {
+    "hex": "15803D",
+    "name": "green"
+   },
+   "title": "From Day One to Store-Ready",
+   "angle": "Take the store manager's point of view. They are the pivot between what head office wants and what actually happens, and today they are unsupported."
+  },
+  {
+   "name": "Yixun LI (Ethan)",
+   "slug": "yixun-li-ethan",
+   "slides": 11,
+   "accent": {
+    "hex": "2563EB",
+    "name": "blue"
+   },
+   "title": "RetailCo Store Operating System",
+   "angle": "Frame it as one operating system rather than four tools. The products are worth more joined up than bought separately, and that is the whole pitch."
+  },
+  {
+   "name": "Nicole LIM",
+   "slug": "nicole-lim",
+   "slides": 13,
+   "accent": {
+    "hex": "0F766E",
+    "name": "teal"
+   },
+   "title": "The Monday-Morning Test",
+   "angle": "Lead with the Monday-morning test: what the COO knows on Monday today, versus what they would know under this proposal."
+  },
+  {
+   "name": "Lis LIM",
+   "slug": "lis-lim",
+   "slides": 11,
+   "accent": {
+    "hex": "B45309",
+    "name": "bronze"
+   },
+   "title": "Turning Shop-Floor Unknowns into Managed Risk",
+   "angle": "Frame it as risk. Not knowing what happens across the estate is an exposure - brand, compliance, customer experience - not just an inconvenience."
+  },
+  {
+   "name": "Jia Chai LOW",
+   "slug": "jia-chai-low",
+   "slides": 12,
+   "accent": {
+    "hex": "7C3AED",
+    "name": "violet"
+   },
+   "title": "One RetailCo, 120 Stores",
+   "angle": "Argue standardisation: the stores are running as many different businesses as there are branches. Make consistency the prize and the products the means."
+  },
+  {
+   "name": "Feijin CHEN",
+   "slug": "feijin-chen",
+   "slides": 11,
+   "accent": {
+    "hex": "BE123C",
+    "name": "crimson"
+   },
+   "title": "RetailCo Frontline Adoption Proposal",
+   "angle": "Lead with adoption. All of this fails if the frontline will not use it, so make change management the spine of the proposal."
+  }
+ ]
+}

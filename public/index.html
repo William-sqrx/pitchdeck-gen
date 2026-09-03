@@ -7,8 +7,7 @@
 <style>
   :root{
     --bg:#0B0F1A; --panel:#131926; --line:#232C3E; --ink:#F2F5FA;
-    --muted:#8A97AE; --accent:#4C7DFF; --accent-soft:#1B2740; --ok:#37D399; --bad:#FF6B6B;
-    --radius:14px;
+    --muted:#8A97AE; --accent:#4C7DFF; --bad:#FF6B6B;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -17,238 +16,165 @@
     font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:820px;margin:0 auto;padding:40px 20px 80px}
-  header{margin-bottom:28px}
+  .wrap{max-width:720px;margin:0 auto;padding:44px 20px 90px}
   .eyebrow{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
-  h1{margin:0 0 8px;font-size:30px;line-height:1.2;letter-spacing:-.02em}
-  .sub{color:var(--muted);margin:0;max-width:60ch}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-bottom:16px}
-  label{display:block;font-size:13px;font-weight:600;margin-bottom:7px}
-  .hint{color:var(--muted);font-weight:400;font-size:12px}
-  textarea,input[type=text]{
-    width:100%;background:#0A0E18;color:var(--ink);border:1px solid var(--line);
-    border-radius:10px;padding:12px 13px;font-size:14px;font-family:inherit;line-height:1.5;
+  h1{margin:0 0 10px;font-size:31px;line-height:1.2;letter-spacing:-.02em}
+  .sub{color:var(--muted);margin:0 0 30px;max-width:56ch}
+
+  .row{
+    background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--dot,var(--accent));
+    border-radius:4px 13px 13px 4px;padding:16px 18px;margin-bottom:11px;
   }
-  textarea{min-height:230px;resize:vertical}
-  textarea:focus,input:focus{outline:none;border-color:var(--accent)}
-  .row{display:flex;gap:12px;flex-wrap:wrap}
-  .row>div{flex:1 1 220px}
-  .segs{display:flex;gap:6px;background:#0A0E18;border:1px solid var(--line);border-radius:10px;padding:4px}
-  .segs button{
-    flex:1;background:transparent;border:0;color:var(--muted);padding:8px 6px;border-radius:7px;
-    font:inherit;font-size:13px;font-weight:600;cursor:pointer;
+  .top{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+  .who{flex:1 1 240px;min-width:0}
+  .nm{font-size:17px;font-weight:700;letter-spacing:-.01em}
+  .tl{color:var(--dot,var(--accent));font-size:13.5px;font-weight:600;margin-top:2px}
+  .an{color:var(--muted);font-size:12.5px;margin-top:6px;line-height:1.5}
+  .meta{color:var(--muted);font-size:11.5px;margin-top:7px;letter-spacing:.02em}
+  .dl{
+    flex:none;background:var(--dot,var(--accent));color:#fff;border:0;border-radius:10px;
+    padding:12px 17px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;
   }
-  .segs button[aria-pressed=true]{background:var(--accent-soft);color:var(--ink)}
-  .go{
-    width:100%;margin-top:4px;background:var(--accent);color:#fff;border:0;border-radius:11px;
-    padding:15px;font:inherit;font-size:16px;font-weight:700;cursor:pointer;
+  .dl:hover:not(:disabled){filter:brightness(1.1)}
+  .dl:disabled{opacity:.6;cursor:default}
+  .scriptToggle{
+    margin-top:12px;background:none;border:0;padding:0;color:var(--muted);
+    font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;
   }
-  .go:hover{filter:brightness(1.08)}
-  .go:disabled{opacity:.55;cursor:default;filter:none}
-  .ghost{background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:11px 16px;font:inherit;font-weight:600;cursor:pointer}
-  .ghost:hover{border-color:var(--accent)}
-  .status{margin-top:14px;font-size:14px;color:var(--muted);min-height:22px}
-  .status.err{color:var(--bad)}
-  #out{display:none}
-  .slide-row{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);align-items:baseline}
-  .slide-row:last-child{border-bottom:0}
-  .num{color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px;min-width:22px}
-  .st{font-weight:600;flex:1}
-  .lay{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
-  details{margin-top:6px}
-  summary{cursor:pointer;color:var(--muted);font-size:12px}
-  .script{color:var(--muted);font-size:13px;margin-top:6px;white-space:pre-wrap}
-  .actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-  .foot{color:var(--muted);font-size:12px;margin-top:26px;text-align:center}
-  .spin{display:inline-block;width:13px;height:13px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:s .7s linear infinite;vertical-align:-2px;margin-right:7px}
+  .scriptToggle:hover{color:var(--ink)}
+  .scripts{display:none;margin-top:12px;border-top:1px solid var(--line);padding-top:12px}
+  .sl{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .sl:last-child{border-bottom:0}
+  .sn{color:var(--muted);font-variant-numeric:tabular-nums;font-size:11px;min-width:20px;flex:none}
+  .sb{flex:1;min-width:0}
+  .sh{font-weight:600;font-size:13.5px}
+  .sx{color:var(--muted);font-size:12.5px;margin-top:4px;white-space:pre-wrap}
+
+  .note{color:var(--muted);font-size:12.5px;text-align:center;margin-top:30px;line-height:1.8}
+  .err{color:var(--bad);text-align:center;padding:30px 0}
+  .spin{display:inline-block;width:12px;height:12px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:s .7s linear infinite;vertical-align:-2px;margin-right:6px}
   @keyframes s{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div class="eyebrow">Hands-On Lab</div>
-    <h1>Customer case → pitch deck</h1>
-    <p class="sub">Paste the customer scenario. Get a PowerPoint back with a word-for-word speaker script in the notes of every slide. The RetailCo case is already filled in — you can just press Generate.</p>
-  </header>
+  <div class="eyebrow">Hands-On Lab &middot; RetailCo</div>
+  <h1>Find your name. Download. Present.</h1>
+  <p class="sub">One deck each, already written. Everyone was given the same customer, but each deck argues it a different way &mdash; so no two of these are alike. Your speaker script is in the PowerPoint <b>Notes</b> of every slide: hit <b>Present</b> and only you see it.</p>
 
-  <div class="card">
-    <label for="scenario">Customer scenario <span class="hint">— their pains, and the products you're selling</span></label>
-    <textarea id="scenario" spellcheck="false"></textarea>
-  </div>
+  <div id="list"></div>
 
-  <div class="card">
-    <div class="row">
-      <div>
-        <label for="presenter">Your name <span class="hint">(on the title slide)</span></label>
-        <input type="text" id="presenter" placeholder="e.g. Veronica Lee" autocomplete="off">
-      </div>
-      <div>
-        <label>Language</label>
-        <div class="segs" id="langsegs">
-          <button data-l="en" aria-pressed="true">English</button>
-          <button data-l="zh" aria-pressed="false">中文</button>
-          <button data-l="bi" aria-pressed="false">Both</button>
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:14px">
-      <label for="angle">Your angle <span class="hint">(optional — makes your deck different from everyone else's)</span></label>
-      <input type="text" id="angle" placeholder="e.g. lead with ROI for the COO / focus on rollout speed" autocomplete="off">
-    </div>
-  </div>
-
-  <button class="go" id="go">Generate my deck</button>
-  <div class="status" id="status"></div>
-
-  <div class="card" id="out">
-    <div id="meta" style="margin-bottom:12px"></div>
-    <div id="slides"></div>
-    <div class="actions">
-      <button class="ghost" id="dl">↓ Download .pptx</button>
-      <button class="ghost" id="again">Regenerate</button>
-    </div>
-  </div>
-
-  <p class="foot">Speaker script sits in the PowerPoint <b>Notes</b> field of each slide — press <b>Present</b> and you'll see it on your screen only.</p>
+  <p class="note">
+    Not on the list, or want a different angle? Ask William.<br>
+    <span id="built"></span>
+  </p>
 </div>
 
 <script src="/vendor/pptxgen.bundle.js"></script>
 <script>
-const DEFAULT_SCENARIO = `THE CUSTOMER
-RetailCo. 120 stores across APAC. 2,000 frontline staff.
+const CACHE = {};
 
-Their COO raised four problems:
-1. "I have no idea what actually happens on my shop floor. I get a spreadsheet on Monday about last week."
-2. "My best store managers outsell my worst ones by 3x. I cannot bottle what they do."
-3. "Onboarding a new hire takes six weeks and depends entirely on whoever happens to be working that day."
-4. "Scheduling our store staff is a pain — getting one roster set takes coordination across many people and teams."
-
-THE PRODUCTS WE ARE SELLING
-- Spacesight — see what's happening on the floor (in-store vision analytics).
-- Echo — hear what frontline staff actually say to customers (conversation capture and scoring).
-- AI Wiki (Harbor Wiki) — bottle what the best people do so anyone can look it up.
-- Alivia — turns all of the above into a client proposal.
-
-THE TASK
-Pitch these products back to RetailCo's COO as one joined-up proposal that solves the problems above.`;
-
-const $ = (s) => document.querySelector(s);
-const el = { scenario:$('#scenario'), presenter:$('#presenter'), angle:$('#angle'),
-             go:$('#go'), status:$('#status'), out:$('#out'), slides:$('#slides'),
-             meta:$('#meta'), dl:$('#dl'), again:$('#again') };
-let LANG = 'en';
-let DECK = null;
-
-el.scenario.value = localStorage.getItem('pd_scenario') || DEFAULT_SCENARIO;
-el.presenter.value = localStorage.getItem('pd_presenter') || '';
-el.scenario.addEventListener('input', () => localStorage.setItem('pd_scenario', el.scenario.value));
-el.presenter.addEventListener('input', () => localStorage.setItem('pd_presenter', el.presenter.value));
-
-$('#langsegs').addEventListener('click', (e) => {
-  const b = e.target.closest('button'); if (!b) return;
-  LANG = b.dataset.l;
-  [...e.currentTarget.children].forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-});
-
-function setStatus(msg, isErr) {
-  el.status.className = 'status' + (isErr ? ' err' : '');
-  el.status.innerHTML = msg;
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function firstSentence(s){
+  const t = String(s||'').trim();
+  const i = t.indexOf('. ');
+  return i > 0 ? t.slice(0, i+1) : t;
 }
 
-// The server sleeps when idle and restarts on deploy. In both windows Render's
-// edge answers with a plain-text 404/502 rather than our JSON, so never assume
-// the body parses — and just wait it out, because the wake takes ~50s.
-class Waking extends Error {}
-
-async function askServer() {
-  const r = await fetch('/api/generate', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      scenario: el.scenario.value,
-      presenter: el.presenter.value,
-      angle: el.angle.value,
-      lang: LANG,
-    }),
-  });
-  const raw = await r.text();
-  let data = null;
-  try { data = JSON.parse(raw); } catch (_) { /* not ours */ }
-
-  if (!data) {
-    if ([404, 429, 500, 502, 503, 504].includes(r.status)) throw new Waking();
-    throw new Error('The server sent something unexpected (HTTP ' + r.status + ').');
-  }
-  if (!r.ok) throw new Error(data.error || 'Generation failed.');
-  return data;
+async function loadDeck(slug){
+  if (CACHE[slug]) return CACHE[slug];
+  const r = await fetch('/decks/' + slug + '.json');
+  if (!r.ok) throw new Error('Could not load that deck (HTTP ' + r.status + ').');
+  return (CACHE[slug] = await r.json());
 }
 
-async function generate() {
-  el.go.disabled = true;
-  el.out.style.display = 'none';
-  setStatus('<span class="spin"></span>Writing your deck — about 30&ndash;60 seconds.');
+async function download(entry, btn){
+  const was = btn.textContent;
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin"></span>Building';
   try {
-    let data;
-    for (let attempt = 0; ; attempt++) {
-      try { data = await askServer(); break; }
-      catch (e) {
-        if (!(e instanceof Waking) || attempt >= 4) {
-          if (e instanceof Waking) throw new Error('The server would not wake up.');
-          throw e;
-        }
-        setStatus('<span class="spin"></span>Server was asleep — waking it up, hold on…');
-        await new Promise(res => setTimeout(res, 6000));
-      }
-    }
-    DECK = data;
-    render(data);
-    setStatus('Done — ' + data.slides.length + ' slides. Download it below.');
-    el.out.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const deck = await loadDeck(entry.slug);
+    await buildPptx(deck).writeFile({ fileName: fileName(deck) });
+    btn.textContent = '✓ Downloaded';
+    setTimeout(() => { btn.textContent = was; }, 3500);
   } catch (e) {
-    setStatus('✕ ' + e.message + ' — press Generate again.', true);
+    btn.textContent = 'Failed — retry';
+    console.error(e);
   } finally {
-    el.go.disabled = false;
+    btn.disabled = false;
   }
 }
 
-function esc(s) {
-  return String(s == null ? '' : s).replace(/[&<>]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;' }[c]));
+async function toggleScripts(entry, box, btn){
+  if (box.style.display === 'block') { box.style.display = 'none'; btn.textContent = 'Read my speaker script ▾'; return; }
+  btn.textContent = 'Loading…';
+  try {
+    const deck = await loadDeck(entry.slug);
+    box.innerHTML = deck.slides.map((s, i) =>
+      '<div class="sl"><div class="sn">' + String(i+1).padStart(2,'0') + '</div><div class="sb">' +
+      '<div class="sh">' + esc(s.title || s.quote || '') + '</div>' +
+      '<div class="sx">' + esc(s.script || '') + '</div></div></div>'
+    ).join('');
+    box.style.display = 'block';
+    btn.textContent = 'Hide script ▴';
+  } catch (e) {
+    btn.textContent = 'Could not load the script';
+  }
 }
 
-function render(deck) {
-  const m = deck.meta || {};
-  el.meta.innerHTML = '<div style="font-weight:700;font-size:17px">' + esc(m.title || 'Proposal') + '</div>' +
-    '<div style="color:var(--muted);font-size:13px">' + esc(m.subtitle || '') + '</div>';
-  el.slides.innerHTML = deck.slides.map((s, i) =>
-    '<div class="slide-row"><div class="num">' + String(i + 1).padStart(2, '0') + '</div>' +
-    '<div class="st">' + esc(s.title || s.quote || m.title || '—') +
-    '<details><summary>speaker script</summary><div class="script">' + esc(s.script || '') + '</div></details>' +
-    '</div><div class="lay">' + esc(s.layout || '') + '</div></div>'
-  ).join('');
-  el.out.style.display = 'block';
-}
+(async () => {
+  const list = document.getElementById('list');
+  let idx;
+  try {
+    const r = await fetch('/decks/index.json');
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    idx = await r.json();
+  } catch (e) {
+    list.innerHTML = '<div class="err">Could not load the decks. Refresh in a moment — the server may be waking up.</div>';
+    return;
+  }
+
+  list.innerHTML = '';
+  idx.decks.forEach(entry => {
+    const row = document.createElement('div');
+    row.className = 'row';
+    row.style.setProperty('--dot', '#' + entry.accent.hex);
+    row.innerHTML =
+      '<div class="top">' +
+        '<div class="who">' +
+          '<div class="nm">' + esc(entry.name) + '</div>' +
+          '<div class="tl">' + esc(entry.title) + '</div>' +
+          '<div class="an">Your line: ' + esc(firstSentence(entry.angle)) + '</div>' +
+          '<div class="meta">' + entry.slides + ' slides &middot; ' + esc(entry.accent.name) + '</div>' +
+        '</div>' +
+        '<button class="dl">↓ Download .pptx</button>' +
+      '</div>' +
+      '<button class="scriptToggle">Read my speaker script ▾</button>' +
+      '<div class="scripts"></div>';
+
+    row.querySelector('.dl').addEventListener('click', (e) => download(entry, e.currentTarget));
+    const box = row.querySelector('.scripts');
+    const tog = row.querySelector('.scriptToggle');
+    tog.addEventListener('click', () => toggleScripts(entry, box, tog));
+    list.appendChild(row);
+  });
+
+  if (idx.builtAt) {
+    document.getElementById('built').textContent =
+      'Written ' + new Date(idx.builtAt).toLocaleString();
+  }
+})();
 
 /* ---------- PPTX ---------- */
-const INK='0F172A', ACCENT='2563EB', MUTED='64748B', LIGHT='F1F5F9', WHITE='FFFFFF', RULE='E2E8F0';
+const INK='0F172A', MUTED='64748B', LIGHT='F1F5F9', WHITE='FFFFFF', RULE='E2E8F0';
 const FONT='Arial';
 const W=13.333, H=7.5, MX=0.85;
 
 function txt(a){ return (a==null?'':String(a)); }
 function arr(a){ return Array.isArray(a)?a:[]; }
 
-function chrome(slide, title, idx, total, client) {
-  slide.addShape('rect', { x:MX, y:0.62, w:0.5, h:0.055, fill:{color:ACCENT} });
-  slide.addText(txt(title), {
-    x:MX, y:0.85, w:W-MX*2, h:0.95, fontFace:FONT, fontSize:29, bold:true,
-    color:INK, valign:'top', lineSpacing:34,
-  });
-  slide.addText(txt(client) + (client ? '   ·   ' : '') + idx + ' / ' + total, {
-    x:MX, y:H-0.62, w:W-MX*2, h:0.3, fontFace:FONT, fontSize:10, color:MUTED, align:'right',
-  });
-}
-
 function buildPptx(deck) {
+  const ACCENT = /^[0-9A-Fa-f]{6}$/.test(txt(deck.accent)) ? txt(deck.accent) : '2563EB';
   const pptx = new PptxGenJS();
   pptx.layout = 'LAYOUT_WIDE';
   const m = deck.meta || {};
@@ -258,6 +184,17 @@ function buildPptx(deck) {
 
   const slides = arr(deck.slides);
   const total = slides.length;
+
+  const chrome = (slide, title, idx) => {
+    slide.addShape('rect', { x:MX, y:0.62, w:0.5, h:0.055, fill:{color:ACCENT} });
+    slide.addText(txt(title), {
+      x:MX, y:0.85, w:W-MX*2, h:0.95, fontFace:FONT, fontSize:29, bold:true,
+      color:INK, valign:'top', lineSpacing:34,
+    });
+    slide.addText(txt(m.client) + (txt(m.client) ? '   ·   ' : '') + idx + ' / ' + total, {
+      x:MX, y:H-0.62, w:W-MX*2, h:0.3, fontFace:FONT, fontSize:10, color:MUTED, align:'right',
+    });
+  };
 
   slides.forEach((s, i) => {
     const sl = pptx.addSlide();
@@ -298,7 +235,7 @@ function buildPptx(deck) {
       });
 
     } else if (layout === 'three') {
-      chrome(sl, s.title, n, total, m.client);
+      chrome(sl, s.title, n);
       const cards = arr(s.cards).slice(0, 3);
       const gap = 0.35, cw = (W - MX*2 - gap*(cards.length-1)) / Math.max(cards.length, 1);
       cards.forEach((c, j) => {
@@ -314,7 +251,7 @@ function buildPptx(deck) {
       });
 
     } else if (layout === 'metrics') {
-      chrome(sl, s.title, n, total, m.client);
+      chrome(sl, s.title, n);
       const ms = arr(s.metrics).slice(0, 3);
       const cw = (W - MX*2) / Math.max(ms.length, 1);
       ms.forEach((mm, j) => {
@@ -344,7 +281,7 @@ function buildPptx(deck) {
       });
 
     } else if (layout === 'agenda') {
-      chrome(sl, s.title, n, total, m.client);
+      chrome(sl, s.title, n);
       arr(s.bullets).slice(0, 5).forEach((b, j) => {
         const y = 2.55 + j*0.86;
         sl.addText(String(j+1).padStart(2,'0'), { x:MX, y, w:0.62, h:0.55, fontFace:FONT, fontSize:17, bold:true, color:ACCENT });
@@ -353,7 +290,7 @@ function buildPptx(deck) {
       });
 
     } else { // bullets (default)
-      chrome(sl, s.title, n, total, m.client);
+      chrome(sl, s.title, n);
       let y = 2.5;
       if (txt(s.subtitle)) {
         sl.addText(txt(s.subtitle), { x:MX, y:1.95, w:W-MX*2-1.0, h:0.5, fontFace:FONT, fontSize:16, color:MUTED, valign:'top' });
@@ -380,25 +317,6 @@ function fileName(deck) {
   return base + (who ? '_' + who : '') + '.pptx';
 }
 
-el.dl.addEventListener('click', async () => {
-  if (!DECK) return;
-  el.dl.disabled = true;
-  const was = el.dl.textContent;
-  el.dl.textContent = 'Building…';
-  try {
-    await buildPptx(DECK).writeFile({ fileName: fileName(DECK) });
-    el.dl.textContent = '✓ Downloaded — click for another copy';
-    setTimeout(() => { el.dl.textContent = was; }, 4000);
-  } catch (e) {
-    setStatus('✕ Could not build the file: ' + e.message, true);
-    el.dl.textContent = was;
-  } finally {
-    el.dl.disabled = false;
-  }
-});
-
-el.go.addEventListener('click', generate);
-el.again.addEventListener('click', generate);
 </script>
 </body>
 </html>

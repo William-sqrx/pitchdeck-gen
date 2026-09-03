@@ -1,0 +1,177 @@
+{
+ "meta": {
+  "client": "RetailCo",
+  "title": "Turning Shop-Floor Unknowns into Managed Risk",
+  "subtitle": "A one-day view of how Spacesight, Echo, Harbor Wiki, and Alivia work together across 120 APAC stores",
+  "presenter": "Lis LIM"
+ },
+ "slides": [
+  {
+   "layout": "title",
+   "title": "Turning Shop-Floor Unknowns into Managed Risk",
+   "subtitle": "Following one store through a single day, before and after",
+   "script": "We are framing this conversation around risk, because the issue is bigger than operational inconvenience. When we do not know what happens across 120 stores and 2,000 frontline staff until a spreadsheet arrives on Monday, we are exposed across brand, compliance, customer experience, and execution. We will follow one store through a single day, first as RetailCo experiences it now, then as it could work with Spacesight, Echo, Harbor Wiki, and Alivia joined together into one proposal."
+  },
+  {
+   "layout": "agenda",
+   "title": "Where we are going",
+   "bullets": [
+    "Start with the exposure RetailCo described",
+    "Follow one store through a day",
+    "Map each risk to a named product",
+    "Call out the scheduling gap honestly",
+    "Ask for a focused pilot cell"
+   ],
+   "script": "We will keep the path very simple. First, we will treat the current visibility gap as an exposure, not just a reporting delay. Then we will walk through a normal trading day in one store, from opening through afternoon onboarding. At each point, we will show which product reduces which risk: Spacesight for what happens on the floor, Echo for what is said to customers, Harbor Wiki for bottling best practice, and Alivia for turning the proposal into a concrete client-ready plan. We will also be explicit about scheduling, because it needs its own workstream."
+  },
+  {
+   "layout": "quote",
+   "quote": "I have no idea what actually happens on my shop floor. I get a spreadsheet on Monday about last week.",
+   "attribution": "RetailCo COO",
+   "script": "We should start with your words, because they define the exposure. If we only learn on Monday what happened last week, we cannot intervene while the brand moment is still happening. We cannot see whether a promotion was executed, whether a queue built up, whether a customer was approached well, or whether a new hire was left unsupported. The risk is not that the spreadsheet is late. The risk is that the store day has already passed, the customer has already formed an opinion, and the pattern is already repeating."
+  },
+  {
+   "layout": "metrics",
+   "title": "The exposure scales across the estate",
+   "metrics": [
+    {
+     "value": "120",
+     "label": "stores across APAC"
+    },
+    {
+     "value": "2,000",
+     "label": "frontline staff"
+    },
+    {
+     "value": "Monday",
+     "label": "first look at last week"
+    }
+   ],
+   "script": "When we put the numbers around that quote, the risk becomes structural. RetailCo is not managing one store with one familiar team. We are talking about 120 stores across APAC and 2,000 frontline staff, all creating customer moments every day. If the first consolidated view comes on Monday, then variance has days to compound before anyone sees it. Spacesight and Echo change the timing of the signal. Harbor Wiki changes how the response is shared. Alivia helps package those pieces into one proposal rather than four disconnected conversations."
+  },
+  {
+   "layout": "three",
+   "title": "8:45 a.m. — the store opens, but the estate is still blind",
+   "cards": [
+    {
+     "heading": "Before",
+     "body": "Opening standards and floor activity are only reconstructed after the fact."
+    },
+    {
+     "heading": "Risk",
+     "body": "Brand execution varies before operations can see or correct it."
+    },
+    {
+     "heading": "With Spacesight",
+     "body": "In-store vision analytics show what is happening on the floor."
+    }
+   ],
+   "script": "At 8:45, the store opens and the day starts creating risk immediately. Today, we may only know later whether the floor was ready, where staff attention went, or whether customers were left waiting. Spacesight addresses that first blind spot by giving RetailCo a view of what is happening on the shop floor. We are not asking managers to write more reports. We are changing the source of truth from retrospective spreadsheet commentary to observed floor activity, so operations can see the day while it is still the day."
+  },
+  {
+   "layout": "three",
+   "title": "11:30 a.m. — the customer conversation becomes the brand",
+   "cards": [
+    {
+     "heading": "Before",
+     "body": "RetailCo cannot hear what frontline staff actually say to customers."
+    },
+    {
+     "heading": "Risk",
+     "body": "Sales quality, compliance tone, and service experience differ by person."
+    },
+    {
+     "heading": "With Echo",
+     "body": "Conversation capture and scoring reveal customer interactions as they occur."
+    }
+   ],
+   "script": "By late morning, the most important part of the brand may be a conversation between one staff member and one customer. That is also the hardest moment for a COO to see. Echo is the product that addresses this risk directly. It captures and scores what frontline staff actually say to customers, so RetailCo can understand not only whether activity happened, but whether the conversation matched the standard. This matters because shop-floor visibility without conversation quality still leaves a gap in customer experience, coaching, and compliance exposure."
+  },
+  {
+   "layout": "three",
+   "title": "1:15 p.m. — the best manager does something others cannot copy",
+   "cards": [
+    {
+     "heading": "Before",
+     "body": "Top managers outsell weaker stores, but their methods stay local."
+    },
+    {
+     "heading": "Risk",
+     "body": "A 3x performance gap becomes tribal knowledge, not an operating model."
+    },
+    {
+     "heading": "With Harbor Wiki",
+     "body": "Best practices become searchable guidance any store can use."
+    }
+   ],
+   "script": "Your second pain is the performance gap: the best store managers outsell the worst ones by 3x, and RetailCo cannot bottle what they do. That is a risk because excellence stays trapped inside individual habits. Harbor Wiki is the product that turns those patterns into shared operating knowledge. We use the signals from Spacesight and Echo to identify what strong execution looks and sounds like, then Harbor Wiki gives staff and managers somewhere to look it up. The goal is not to clone personalities; it is to make the winning play repeatable."
+  },
+  {
+   "layout": "three",
+   "title": "3:00 p.m. — a new hire learns whatever the shift happens to teach",
+   "cards": [
+    {
+     "heading": "Before",
+     "body": "Onboarding takes six weeks and depends on whoever is working."
+    },
+    {
+     "heading": "Risk",
+     "body": "Customer experience varies while capability is still forming."
+    },
+    {
+     "heading": "With Echo + Harbor Wiki",
+     "body": "Coaching moments and best answers become available on demand."
+    }
+   ],
+   "script": "In the afternoon, a new hire is serving customers while still learning the job. Today, onboarding takes six weeks and depends entirely on whoever happens to be working that day. We should treat that as customer experience risk, because the learner is already representing the brand. Echo helps reveal where the conversation needs coaching. Harbor Wiki gives the new hire access to the best answers and the best manager practices. Spacesight adds context from the floor, so onboarding is connected to real work rather than only to memory and availability."
+  },
+  {
+   "layout": "bullets",
+   "title": "4:30 p.m. — the roster problem is real, and it is not solved by pretending",
+   "subtitle": "Scheduling needs an adjacent workstream, not a forced product fit",
+   "bullets": [
+    "Pain: one roster needs many people and teams",
+    "No listed product is a workforce scheduling engine",
+    "Alivia should capture it as an open requirement",
+    "Pilot can measure handoffs and decision points"
+   ],
+   "script": "We also need to be direct about scheduling. You told us that getting one roster set takes coordination across many people and teams. None of the listed products is a workforce scheduling engine, and we should not force-fit Spacesight, Echo, or Harbor Wiki into that role. What we can do is include scheduling as an explicit open item in the proposal Alivia helps create. During the pilot, we can map where roster decisions get stuck, which teams are involved, and what integration or workflow requirement would be needed next."
+  },
+  {
+   "layout": "bullets",
+   "title": "The joined-up proposal for one pilot day",
+   "subtitle": "Each product has a clear job in the risk model",
+   "bullets": [
+    "Spacesight shows floor activity as it happens",
+    "Echo captures and scores customer conversations",
+    "Harbor Wiki makes best practice searchable",
+    "Alivia packages the client proposal and scope"
+   ],
+   "script": "The value comes from joining the products in the right sequence. Spacesight gives us observed floor activity, so we are not waiting for Monday’s spreadsheet to understand what happened. Echo adds the spoken customer moment, so we are not blind to service quality. Harbor Wiki converts the strongest patterns into guidance that managers and new hires can actually use. Alivia then turns that into a coherent client proposal, including scope, pilot structure, and the open scheduling requirement. This is one operating-risk proposal, not four separate tools looking for a home."
+  },
+  {
+   "layout": "closing",
+   "title": "Our ask: pilot a named store cell",
+   "subtitle": "Pilot Cell A: two top-performing stores, two bottom-performing stores, and one onboarding-heavy store",
+   "bullets": [
+    "Confirm the five-store Pilot Cell A",
+    "Instrument Spacesight and Echo for the trading day",
+    "Build the first Harbor Wiki playbook entries",
+    "Use Alivia to finalize the pilot proposal and open scheduling workstream"
+   ],
+   "script": "Our ask is to start small and make the risk visible in a controlled way. We propose Pilot Cell A: two top-performing stores, two bottom-performing stores, and one onboarding-heavy store. That gives us a practical comparison without pretending the whole APAC estate can change at once. We would use Spacesight to see the floor, Echo to hear the customer conversations, Harbor Wiki to capture what the best stores do, and Alivia to finalize the proposal, scope, and scheduling open item. If the signal is useful, we then discuss how it scales across 120 stores."
+  }
+ ],
+ "accent": "B45309",
+ "approach": {
+  "angle": "Frame it as risk. Not knowing what happens across the estate is an exposure - brand, compliance, customer experience - not just an inconvenience.",
+  "device": "Follow one store through a single day, before and after.",
+  "opener": "Open with a short agenda so the COO knows exactly where you are taking them.",
+  "close": "Close by asking for a pilot in a small, named set of stores.",
+  "accent": {
+   "hex": "B45309",
+   "name": "bronze"
+  },
+  "slides": 11
+ }
+}

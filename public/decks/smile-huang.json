@@ -1,0 +1,151 @@
+{
+ "meta": {
+  "client": "RetailCo",
+  "title": "From Last Week’s Spreadsheet to This Week’s Shop Floor",
+  "subtitle": "A before-and-after operating model for 120 APAC stores and 2,000 frontline staff",
+  "presenter": "Smile HUANG"
+ },
+ "slides": [
+  {
+   "layout": "title",
+   "title": "From Last Week’s Spreadsheet to This Week’s Shop Floor",
+   "subtitle": "A before-and-after operating model for 120 APAC stores and 2,000 frontline staff",
+   "script": "We are starting with the week as it feels today: 120 stores moving fast, 2,000 frontline staff making thousands of customer moments, and the operating picture arriving after the fact. The proposal is not another reporting layer. We are connecting what happens on the floor, what staff actually say, and what your best managers already know, so the business can see, hear, and reuse winning behaviors while the week is still live. We will also be clear where scheduling needs an adjacent workforce-management decision."
+  },
+  {
+   "layout": "agenda",
+   "title": "Where we are taking this conversation",
+   "bullets": [
+    "The cost of operating one week behind",
+    "The COO’s week today",
+    "The COO’s week with live floor intelligence",
+    "How best-manager behavior becomes reusable",
+    "One decision today and next week’s actions"
+   ],
+   "script": "We will keep this grounded in your four stated concerns and in the numbers you gave us: 120 stores, 2,000 frontline staff, a Monday spreadsheet about last week, a 3x performance gap between managers, a six-week onboarding cycle, and rosters that require coordination across many people and teams. We will first make the cost of the current rhythm tangible, then show the before-and-after week. Finally, we will name which product carries each job, and where rostering remains an open integration or adjacent play rather than pretending it is solved by analytics alone."
+  },
+  {
+   "layout": "quote",
+   "quote": "I have no idea what actually happens on my shop floor. I get a spreadsheet on Monday about last week.",
+   "attribution": "RetailCo COO",
+   "script": "We should treat this quote as the center of the operating problem. A spreadsheet on Monday is useful for history, but it cannot help a store manager recover a poor customer interaction on Friday afternoon, compare a winning floor pattern on Saturday, or coach a new hire during the shift where the habit forms. Across 120 stores, the hidden cost is not one missed report; it is a whole estate learning too slowly. Spacesight and Echo change the source of truth from delayed summary to live evidence from the floor and the conversation."
+  },
+  {
+   "layout": "metrics",
+   "title": "The status quo is a week of unmanaged variance",
+   "metrics": [
+    {
+     "value": "120",
+     "label": "stores operating before the spreadsheet arrives"
+    },
+    {
+     "value": "3x",
+     "label": "gap between best and worst store managers"
+    },
+    {
+     "value": "6 wks",
+     "label": "onboarding dependent on who is working that day"
+    }
+   ],
+   "script": "We do not need to invent a financial model to see the pressure. We already have three hard signals. First, 120 stores are running before the Monday view catches up. Second, your best store managers outsell the worst ones by 3x, which means the business has proof that better practice exists but cannot scale it reliably. Third, onboarding takes six weeks and depends on whoever is on shift. The status quo cost is inconsistency: different stores, different managers, different trainers, and delayed evidence when action should happen the same day."
+  },
+  {
+   "layout": "three",
+   "title": "The COO’s week today: visibility arrives after the week is gone",
+   "cards": [
+    {
+     "heading": "Monday",
+     "body": "Last week’s spreadsheet explains outcomes after the operating moments have passed."
+    },
+    {
+     "heading": "Midweek",
+     "body": "Manager variance continues because winning behaviors are observed locally, not captured centrally."
+    },
+    {
+     "heading": "New hire shifts",
+     "body": "Training quality depends on whoever is available, not one consistent RetailCo standard."
+    }
+   ],
+   "script": "Today, the COO’s week starts behind the business. Monday tells us what happened, but not early enough to influence the moments that produced the result. By midweek, the best managers may be doing things that work, but those moves remain trapped in their own stores. For new hires, the experience is even more variable: they learn the job through the person beside them that day. That creates a fragile operating model, because RetailCo’s standard is carried by individuals rather than by a system that observes, captures, and teaches."
+  },
+  {
+   "layout": "three",
+   "title": "The COO’s week with this in place: see, hear, and codify",
+   "cards": [
+    {
+     "heading": "Spacesight",
+     "body": "Shows what is happening on the shop floor through in-store vision analytics."
+    },
+    {
+     "heading": "Echo",
+     "body": "Captures and scores what frontline staff actually say to customers."
+    },
+    {
+     "heading": "Harbor Wiki",
+     "body": "Turns proven manager behaviors into searchable guidance for every store."
+    }
+   ],
+   "script": "With the new week, we change the operating loop. Spacesight gives the visual signal from the floor, so RetailCo can see what is actually happening inside stores rather than waiting for a weekly summary. Echo adds the conversation layer, because customer experience is not only where staff stand or how traffic moves; it is what staff say and how consistently they say it. Harbor Wiki then converts the best observed behaviors into shared operating knowledge. The point is a joined system: evidence becomes coaching, and coaching becomes a repeatable RetailCo way of working."
+  },
+  {
+   "layout": "bullets",
+   "title": "From 3x manager variance to a reusable playbook",
+   "subtitle": "We do not try to average managers out; we capture what the best ones do.",
+   "bullets": [
+    "Echo identifies high-quality customer conversations",
+    "Spacesight connects behavior to floor context",
+    "Harbor Wiki stores winning routines and prompts",
+    "Managers coach from evidence, not folklore"
+   ],
+   "script": "The 3x gap between your best and worst store managers is not only a performance problem; it is also an asset hiding in plain sight. We want to bottle what the best managers do without forcing every store to become identical. Echo lets us hear the customer conversations that separate strong execution from weak execution. Spacesight adds the floor context around those interactions. Harbor Wiki makes the lessons accessible, searchable, and consistent, so a manager in one market can apply what a stronger manager has already proven elsewhere, without waiting for informal word of mouth."
+  },
+  {
+   "layout": "bullets",
+   "title": "From six-week onboarding to a consistent first shift standard",
+   "subtitle": "New hires should learn RetailCo’s best practice, not one person’s habits.",
+   "bullets": [
+    "Harbor Wiki becomes the onboarding source of truth",
+    "Echo supports conversation coaching from real examples",
+    "Spacesight reinforces floor behaviors during live operations",
+    "Store leaders align training across 2,000 staff"
+   ],
+   "script": "For onboarding, the goal is not to promise an artificial reduction in weeks; it is to remove the dependency on whoever happens to be working that day. Harbor Wiki becomes the stable source of truth for what a new hire should know, say, and do. Echo supplies real conversation examples and scoring, so coaching is specific rather than subjective. Spacesight reinforces floor behaviors in the actual store environment. Across 2,000 frontline staff, that means RetailCo can teach from the same standard while still adapting locally where markets and store formats differ."
+  },
+  {
+   "layout": "bullets",
+   "title": "Roster pain: what this proposal solves, and what remains open",
+   "subtitle": "Scheduling is real; we should be precise about the boundary.",
+   "bullets": [
+    "Spacesight informs demand patterns and floor coverage discussions",
+    "Harbor Wiki standardizes roster handoff and escalation rules",
+    "Alivia packages the full proposal and implementation plan",
+    "Workforce scheduling requires an integration or adjacent platform decision"
+   ],
+   "script": "We should be transparent on scheduling. None of the named products is a full workforce scheduling engine that automatically builds rosters across teams. What we can solve here is the intelligence and operating discipline around rostering. Spacesight can inform where coverage pressure appears on the floor. Harbor Wiki can standardize handoffs, escalation rules, and manager routines so coordination is less dependent on ad hoc messages. Alivia then turns this into a clear RetailCo proposal and implementation plan. The open item is the scheduling system itself, which should be handled through integration or an adjacent workforce-management decision."
+  },
+  {
+   "layout": "closing",
+   "title": "One decision today: approve the joined operating proposal",
+   "subtitle": "The week after, we move from discussion to evidence.",
+   "bullets": [
+    "Confirm the target stores and operating questions",
+    "Configure Spacesight, Echo, and Harbor Wiki workstreams",
+    "Use Alivia to produce the RetailCo proposal pack",
+    "Define the workforce-scheduling integration path"
+   ],
+   "script": "We are asking for one decision today: approve the joined proposal direction, with Spacesight for floor visibility, Echo for frontline conversations, Harbor Wiki for reusable best practice, and Alivia to package the implementation proposal. The week after, we would confirm the target stores and the specific operating questions we want evidence to answer. We would set up the product workstreams and define what good looks like for managers and new hires. We would also make the scheduling boundary explicit by agreeing whether RetailCo wants an integration path or a separate workforce-management evaluation."
+  }
+ ],
+ "accent": "B45309",
+ "approach": {
+  "angle": "Lead with the cost of the status quo. Invent no numbers you were not given, but make the reader feel what a week of blind operating costs across the estate.",
+  "device": "Before-and-after: the COO's week today, then the COO's week with this in place.",
+  "opener": "Open with a short agenda so the COO knows exactly where you are taking them.",
+  "close": "Close by asking for one decision today and listing what happens the week after.",
+  "accent": {
+   "hex": "B45309",
+   "name": "bronze"
+  },
+  "slides": 10
+ }
+}

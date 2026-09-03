@@ -1,0 +1,189 @@
+{
+ "meta": {
+  "client": "RetailCo",
+  "title": "One RetailCo, 120 Stores",
+  "subtitle": "A 30 / 60 / 90 day path to consistent shop-floor execution across APAC",
+  "presenter": "Jia Chai LOW"
+ },
+ "slides": [
+  {
+   "layout": "title",
+   "title": "One RetailCo, 120 Stores",
+   "subtitle": "A 30 / 60 / 90 day path to consistent shop-floor execution across APAC",
+   "script": "We are starting from a simple premise: RetailCo should feel like one operating system across 120 stores, not 120 different versions of the business. Today, the COO’s language points to variation: delayed shop-floor visibility, a 3x gap between best and worst store managers, onboarding that changes depending on who is rostered, and scheduling coordination that absorbs too many people. Our proposal is to make consistency the prize. Spacesight, Echo, Harbor Wiki, and Alivia work together to see what happens, hear what happens, codify what works, and turn it into an executable proposal."
+  },
+  {
+   "layout": "quote",
+   "quote": "If every store runs differently, the business can only improve as fast as the slowest weekly spreadsheet.",
+   "attribution": "The one sentence we want RetailCo to remember",
+   "script": "We believe this is the sentence that matters because it connects every pain you raised. When visibility arrives on Monday, last week’s inconsistency has already happened. When the best managers outsell the worst by 3x, the know-how exists, but it is trapped locally. When onboarding takes six weeks and depends on whoever is working, new hires inherit inconsistency by design. And when scheduling requires coordination across many people and teams, execution starts with friction. We are proposing a 30, 60, and 90 day path to make the standard visible, teachable, and repeatable."
+  },
+  {
+   "layout": "metrics",
+   "title": "The scale of inconsistency is already measurable",
+   "metrics": [
+    {
+     "value": "120",
+     "label": "stores across APAC"
+    },
+    {
+     "value": "2,000",
+     "label": "frontline staff"
+    },
+    {
+     "value": "3x",
+     "label": "manager performance gap"
+    }
+   ],
+   "script": "We are not treating this as a technology experiment. We are treating it as an operating consistency problem at APAC scale. With 120 stores and 2,000 frontline staff, even small differences in daily behavior multiply quickly. The 3x gap between your best and worst store managers tells us there is already a better way inside RetailCo. The opportunity is not to invent it from scratch. The opportunity is to observe it, capture it, score it, and package it so that every store can operate closer to the best stores, not just the average store."
+  },
+  {
+   "layout": "agenda",
+   "title": "The 30 / 60 / 90 day standardisation path",
+   "bullets": [
+    "30 days: see and hear the real floor",
+    "60 days: codify what the best stores do",
+    "90 days: make the standard teachable",
+    "Open item: scheduling workflow discovery"
+   ],
+   "script": "We would sequence this in three horizons because RetailCo needs momentum without waiting for a long transformation programme. In the first 30 days, we create the factual baseline by seeing the floor with Spacesight and hearing customer interactions with Echo. By 60 days, we identify the patterns that separate strong stores and managers, then codify those patterns in Harbor Wiki. By 90 days, we turn the standard into onboarding and coaching routines. Scheduling is important, and we will address it honestly: it needs discovery, because the listed products inform rostering, but they are not a roster engine."
+  },
+  {
+   "layout": "three",
+   "title": "30 days: replace opinion with operating evidence",
+   "cards": [
+    {
+     "heading": "Spacesight",
+     "body": "Shows what is happening on the shop floor, not what arrives in Monday’s spreadsheet."
+    },
+    {
+     "heading": "Echo",
+     "body": "Captures and scores how frontline staff actually speak with customers."
+    },
+    {
+     "heading": "Baseline",
+     "body": "Creates a shared view of store behaviors, traffic moments, and service patterns."
+    }
+   ],
+   "script": "We begin by changing the evidence base. Today, the COO said, “I have no idea what actually happens on my shop floor. I get a spreadsheet on Monday about last week.” Spacesight directly addresses that by showing floor activity as an operational signal rather than a delayed summary. Echo complements it by capturing what staff actually say to customers and scoring those conversations. Together, they let RetailCo compare what happens in the store with what is said in the customer interaction, so consistency is based on observed behavior, not anecdotes or after-the-fact reporting."
+  },
+  {
+   "layout": "three",
+   "title": "30 days: make the same day actionable",
+   "cards": [
+    {
+     "heading": "From lag",
+     "body": "Monday reporting tells leaders what already happened last week."
+    },
+    {
+     "heading": "To signal",
+     "body": "Floor and conversation data reveal execution gaps while they still matter."
+    },
+    {
+     "heading": "To routine",
+     "body": "Managers use the same facts for daily coaching and follow-up."
+    }
+   ],
+   "script": "The practical change in the first month is not just better reporting. It is a different management rhythm. We move from a Monday spreadsheet about last week to same-day signals that store leaders and operations teams can use while the pattern is still current. If a store is under-engaging customers, Echo makes the conversation pattern visible. If floor execution is drifting, Spacesight gives the operational context. That matters because standardisation only works when managers can act on the same facts, at the same cadence, across stores."
+  },
+  {
+   "layout": "three",
+   "title": "60 days: bottle the best store managers",
+   "cards": [
+    {
+     "heading": "Find the pattern",
+     "body": "Compare high-performing managers against weaker execution moments."
+    },
+    {
+     "heading": "Write the standard",
+     "body": "Turn proven behaviors into searchable Harbor Wiki guidance."
+    },
+    {
+     "heading": "Coach consistently",
+     "body": "Use Echo scoring and Spacesight patterns to reinforce the standard."
+    }
+   ],
+   "script": "By day 60, we shift from visibility to repeatability. The COO said, “My best store managers outsell my worst ones by 3x. I cannot bottle what they do.” We solve the bottling problem by using Spacesight and Echo to identify what the better managers do differently, then storing those practices in Harbor Wiki as a living operating reference. This is where standardisation becomes practical. A store manager does not need to guess what good looks like. They can look up the RetailCo way, connect it to observed signals, and coach against it."
+  },
+  {
+   "layout": "quote",
+   "quote": "My best store managers outsell my worst ones by 3x. I cannot bottle what they do.",
+   "attribution": "RetailCo COO",
+   "script": "We would keep this quote visible because it is the clearest value lever in the conversation. RetailCo already has excellence; the issue is distribution. A 3x gap means the business is carrying very different versions of selling, coaching, and floor leadership across the estate. Harbor Wiki is the product that captures the best way once it has been identified. Echo helps define the conversation standard. Spacesight helps define the floor standard. Together, they let us turn top-manager know-how into a shared asset instead of leaving it inside individual stores."
+  },
+  {
+   "layout": "three",
+   "title": "90 days: make onboarding teach the RetailCo way",
+   "cards": [
+    {
+     "heading": "Current state",
+     "body": "Six weeks, dependent on whoever happens to be working that day."
+    },
+    {
+     "heading": "New path",
+     "body": "Harbor Wiki gives every hire the same answers and examples."
+    },
+    {
+     "heading": "Reinforcement",
+     "body": "Echo and Spacesight show whether training appears in real behavior."
+    }
+   ],
+   "script": "By day 90, we turn the standard into a training asset. The COO said onboarding takes six weeks and depends entirely on whoever happens to be working that day. That is a consistency risk, because every new hire receives a different version of RetailCo. Harbor Wiki becomes the place where the approved store practices, customer language, and operating routines live. Echo and Spacesight then close the loop by showing whether those practices appear in live customer conversations and shop-floor behavior. We are not just documenting training; we are connecting training to execution."
+  },
+  {
+   "layout": "bullets",
+   "title": "Scheduling: address the pain without overclaiming",
+   "subtitle": "A discovery item alongside the 30 / 60 / 90 work",
+   "bullets": [
+    "Map roster handoffs across stores and support teams",
+    "Identify demand signals from Spacesight patterns",
+    "Connect staffing assumptions to observed floor activity",
+    "Define requirements for any roster-system integration"
+   ],
+   "script": "We also want to be direct about scheduling. The COO said, “Scheduling our store staff is a pain — getting one roster set takes coordination across many people and teams.” The products in scope do not replace a workforce management or rostering system. What they can do is improve the quality of inputs and expose the coordination points. Spacesight can show demand and floor patterns that should inform staffing assumptions. The two-week discovery should map who touches a roster, where decisions stall, and what integration or adjacent product would be needed to reduce that coordination burden."
+  },
+  {
+   "layout": "three",
+   "title": "Alivia turns the operating design into a proposal",
+   "cards": [
+    {
+     "heading": "Scope",
+     "body": "Packages Spacesight, Echo, and Harbor Wiki into one joined-up RetailCo proposal."
+    },
+    {
+     "heading": "Sequence",
+     "body": "Connects the 30 / 60 / 90 horizons to concrete discovery outputs."
+    },
+    {
+     "heading": "Decision",
+     "body": "Gives leaders a clear basis for what to pilot, measure, and scale."
+    }
+   ],
+   "script": "Alivia is important because the end product should not be a set of disconnected tools. RetailCo needs one proposal that explains the operating change, the product roles, the discovery work, and the scaling path. Alivia helps turn the evidence from this conversation and the discovery period into a client proposal that leadership can actually decide on. Spacesight sees the floor, Echo hears the frontline, Harbor Wiki bottles the standard, and Alivia packages the whole programme. That is how we keep the focus on one RetailCo operating model, not a technology shopping list."
+  },
+  {
+   "layout": "closing",
+   "title": "Our ask: approve a two-week discovery with operations",
+   "subtitle": "The goal is to leave discovery with a practical 30 / 60 / 90 rollout plan.",
+   "bullets": [
+    "Meet store operations, training, and workforce planning leads",
+    "Select representative stores across performance levels",
+    "Map data, workflow, and onboarding content sources",
+    "Produce the Alivia proposal for RetailCo leadership"
+   ],
+   "script": "We are asking for a focused two-week discovery with the operations team. In that window, we would confirm the store workflows, select representative locations, understand the current spreadsheet reporting, review onboarding materials, and map the scheduling handoffs that create coordination pain. We would also define where Spacesight, Echo, and Harbor Wiki create the strongest first proof points. At the end, Alivia would turn the findings into a concrete RetailCo proposal: what to implement in 30 days, what to codify by 60 days, and what to scale by 90 days."
+  }
+ ],
+ "accent": "7C3AED",
+ "approach": {
+  "angle": "Argue standardisation: the stores are running as many different businesses as there are branches. Make consistency the prize and the products the means.",
+  "device": "Structure as 30 / 60 / 90 days - three horizons of what changes.",
+  "opener": "Open with the one sentence you want them to remember, then justify it.",
+  "close": "Close by asking for a two-week discovery with their ops team.",
+  "accent": {
+   "hex": "7C3AED",
+   "name": "violet"
+  },
+  "slides": 12
+ }
+}

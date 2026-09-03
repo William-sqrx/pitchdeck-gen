@@ -1,0 +1,157 @@
+{
+ "meta": {
+  "client": "RetailCo",
+  "title": "RetailCo Frontline Adoption Proposal",
+  "subtitle": "From Monday-morning hindsight to a store operating system people actually use",
+  "presenter": "Feijin CHEN"
+ },
+ "slides": [
+  {
+   "layout": "title",
+   "title": "RetailCo Frontline Adoption Proposal",
+   "subtitle": "From Monday-morning hindsight to a store operating system people actually use",
+   "script": "We are not here to sell RetailCo another dashboard that head office loves and the stores ignore. We are here to make the working week feel different for 120 stores and 2,000 frontline staff across APAC. The technology matters, but adoption is the test. If store teams do not trust it, managers do not coach from it, and new hires do not use it in the moment, nothing changes. So we will anchor the proposal around the COO’s week today, and the COO’s week once this becomes part of daily store rhythm."
+  },
+  {
+   "layout": "quote",
+   "quote": "The hard part is not seeing the store; it is changing what 2,000 people do every day.",
+   "attribution": "The thing everyone in the room already knows",
+   "script": "We should name the uncomfortable truth early. RetailCo does not have a lack of effort in stores. It has a consistency problem across a large, distributed frontline. Any solution that feels like surveillance, extra administration, or another head-office initiative will meet resistance. That is why we start with adoption before analytics. We need store managers to see this as a coaching advantage, frontline staff to see it as help in the moment, and the COO to see reality while it is still actionable, not after the week has already moved on."
+  },
+  {
+   "layout": "agenda",
+   "title": "The adoption spine of the proposal",
+   "bullets": [
+    "Start with the COO’s week today",
+    "Design around frontline trust and use",
+    "Connect Spacesight, Echo, and AI Wiki",
+    "Be honest about scheduling as an open item",
+    "Decide the first operating rhythm"
+   ],
+   "script": "We will move through this as a before-and-after story, not as a product tour. First, we look at the COO’s current week: delayed visibility, uneven store performance, inconsistent onboarding, and painful roster coordination. Then we define the adoption conditions that make any answer work across APAC. After that, we connect Spacesight, Echo, and AI Wiki into one loop: see the floor, hear the customer conversation, and bottle what the best managers do. We will also call out scheduling honestly, because the listed stack helps inform it but does not replace a rostering system."
+  },
+  {
+   "layout": "metrics",
+   "title": "The COO’s week today",
+   "metrics": [
+    {
+     "value": "Monday",
+     "label": "Last week’s shop-floor spreadsheet arrives"
+    },
+    {
+     "value": "3x",
+     "label": "Gap between best and worst store managers"
+    },
+    {
+     "value": "6 wks",
+     "label": "New-hire onboarding depends on who is working"
+    }
+   ],
+   "script": "We can describe the current week very simply. On Monday, the COO receives a spreadsheet about what happened last week, so visibility arrives after the opportunity to intervene has passed. Across 120 stores, the best managers outsell the worst by 3x, but the habits behind that difference are not captured in a way others can repeat. A new hire takes six weeks to onboard, and the experience depends entirely on whoever happens to be rostered that day. Meanwhile, scheduling still requires coordination across many people and teams before one roster is set."
+  },
+  {
+   "layout": "three",
+   "title": "Adoption first: make the system feel useful, not imposed",
+   "cards": [
+    {
+     "heading": "Invisible where possible",
+     "body": "Spacesight and Echo reduce manual reporting instead of adding forms."
+    },
+    {
+     "heading": "Useful on shift",
+     "body": "AI Wiki answers practical questions while work is happening."
+    },
+    {
+     "heading": "Manager-led",
+     "body": "Store managers coach from evidence, not opinion or memory."
+    }
+   ],
+   "script": "We propose three adoption principles before we propose rollout. First, capture should be invisible where possible. Spacesight and Echo create evidence from the work already happening, rather than asking frontline staff to fill out more reports. Second, the system has to be useful during a shift, not only in a review meeting. AI Wiki should answer the questions people ask when serving customers or learning a task. Third, store managers need to lead the change. If managers use the evidence for coaching rather than blame, teams will engage instead of defend."
+  },
+  {
+   "layout": "three",
+   "title": "The joined-up loop: see, hear, bottle",
+   "cards": [
+    {
+     "heading": "Spacesight",
+     "body": "Shows what is actually happening on the shop floor across stores."
+    },
+    {
+     "heading": "Echo",
+     "body": "Captures and scores what staff actually say to customers."
+    },
+    {
+     "heading": "AI Wiki",
+     "body": "Turns proven manager and associate behaviors into searchable guidance."
+    }
+   ],
+   "script": "This is the core operating loop. Spacesight answers the first pain directly: what is actually happening on the shop floor, without waiting for a Monday spreadsheet. Echo adds the missing customer-conversation layer, so performance is not judged only by sales outcomes but by what staff actually say and how they handle moments. AI Wiki then captures the repeatable behaviors behind the best stores and makes them available to every manager and new hire. Together, the products turn scattered frontline reality into a common way of working that stores can adopt."
+  },
+  {
+   "layout": "quote",
+   "quote": "By Thursday, we already know what Monday used to tell us too late.",
+   "attribution": "The COO’s week with the new operating rhythm",
+   "script": "Now the week changes. Instead of waiting for a Monday spreadsheet about last week, the COO and regional leaders can see store patterns as they emerge. Spacesight highlights what is happening on the floor, and Echo shows whether customer interactions match the behaviors RetailCo wants. The adoption point is important: we do not ask the COO to inspect every store manually. We create a rhythm where exceptions, coaching opportunities, and strong examples surface naturally. That means leaders can intervene during the same trading week, while the moment is still alive."
+  },
+  {
+   "layout": "bullets",
+   "title": "Bottling the 3x manager gap into daily coaching",
+   "subtitle": "The best stores become the curriculum, not just the benchmark.",
+   "bullets": [
+    "Identify winning floor patterns with Spacesight",
+    "Capture high-quality customer language with Echo",
+    "Publish repeatable plays in AI Wiki",
+    "Coach managers from examples, not anecdotes"
+   ],
+   "script": "RetailCo already has the answer inside the business: the best store managers are outselling the worst by 3x. The issue is that their methods are trapped in local habit. We use Spacesight to identify floor behaviors that correlate with strong execution, Echo to capture the customer language that works, and AI Wiki to turn those practices into simple, searchable plays. This changes performance management from telling weaker stores to do better into showing them what better looks and sounds like. Adoption improves because the guidance comes from RetailCo’s own best people."
+  },
+  {
+   "layout": "bullets",
+   "title": "Onboarding becomes a guided path, not a lucky roster",
+   "subtitle": "Six weeks should not depend on whoever happens to be working.",
+   "bullets": [
+    "AI Wiki gives every hire one source of truth",
+    "Echo examples show real customer conversations",
+    "Spacesight examples show expected floor behaviors",
+    "Managers coach against the same standard"
+   ],
+   "script": "The six-week onboarding pain is a clear adoption opportunity. Today, a new hire learns based on who happens to be working that day, which means the standard varies by store, shift, and manager. With AI Wiki, every new hire gets the same source of truth for procedures, selling plays, and common customer moments. Echo can supply examples of strong frontline conversations, and Spacesight can show what good floor execution looks like. Managers still matter, but they are no longer improvising the curriculum. We make onboarding repeatable without stripping out human coaching."
+  },
+  {
+   "layout": "bullets",
+   "title": "Scheduling: an honest open item, informed by better evidence",
+   "subtitle": "The current product set supports rostering decisions but does not replace rostering workflow.",
+   "bullets": [
+    "No listed product is a full scheduler",
+    "Spacesight informs store traffic and floor coverage",
+    "Echo informs skills and coaching needs",
+    "Alivia packages the proposal and open integration path"
+   ],
+   "script": "We should be direct about the fourth pain. Scheduling store staff is a pain, and getting one roster set requires coordination across many people and teams. None of the listed products is a full workforce scheduling tool, so we should not pretend this stack replaces that workflow. What it can do is improve the evidence around roster decisions. Spacesight can inform traffic and coverage patterns, while Echo can show where skills or coaching needs matter by store. Alivia then turns the full solution, including this scheduling open item and any integration path, into a clear client proposal."
+  },
+  {
+   "layout": "closing",
+   "title": "Decision today: choose the first adoption rhythm",
+   "subtitle": "The week after, we turn the proposal into a store-ready operating plan.",
+   "bullets": [
+    "Confirm priority stores and sponsor owners",
+    "Define the manager coaching rhythm",
+    "Select first AI Wiki onboarding topics",
+    "Document scheduling integration questions"
+   ],
+   "script": "We are asking for one decision today: choose the first adoption rhythm RetailCo wants to prove. That means agreeing which stores participate first, who sponsors the change, how managers will coach from Spacesight and Echo, and which onboarding topics AI Wiki should cover first. The week after, we turn this into a store-ready plan: priority locations, manager routines, example capture, Wiki structure, and the scheduling questions that need integration discovery. Alivia will package that into the formal proposal so the initiative is not just technically sound, but operationally adoptable."
+  }
+ ],
+ "accent": "BE123C",
+ "approach": {
+  "angle": "Lead with adoption. All of this fails if the frontline will not use it, so make change management the spine of the proposal.",
+  "device": "Before-and-after: the COO's week today, then the COO's week with this in place.",
+  "opener": "Open by naming the thing everyone in the room already knows but has not said.",
+  "close": "Close by asking for one decision today and listing what happens the week after.",
+  "accent": {
+   "hex": "BE123C",
+   "name": "crimson"
+  },
+  "slides": 10
+ }
+}

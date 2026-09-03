@@ -1,0 +1,185 @@
+{
+ "meta": {
+  "client": "RetailCo",
+  "title": "Closing the Same-Day Loop",
+  "subtitle": "From shop floor signals to COO action across 120 APAC stores",
+  "presenter": "Jasper GOH"
+ },
+ "slides": [
+  {
+   "layout": "title",
+   "title": "Closing the Same-Day Loop",
+   "subtitle": "From shop floor signals to COO action across 120 APAC stores",
+   "script": "We are not here to sell another dashboard that arrives after the moment has passed. We are here to help RetailCo close the loop inside a single store day. The core issue is not that data does not exist; it is that what happens on the floor, what staff say to customers, and what great managers do never reaches leadership in time to change the next hour. Our proposal connects Spacesight, Echo, Harbor Wiki, and Alivia into one operating rhythm: see, hear, bottle, and act."
+  },
+  {
+   "layout": "quote",
+   "quote": "I have no idea what actually happens on my shop floor. I get a spreadsheet on Monday about last week.",
+   "attribution": "RetailCo COO",
+   "script": "We want to start with your words because they name the real constraint. The Monday spreadsheet is not wrong; it is simply late. By the time it lands, the missed interaction, the empty zone, the weak opening routine, or the coaching moment has already become history. Across 120 stores and 2,000 frontline staff, that delay compounds quickly. Our lens is therefore time to action. If we can move the signal from last week to the same day, managers and the COO can intervene while the pattern is still alive."
+  },
+  {
+   "layout": "agenda",
+   "title": "One store, one day, one closed loop",
+   "bullets": [
+    "Morning: see the floor as it happens",
+    "Midday: hear the customer conversation",
+    "Afternoon: capture what the best managers do",
+    "End of day: turn evidence into action",
+    "Pilot: three-store cohort across APAC"
+   ],
+   "script": "We will follow one RetailCo store through a normal day, first as it works now and then as it works with the loop closed. The point is not to create a reporting layer above stores. The point is to connect the shop floor, the conversations, and the manager playbook fast enough to guide the next shift. We will also call out scheduling honestly. The current product set does not include roster optimisation, so we will show where we can provide inputs and where a separate workforce-management play remains an open item."
+  },
+  {
+   "layout": "metrics",
+   "title": "The day starts with scale already working against you",
+   "metrics": [
+    {
+     "value": "120",
+     "label": "stores across APAC"
+    },
+    {
+     "value": "2,000",
+     "label": "frontline staff"
+    },
+    {
+     "value": "Monday",
+     "label": "when last week becomes visible"
+    }
+   ],
+   "script": "We begin before doors open. At RetailCo scale, even a normal trading day creates more operating reality than any regional team can observe directly. One store may be sharp on greetings, another may have stock conversations happening in the wrong place, and another may have a manager quietly running a great huddle. Today, those differences surface after the week has closed, if they surface at all. The same-day loop changes the unit of management from a retrospective week to a live store day."
+  },
+  {
+   "layout": "three",
+   "title": "8:45 AM before: the store opens on instinct",
+   "cards": [
+    {
+     "heading": "Floor reality",
+     "body": "Leadership cannot see zones, queues, dwell, or missed service moments until later."
+    },
+    {
+     "heading": "Conversation quality",
+     "body": "Customer interactions disappear unless a manager personally hears them."
+    },
+    {
+     "heading": "Manager craft",
+     "body": "The best opening routines remain local habits, not company knowledge."
+    }
+   ],
+   "script": "At 8:45, the store team is preparing to trade, but the operating model depends heavily on whoever is present. If the manager is excellent, the day starts with clarity. If the manager is new, distracted, or simply less effective, the gap is invisible to the COO. This is where the 3x spread between best and worst managers begins to matter. We are not trying to replace judgment. We are trying to make the conditions around that judgment observable, comparable, and reusable before the day gets away."
+  },
+  {
+   "layout": "three",
+   "title": "11:30 AM after: Spacesight makes the floor visible",
+   "cards": [
+    {
+     "heading": "See",
+     "body": "Spacesight captures in-store activity patterns while the trading day is still live."
+    },
+    {
+     "heading": "Compare",
+     "body": "Teams can spot differences between stores, zones, and service moments."
+    },
+    {
+     "heading": "Act",
+     "body": "Managers can adjust coverage or focus before Monday’s spreadsheet exists."
+    }
+   ],
+   "script": "By late morning, Spacesight gives RetailCo a live operating signal from the shop floor. Instead of waiting for a spreadsheet that describes last week, we can see patterns while staff and customers are still in the store. That may mean a zone is under-attended, customers are clustering without help, or a routine is working unusually well. The value is not surveillance for its own sake. The value is shortening the distance between floor reality and the decision to coach, redirect, or replicate the behavior today."
+  },
+  {
+   "layout": "three",
+   "title": "1:15 PM after: Echo captures the selling moment",
+   "cards": [
+    {
+     "heading": "Hear",
+     "body": "Echo captures what frontline staff actually say to customers."
+    },
+    {
+     "heading": "Score",
+     "body": "Conversations can be reviewed against RetailCo’s service and selling standards."
+    },
+    {
+     "heading": "Coach",
+     "body": "Managers can coach from real examples, not memory or anecdotes."
+    }
+   ],
+   "script": "Around midday, traffic and conversion pressure usually reveal the quality of frontline selling. Echo lets RetailCo hear what staff actually say to customers and score those conversations against the behaviors you care about. This directly addresses the gap between top and bottom managers, because the difference is often in small phrases, prompts, and follow-ups that never appear in sales data. When Echo captures those moments, coaching becomes concrete. We can move from opinions about service to examples that a manager can replay, explain, and improve."
+  },
+  {
+   "layout": "three",
+   "title": "3:30 PM after: Harbor Wiki bottles the 3x manager",
+   "cards": [
+    {
+     "heading": "Best practice",
+     "body": "Harbor Wiki captures routines, talk tracks, and checklists from top stores."
+    },
+    {
+     "heading": "Onboarding",
+     "body": "New hires get a consistent reference instead of whoever is on shift."
+    },
+    {
+     "heading": "Re-use",
+     "body": "Winning behaviors become searchable knowledge across the 120-store network."
+    }
+   ],
+   "script": "By mid-afternoon, the day has already produced useful knowledge. The question is whether it stays trapped inside one store or becomes RetailCo practice. Harbor Wiki is where we bottle what the best managers do, including opening routines, customer talk tracks, product prompts, and coaching notes informed by Spacesight and Echo. This also addresses the six-week onboarding problem. A new hire should not learn only from whoever happens to be working that day. We can give them a consistent source of truth that reflects the behaviors RetailCo wants repeated."
+  },
+  {
+   "layout": "bullets",
+   "title": "Scheduling is a real pain and a clear open item",
+   "subtitle": "We should not pretend the current stack is a roster engine",
+   "bullets": [
+    "No roster optimisation product in scope",
+    "Spacesight can inform demand and coverage discussions",
+    "Echo can highlight coaching and capability gaps",
+    "Harbor Wiki can standardise scheduling handover routines",
+    "Workforce-management integration should be assessed separately"
+   ],
+   "script": "We also want to be direct about scheduling. You told us that getting one roster set takes coordination across many people and teams. Spacesight, Echo, Harbor Wiki, and Alivia do not replace a workforce-management or roster-optimisation system. What they can do is improve the evidence around staffing decisions, expose where coverage is not matching floor reality, and standardise the routines around handover and shift planning. We recommend treating scheduling as an adjacent workstream: informed by the same-day loop, but not claimed as solved by these products alone."
+  },
+  {
+   "layout": "three",
+   "title": "5:45 PM after: Alivia turns the day into a decision pack",
+   "cards": [
+    {
+     "heading": "Signals",
+     "body": "Spacesight and Echo provide evidence from the day, not last week."
+    },
+    {
+     "heading": "Playbook",
+     "body": "Harbor Wiki connects the evidence to proven manager actions."
+    },
+    {
+     "heading": "Proposal",
+     "body": "Alivia packages the next action as a client-ready proposal."
+    }
+   ],
+   "script": "At the end of the store day, the loop closes. Spacesight shows what happened on the floor, Echo shows what was said to customers, and Harbor Wiki shows the playbook we want managers and new hires to follow. Alivia then turns that into a proposal rather than leaving the COO with disconnected observations. The output is not just reporting. It is a structured recommendation for what to coach, what to replicate, what to document, and what to test next across the store network."
+  },
+  {
+   "layout": "closing",
+   "title": "Pilot the loop in three named stores",
+   "subtitle": "Top Store, Typical Store, and Turnaround Store",
+   "bullets": [
+    "Nominate one 3x-performing store as Top Store",
+    "Nominate one representative store as Typical Store",
+    "Nominate one underperforming store as Turnaround Store",
+    "Run Spacesight, Echo, Harbor Wiki, and Alivia as one same-day loop"
+   ],
+   "script": "We propose a focused pilot rather than a broad rollout. Let us jointly name three APAC stores: one top-performing store where we can bottle what great looks like, one typical store where we can test everyday usability, and one turnaround store where the same-day signal matters most. In that cohort, we connect Spacesight, Echo, Harbor Wiki, and Alivia into a single daily operating loop. The ask is simple: give us those three stores, access to the relevant store teams, and permission to prove that Monday can become today."
+  }
+ ],
+ "accent": "2563EB",
+ "approach": {
+  "angle": "The real problem is not missing data, it is that nothing reaches the COO in time to act. Argue for closing the loop from floor to decision inside a single day.",
+  "device": "Follow one store through a single day, before and after.",
+  "opener": "Open on the customer's own words - put their quote on screen before anything else.",
+  "close": "Close by asking for a pilot in a small, named set of stores.",
+  "accent": {
+   "hex": "2563EB",
+   "name": "blue"
+  },
+  "slides": 11
+ }
+}

@@ -257,13 +257,13 @@ function buildPptx(deck) {
 
     } else if (layout === 'quote') {
       sl.background = { color: LIGHT };
-      sl.addText('“', { x:MX-0.15, y:1.35, w:2, h:1.6, fontFace:'Georgia', fontSize:150, color:ACCENT, bold:true });
+      sl.addText('“', { x:MX-0.15, y:1.5, w:2, h:1.4, fontFace:'Georgia', fontSize:112, color:ACCENT, bold:true });
       sl.addText(txt(s.quote) || txt(s.title), {
-        x:MX+0.05, y:2.55, w:W-MX*2-1.0, h:2.6, fontFace:FONT, fontSize:31, italic:true,
+        x:MX+0.05, y:2.95, w:W-MX*2-1.0, h:2.3, fontFace:FONT, fontSize:31, italic:true,
         color:INK, valign:'top', lineSpacing:44,
       });
       sl.addText('— ' + (txt(s.attribution) || txt(m.client)), {
-        x:MX+0.05, y:5.35, w:W-MX*2, h:0.4, fontFace:FONT, fontSize:14, color:MUTED,
+        x:MX+0.05, y:5.5, w:W-MX*2, h:0.4, fontFace:FONT, fontSize:14, color:MUTED,
       });
       sl.addText(txt(m.client) + '   ·   ' + n + ' / ' + total, {
         x:MX, y:H-0.62, w:W-MX*2, h:0.3, fontFace:FONT, fontSize:10, color:MUTED, align:'right',
@@ -275,13 +275,13 @@ function buildPptx(deck) {
       const gap = 0.35, cw = (W - MX*2 - gap*(cards.length-1)) / Math.max(cards.length, 1);
       cards.forEach((c, j) => {
         const x = MX + j*(cw+gap);
-        sl.addShape('roundRect', { x, y:2.35, w:cw, h:2.95, fill:{color:LIGHT}, line:{color:RULE,width:1}, rectRadius:0.09 });
-        sl.addShape('rect', { x:x+0.42, y:2.78, w:0.34, h:0.05, fill:{color:ACCENT} });
+        sl.addShape('roundRect', { x, y:2.55, w:cw, h:3.3, fill:{color:LIGHT}, line:{color:RULE,width:1}, rectRadius:0.09 });
+        sl.addShape('rect', { x:x+0.42, y:3.0, w:0.34, h:0.05, fill:{color:ACCENT} });
         sl.addText(txt(c.heading), {
-          x:x+0.42, y:3.0, w:cw-0.84, h:0.85, fontFace:FONT, fontSize:19, bold:true, color:INK, valign:'top', lineSpacing:24,
+          x:x+0.42, y:3.22, w:cw-0.84, h:0.85, fontFace:FONT, fontSize:19, bold:true, color:INK, valign:'top', lineSpacing:24,
         });
         sl.addText(txt(c.body), {
-          x:x+0.42, y:3.85, w:cw-0.84, h:1.25, fontFace:FONT, fontSize:14, color:'475569', valign:'top', lineSpacing:21,
+          x:x+0.42, y:4.1, w:cw-0.84, h:1.6, fontFace:FONT, fontSize:14, color:'475569', valign:'top', lineSpacing:21,
         });
       });
 
@@ -291,12 +291,12 @@ function buildPptx(deck) {
       const cw = (W - MX*2) / Math.max(ms.length, 1);
       ms.forEach((mm, j) => {
         const x = MX + j*cw;
-        if (j > 0) sl.addShape('rect', { x:x-0.02, y:2.75, w:0.012, h:1.9, fill:{color:RULE} });
+        if (j > 0) sl.addShape('rect', { x:x-0.02, y:3.0, w:0.012, h:2.15, fill:{color:RULE} });
         sl.addText(txt(mm.value), {
-          x:x+0.1, y:2.7, w:cw-0.4, h:1.25, fontFace:FONT, fontSize:56, bold:true, color:ACCENT, valign:'top',
+          x:x+0.1, y:2.95, w:cw-0.4, h:1.25, fontFace:FONT, fontSize:56, bold:true, color:ACCENT, valign:'top',
         });
         sl.addText(txt(mm.label), {
-          x:x+0.1, y:4.05, w:cw-0.5, h:1.3, fontFace:FONT, fontSize:15, color:'475569', valign:'top', lineSpacing:22,
+          x:x+0.1, y:4.4, w:cw-0.5, h:1.3, fontFace:FONT, fontSize:15, color:'475569', valign:'top', lineSpacing:22,
         });
       });
 
@@ -318,7 +318,7 @@ function buildPptx(deck) {
     } else if (layout === 'agenda') {
       chrome(sl, s.title, n, total, m.client);
       arr(s.bullets).slice(0, 5).forEach((b, j) => {
-        const y = 2.45 + j*0.78;
+        const y = 2.55 + j*0.86;
         sl.addText(String(j+1).padStart(2,'0'), { x:MX, y, w:0.62, h:0.55, fontFace:FONT, fontSize:17, bold:true, color:ACCENT });
         sl.addText(txt(b), { x:MX+0.72, y:y-0.02, w:W-MX*2-1.0, h:0.6, fontFace:FONT, fontSize:19, color:INK, valign:'top' });
         sl.addShape('rect', { x:MX, y:y+0.6, w:W-MX*2, h:0.008, fill:{color:RULE} });
@@ -326,15 +326,15 @@ function buildPptx(deck) {
 
     } else { // bullets (default)
       chrome(sl, s.title, n, total, m.client);
-      let y = 2.3;
+      let y = 2.5;
       if (txt(s.subtitle)) {
         sl.addText(txt(s.subtitle), { x:MX, y:1.95, w:W-MX*2-1.0, h:0.5, fontFace:FONT, fontSize:16, color:MUTED, valign:'top' });
-        y = 2.75;
+        y = 2.95;
       }
       arr(s.bullets).slice(0, 5).forEach((b, j) => {
-        sl.addShape('rect', { x:MX, y:y + j*0.75 + 0.17, w:0.13, h:0.13, fill:{color:ACCENT} });
+        sl.addShape('rect', { x:MX, y:y + j*0.85 + 0.17, w:0.13, h:0.13, fill:{color:ACCENT} });
         sl.addText(txt(b), {
-          x:MX+0.42, y:y + j*0.75 - 0.04, w:W-MX*2-0.6, h:0.7, fontFace:FONT, fontSize:19, color:INK, valign:'top', lineSpacing:26,
+          x:MX+0.42, y:y + j*0.85 - 0.04, w:W-MX*2-0.6, h:0.7, fontFace:FONT, fontSize:19, color:INK, valign:'top', lineSpacing:26,
         });
       });
     }

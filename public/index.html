@@ -156,23 +156,51 @@ function setStatus(msg, isErr) {
   el.status.innerHTML = msg;
 }
 
+// The server sleeps when idle and restarts on deploy. In both windows Render's
+// edge answers with a plain-text 404/502 rather than our JSON, so never assume
+// the body parses — and just wait it out, because the wake takes ~50s.
+class Waking extends Error {}
+
+async function askServer() {
+  const r = await fetch('/api/generate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      scenario: el.scenario.value,
+      presenter: el.presenter.value,
+      angle: el.angle.value,
+      lang: LANG,
+    }),
+  });
+  const raw = await r.text();
+  let data = null;
+  try { data = JSON.parse(raw); } catch (_) { /* not ours */ }
+
+  if (!data) {
+    if ([404, 429, 500, 502, 503, 504].includes(r.status)) throw new Waking();
+    throw new Error('The server sent something unexpected (HTTP ' + r.status + ').');
+  }
+  if (!r.ok) throw new Error(data.error || 'Generation failed.');
+  return data;
+}
+
 async function generate() {
   el.go.disabled = true;
   el.out.style.display = 'none';
   setStatus('<span class="spin"></span>Writing your deck — about 30&ndash;60 seconds.');
   try {
-    const r = await fetch('/api/generate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        scenario: el.scenario.value,
-        presenter: el.presenter.value,
-        angle: el.angle.value,
-        lang: LANG,
-      }),
-    });
-    const data = await r.json();
-    if (!r.ok) throw new Error(data.error || 'Generation failed.');
+    let data;
+    for (let attempt = 0; ; attempt++) {
+      try { data = await askServer(); break; }
+      catch (e) {
+        if (!(e instanceof Waking) || attempt >= 4) {
+          if (e instanceof Waking) throw new Error('The server would not wake up.');
+          throw e;
+        }
+        setStatus('<span class="spin"></span>Server was asleep — waking it up, hold on…');
+        await new Promise(res => setTimeout(res, 6000));
+      }
+    }
     DECK = data;
     render(data);
     setStatus('Done — ' + data.slides.length + ' slides. Download it below.');

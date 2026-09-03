@@ -3,7 +3,15 @@ const path = require('path');
 
 const app = express();
 app.use(express.json({ limit: '256kb' }));
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: '5m' }));
+// The vendored library is immutable; the page must not be. A 404 served during a
+// deploy would otherwise sit in Cloudflare's cache for the length of maxAge.
+app.use(express.static(path.join(__dirname, 'public'), {
+  setHeaders(res, filePath) {
+    res.setHeader('Cache-Control', /[\\/]vendor[\\/]/.test(filePath)
+      ? 'public, max-age=604800, immutable'
+      : 'no-cache');
+  },
+}));
 
 const KEY = process.env.SOCHEAP_API_KEY;
 const BASE = (process.env.SOCHEAP_BASE_URL || 'https://socheap.ai/v1').replace(/\/$/, '');

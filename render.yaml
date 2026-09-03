@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: pitchdeck-gen
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: SOCHEAP_API_KEY
+        sync: false
+      - key: SOCHEAP_BASE_URL
+        value: https://socheap.ai/v1
+      - key: MODEL
+        value: gpt-5.5

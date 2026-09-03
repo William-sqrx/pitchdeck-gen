@@ -1,0 +1,10 @@
+{
+  "name": "pitchdeck-gen",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Paste a customer scenario, get a pitch deck (.pptx) with a speaker script on every slide.",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=20" },
+  "dependencies": { "express": "^4.19.2" }
+}

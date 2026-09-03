@@ -1,137 +1,136 @@
 {
  "meta": {
   "client": "RetailCo",
-  "title": "From Day One to Store-Ready",
-  "subtitle": "Supporting every store manager with floor visibility, captured customer conversations, and repeatable know-how",
+  "title": "From Day One to Competent: Supporting the Store Manager at the Pivot Point",
+  "subtitle": "A joined-up proposal for visibility, coaching, onboarding, and repeatable store execution across 120 APAC stores",
   "presenter": "William Jacob WIJAYA"
  },
  "slides": [
   {
    "layout": "title",
-   "title": "From Day One to Store-Ready",
-   "subtitle": "A joined-up proposal for RetailCo’s 120 APAC stores and 2,000 frontline staff",
-   "script": "We are going to look at RetailCo through the eyes of the store manager, because that role sits right between head office ambition and what actually happens on the shop floor. Today, managers are carrying too much in their heads: how to coach, how to onboard, how to explain performance, and how to keep the roster moving. Our proposal follows one new hire from day one to competent, and shows where Spacesight, Echo, Harbor Wiki, and Alivia support the manager at the exact moments they need help."
+   "title": "From Day One to Competent",
+   "subtitle": "Supporting RetailCo store managers with Spacesight, Echo, Harbor Wiki, and Alivia",
+   "script": "We are looking at RetailCo through the eyes of the store manager, because that is where head office intent meets the shop floor. Today, that manager is expected to coach new hires, lift sales standards, explain performance gaps, and coordinate rosters with limited live support. Our proposal follows one new frontline hire from their first day to the point where they can perform with confidence. As that journey unfolds, we will show where Spacesight, Echo, Harbor Wiki, and Alivia fit together as one operating system for better store execution."
+  },
+  {
+   "layout": "section",
+   "title": "The end state: every new hire has the best manager beside them",
+   "subtitle": "We start with what good looks like, then work backward to how RetailCo gets there.",
+   "script": "We want to start at the end, because the destination matters. A new hire should not have to hope the right person is working that day. A store manager should not have to rely on memory, instinct, or a Monday spreadsheet to know what is happening. Head office should be able to see patterns across 120 stores without flattening local judgement. Good looks like a manager with live signals, proven plays, and a shared language for coaching every associate from day one."
   },
   {
    "layout": "three",
-   "title": "What good looks like for one store manager",
+   "title": "What good looks like from the store manager’s chair",
    "cards": [
     {
-     "heading": "Same-day floor awareness",
-     "body": "Managers and head office see store reality before it becomes last week’s spreadsheet."
+     "heading": "The new hire knows what to do",
+     "body": "They learn from proven answers, examples, and store routines captured in Harbor Wiki."
     },
     {
-     "heading": "Best practice made usable",
-     "body": "The strongest manager behaviors become searchable guidance for every shift and every new hire."
+     "heading": "The manager knows where to coach",
+     "body": "Spacesight and Echo reveal floor behavior and customer conversations while they still matter."
     },
     {
-     "heading": "Coaching grounded in reality",
-     "body": "Customer conversations and floor activity become evidence for training, not opinion or memory."
+     "heading": "The COO sees the system working",
+     "body": "Alivia packages the evidence, priorities, and rollout plan into one joined-up proposal."
     }
    ],
-   "script": "We want the end state to feel very practical. A manager should not wait until Monday to understand last week. They should see what is happening in their store while there is still time to act. A new hire should not learn only from whoever happens to be on shift that day. They should have access to the same proven playbook your best managers already use. And coaching should be based on what customers actually experienced, not on anecdotes. That is the operating model we are building toward."
-  },
-  {
-   "layout": "agenda",
-   "title": "We follow one new hire to competence",
-   "bullets": [
-    "Day one: manager sees the real starting point",
-    "First shifts: new hire learns the RetailCo way",
-    "Coaching moments: conversations become teachable evidence",
-    "Competence: good habits scale across 120 stores",
-    "Open item: scheduling needs a separate workflow decision"
-   ],
-   "script": "We will follow the path of one new hire because it exposes the real pressure on the store manager. On day one, the manager needs visibility into the floor and a reliable way to set expectations. During the first shifts, the new hire needs consistent answers, not tribal knowledge. As customer conversations begin, the manager needs fair coaching evidence. Once the person becomes competent, head office needs to bottle what worked and spread it. We will also call out scheduling honestly, because the products here inform the roster problem but do not fully replace a scheduling system."
-  },
-  {
-   "layout": "quote",
-   "quote": "I have no idea what actually happens on my shop floor. I get a spreadsheet on Monday about last week.",
-   "attribution": "RetailCo COO",
-   "script": "We start before the new hire even serves a customer, because the manager first needs to understand the floor they are walking into. Spacesight addresses this directly by giving in-store vision analytics: what is happening, where customers and staff are, and what patterns are visible during the trading day. That changes the manager’s starting point. Instead of receiving a spreadsheet on Monday about last week, we create a same-day view that helps them coach, redeploy attention, and explain what happened with evidence rather than guesswork."
-  },
-  {
-   "layout": "bullets",
-   "title": "Harbor Wiki makes first shifts consistent",
-   "subtitle": "Harbor Wiki gives the new hire a consistent RetailCo starting point",
-   "bullets": [
-    "Store opening and closing routines",
-    "Customer greeting and discovery standards",
-    "Product and promotion talking points",
-    "Escalation rules and manager handoffs",
-    "Local store tips from proven managers"
-   ],
-   "script": "The six-week onboarding issue is really a consistency issue. If learning depends entirely on whoever happens to be working that day, the new hire gets a different RetailCo depending on the shift. Harbor Wiki, our AI Wiki, becomes the place where the manager points them from day one. It captures the routines, talk tracks, exceptions, and store-specific know-how that usually sit in the heads of experienced people. The manager still leads the person, but the baseline is no longer random. We make the RetailCo way available every shift."
-  },
-  {
-   "layout": "three",
-   "title": "First customer conversations become coaching material",
-   "cards": [
-    {
-     "heading": "Echo captures",
-     "body": "What frontline staff actually say to customers during real store interactions."
-    },
-    {
-     "heading": "Echo scores",
-     "body": "Conversations against the behaviors RetailCo wants to reinforce."
-    },
-    {
-     "heading": "Managers coach",
-     "body": "Feedback becomes specific, timely, and tied to observed customer moments."
-    }
-   ],
-   "script": "Once the new hire starts talking to customers, the manager needs to coach without hovering over every interaction. Echo gives that manager a practical coaching layer by capturing and scoring what frontline staff actually say to customers. That matters because sales behaviors are often invisible unless someone happens to be nearby. With Echo, we can identify whether the new hire is asking the right questions, explaining value clearly, and handling objections in the RetailCo way. Coaching becomes less personal and more useful, because it is anchored in real conversations."
-  },
-  {
-   "layout": "metrics",
-   "title": "The manager’s pressure is already visible in RetailCo’s numbers",
-   "metrics": [
-    {
-     "value": "120",
-     "label": "stores across APAC"
-    },
-    {
-     "value": "2,000",
-     "label": "frontline staff"
-    },
-    {
-     "value": "6 wks",
-     "label": "new hire onboarding today"
-    }
-   ],
-   "script": "The scale is why this cannot rely on heroic managers. RetailCo has 120 stores across APAC and 2,000 frontline staff, so every informal workaround gets multiplied. A six-week onboarding path is not only long; it is variable, because each store teaches differently. Spacesight gives the manager and head office visibility into floor reality. Echo shows the customer conversation quality behind the numbers. Harbor Wiki makes the best guidance reusable. Together, they reduce the dependence on who happens to be nearby and give the manager a repeatable support system."
+   "script": "From the manager’s chair, the end state is practical. The new hire can ask, search, and learn from what RetailCo’s strongest people already do, not just from whoever is nearby. The manager can see where traffic is building, where service is slipping, and what customers are actually hearing. The COO can stop managing through delayed summaries and start seeing patterns while they are still actionable. Alivia then turns those findings into a proposal that RetailCo can review, refine, and scale deliberately rather than as disconnected tools."
   },
   {
    "layout": "quote",
    "quote": "My best store managers outsell my worst ones by 3x. I cannot bottle what they do.",
    "attribution": "RetailCo COO",
-   "script": "This is where the new hire’s journey connects to the 3x gap between your best and worst store managers. We are not claiming one tool magically closes that gap. We are saying the behaviors behind the gap can finally be observed, captured, and reused. Spacesight shows how strong managers organize the floor. Echo shows how their teams speak with customers. Harbor Wiki turns those patterns into guidance that another manager and another new hire can actually look up. That is how we start bottling what the best people do."
+   "script": "This is the heart of the opportunity. RetailCo already has excellence inside the business, but it is trapped in individual managers, individual shifts, and individual stores. When the best managers outsell the worst ones by 3x, the answer is not only more training. The answer is to observe what great execution looks like, hear how great conversations sound, and convert that into a living source of guidance. That is why we connect Spacesight for behavior, Echo for conversations, and Harbor Wiki for repeatable know-how."
+  },
+  {
+   "layout": "section",
+   "title": "Day one: remove the lottery from onboarding",
+   "subtitle": "The new hire’s first shift should not depend entirely on who happens to be working.",
+   "script": "Now we move back to day one. RetailCo told us onboarding takes six weeks and depends entirely on whoever happens to be working that day. From a manager’s perspective, that creates two problems at once. The new hire learns inconsistently, and the manager has to keep repeating the basics while still running the floor. We would use Harbor Wiki as the front door for store knowledge, then feed it with the behaviors and conversations that Spacesight and Echo help identify as worth copying."
+  },
+  {
+   "layout": "stack",
+   "title": "Each operational pain gets an owner",
+   "rows": [
+    {
+     "left": "Monday visibility",
+     "right": "Spacesight shows floor activity before last week becomes history."
+    },
+    {
+     "left": "Sales variation",
+     "right": "Echo and Spacesight identify the habits behind stronger managers."
+    },
+    {
+     "left": "Six-week onboarding",
+     "right": "Harbor Wiki turns proven routines into searchable guidance for new hires."
+    },
+    {
+     "left": "Roster coordination",
+     "right": "Open workstream: Alivia scopes scheduling integration and workflow requirements."
+    }
+   ],
+   "script": "We are being explicit about ownership because every pain should either map to a product or be called out honestly. The Monday visibility problem is directly addressed by Spacesight, with Echo adding what customers and associates actually say. The 3x manager gap is addressed by finding the behaviors and conversations that explain better execution, then turning them into reusable content in Harbor Wiki. The six-week onboarding challenge is a Harbor Wiki use case. Scheduling is different: these products do not automatically generate rosters, so Alivia should capture it as an open workflow and integration workstream."
+  },
+  {
+   "layout": "table",
+   "title": "The first week shifts from shadowing to guided practice",
+   "leftHead": "Today",
+   "rightHead": "With the proposal",
+   "rows": [
+    {
+     "left": "New hire waits for ad hoc explanations",
+     "right": "Harbor Wiki gives consistent answers and store routines."
+    },
+    {
+     "left": "Manager guesses which habits matter",
+     "right": "Spacesight highlights observable floor patterns."
+    },
+    {
+     "left": "Customer talk is invisible after the shift",
+     "right": "Echo captures and scores real frontline conversations."
+    },
+    {
+     "left": "Coaching depends on memory",
+     "right": "Examples become reusable guidance for the next hire."
+    }
+   ],
+   "script": "In the first week, we are not trying to replace the store manager. We are trying to give that manager leverage. Today, shadowing can be useful, but it is fragile because it depends on who is present and what they remember to explain. With Harbor Wiki, the new hire has a consistent baseline. With Spacesight, the manager can coach from what happened on the floor. With Echo, coaching can include how associates explain, recommend, and respond to customers. The result is guided practice rather than informal absorption."
+  },
+  {
+   "layout": "section",
+   "title": "From competent in one store to consistent across 120",
+   "subtitle": "Once the first hire learns faster, RetailCo can scale the same operating rhythm.",
+   "script": "Once a new hire becomes competent, the question changes. We are no longer asking whether one person learned the job. We are asking how RetailCo repeats that outcome across 120 APAC stores and 2,000 frontline staff. This is where the manager remains the pivot. We give them signals, language, and reusable plays, while head office gains a clearer picture of what is working. The objective is not central control for its own sake; it is making the best local execution easier to copy."
   },
   {
    "layout": "bullets",
-   "title": "Scheduling is a real pain, and we should not overclaim it",
-   "subtitle": "The current product set informs rostering, but does not fully run it",
+   "title": "What becomes repeatable",
+   "subtitle": "The manager’s best work becomes a system, not a personal workaround.",
    "bullets": [
-    "Spacesight reveals floor demand and coverage patterns",
-    "Echo highlights coaching needs by staff member",
-    "Harbor Wiki standardizes roster-related operating rules",
-    "Alivia captures the scheduling gap in the proposal"
+    "Live floor signals through Spacesight",
+    "Conversation coaching through Echo",
+    "Manager playbooks in Harbor Wiki",
+    "Proposal and rollout packaging through Alivia"
    ],
-   "script": "We also need to be direct about scheduling. Your COO said getting one roster set takes coordination across many people and teams. Spacesight can show demand patterns and where coverage is stretched. Echo can indicate which staff may need pairing, support, or coaching. Harbor Wiki can standardize the rules and handoffs managers follow when building rosters. But none of these is a full workforce scheduling engine. We would treat scheduling as an explicit open item in Alivia, so the proposal names the gap and defines the adjacent workflow or integration decision."
+   "script": "What becomes repeatable is the combination, not any single product in isolation. Spacesight helps the manager and COO see what is happening on the shop floor without waiting for a Monday spreadsheet. Echo makes customer conversations coachable instead of anecdotal. Harbor Wiki bottles the routines, answers, and manager plays that explain stronger performance. Alivia then packages the evidence, scope, open scheduling workstream, and rollout path into a proposal RetailCo can actually decide on. That is how one new hire’s journey becomes an operating model."
   },
   {
    "layout": "closing",
-   "title": "Waiting another quarter means another quarter of unmanaged variation",
-   "subtitle": "Start small: prove the manager support model before scaling across APAC",
+   "title": "Waiting another quarter means another quarter of unbottled execution",
+   "subtitle": "The smallest first step is a focused pilot that proves the manager workflow before scale.",
    "bullets": [
-    "Select a small set of representative stores",
-    "Instrument floor visibility with Spacesight",
-    "Capture conversations with Echo and build Harbor Wiki",
-    "Use Alivia to formalize the pilot proposal and open scheduling item"
+    "Choose three representative APAC stores",
+    "Run Spacesight, Echo, and Harbor Wiki together",
+    "Document scheduling requirements as an open workstream",
+    "Use Alivia to produce the scale proposal"
    ],
-   "script": "If RetailCo waits another quarter, the same pattern continues: Monday spreadsheets explain last week, new hires learn inconsistently for six weeks, the 3x manager gap remains hard to decode, and scheduling remains a coordination burden. We recommend the smallest credible first step. Pick a small set of representative stores, support their managers with Spacesight, Echo, and Harbor Wiki, and use Alivia to turn that into a formal pilot proposal with the scheduling open item clearly documented. We prove the operating model first, then decide how to scale it."
+   "script": "If RetailCo waits another quarter, the cost is not an invented percentage on a spreadsheet. It is another quarter where head office learns about last week on Monday, another quarter where the best managers keep outperforming without being bottled, another quarter where new hires learn by chance, and another quarter where roster coordination remains a manual burden. Our smallest sensible first step is three representative stores. We run Spacesight, Echo, and Harbor Wiki together, document the scheduling workflow honestly, and use Alivia to turn the evidence into a scale proposal."
   }
  ],
- "accent": "10814A",
+ "accent": "15803D",
+ "themeId": "block",
+ "structureId": "sections",
  "approach": {
   "angle": "Take the store manager's point of view. They are the pivot between what head office wants and what actually happens, and today they are unsupported.",
   "device": "Follow one new hire from day one to competent, letting the products appear as they are needed.",
@@ -141,7 +140,44 @@
    "hex": "15803D",
    "name": "green"
   },
+  "theme": {
+   "id": "block",
+   "name": "bold block / green",
+   "bg": "FFFFFF",
+   "ink": "0B2418",
+   "body": "3F5A4C",
+   "muted": "76907F",
+   "panel": "E8F3EC",
+   "rule": "C9E0D3",
+   "accent": "10814A",
+   "quoteBg": "0B2418",
+   "coverBg": "10814A",
+   "coverInk": "FFFFFF",
+   "coverSub": "C6E9D6",
+   "coverStyle": "block",
+   "head": "Arial",
+   "text": "Arial",
+   "chrome": "bar",
+   "cards": "numbered",
+   "metrics": "boxed",
+   "bullet": "square",
+   "titleSize": 33,
+   "coverSize": 50
+  },
+  "themeId": "block",
+  "structure": {
+   "id": "sections",
+   "grid": "bottom",
+   "label": "chaptered, title under content",
+   "uses": [
+    "section",
+    "bullets",
+    "three",
+    "quote"
+   ],
+   "brief": "Chaptered. Open each part of the argument with a \"section\" divider, then two or three slides inside it. Use \"section\" at least three times."
+  },
+  "structureId": "sections",
   "slides": 10
- },
- "themeId": "block"
+ }
 }

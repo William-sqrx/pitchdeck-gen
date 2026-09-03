@@ -2,19 +2,19 @@
  "meta": {
   "client": "RetailCo",
   "title": "The Monday-Morning Test",
-  "subtitle": "A joined-up proposal for seeing, hearing, and scaling what works across 120 APAC stores",
+  "subtitle": "Turning shop-floor reality into same-day operating action across 120 APAC stores",
   "presenter": "Nicole LIM"
  },
  "slides": [
   {
    "layout": "title",
    "title": "The Monday-Morning Test",
-   "subtitle": "What RetailCo knows today, and what we can help you know before Monday",
-   "script": "We are going to anchor this conversation in the way you described the business: what you know on Monday about what happened last week, and what you would know if the floor itself became visible, searchable, and teachable. The proposal is not four separate tools looking for problems. It is one operating loop: Spacesight shows what happens in store, Echo captures what staff actually say, AI Wiki turns the best practice into reusable knowledge, and Alivia packages that into a practical proposal we can test in one real store before any broader rollout."
+   "subtitle": "A joined-up proposal for seeing, hearing, bottling, and scaling what works in store",
+   "script": "We are starting with the test that matters operationally: what we know on Monday morning. Today, Monday tells us what happened last week, after the customer conversations, manager decisions, missed opportunities, and roster work have already passed. Our proposal changes that rhythm. We connect Spacesight, Echo, Harbor Wiki, and Alivia so RetailCo can see what is happening on the floor, hear what staff are saying, bottle the best behaviours, and turn one real store into a practical proposal before we talk about scaling."
   },
   {
    "layout": "metrics",
-   "title": "The scale makes slow feedback expensive",
+   "title": "RetailCo's operating scale makes delay expensive",
    "metrics": [
     {
      "value": "120",
@@ -25,156 +25,201 @@
      "label": "frontline staff"
     },
     {
-     "value": "6 wks",
-     "label": "new-hire onboarding today"
+     "value": "3x",
+     "label": "gap between best and worst managers"
     }
    ],
-   "script": "We should start with the size of the operating surface. RetailCo is not trying to understand one flagship location or a small team. We are talking about 120 stores across APAC and 2,000 frontline staff, each making small decisions every day that affect conversion, service, and consistency. When the feedback cycle is a spreadsheet on Monday about last week, the business is always managing through delay. And when onboarding takes six weeks, every inconsistency in the store becomes a training dependency rather than an operating asset."
+   "script": "We are not looking at a small visibility problem. We are looking at 120 stores, 2,000 frontline staff, and a three-times performance gap between the best and worst store managers. At that scale, even simple questions become hard when the answer arrives in a spreadsheet after the week is over. We do not need to start by boiling the ocean. We need to prove, in one store, that the operating facts can move closer to the operating moment, and then use that proof to guide the broader conversation."
+  },
+  {
+   "layout": "table",
+   "title": "What Monday knows today versus what Monday could know",
+   "leftHead": "Today",
+   "rightHead": "With this proposal",
+   "rows": [
+    {
+     "left": "Last week's spreadsheet",
+     "right": "Same-day floor signals from Spacesight"
+    },
+    {
+     "left": "Anecdotes about customer conversations",
+     "right": "Scored frontline conversations from Echo"
+    },
+    {
+     "left": "Best managers remain tribal knowledge",
+     "right": "Repeatable playbooks in Harbor Wiki"
+    },
+    {
+     "left": "Roster pain described manually",
+     "right": "Roster workflow scoped as an open item"
+    }
+   ],
+   "script": "We are reframing the proposal around the Monday-morning difference. Today, Monday is backward-looking: a spreadsheet, anecdotes, and manager instinct. Under this proposal, Monday becomes diagnostic. Spacesight shows what happened on the floor. Echo shows what staff actually said to customers. Harbor Wiki turns the patterns from strong managers into a searchable operating playbook. Scheduling is different: none of these products is a rostering engine, so we should not pretend it is solved. We can, however, scope the coordination pain clearly as part of the proposal."
+  },
+  {
+   "layout": "stack",
+   "title": "Fix fastest where the signal already exists",
+   "rows": [
+    {
+     "left": "Floor visibility",
+     "right": "Spacesight captures what is happening in store."
+    },
+    {
+     "left": "Customer conversations",
+     "right": "Echo captures and scores what staff say."
+    },
+    {
+     "left": "Manager know-how",
+     "right": "Harbor Wiki turns winning behaviours into answers."
+    },
+    {
+     "left": "Proposal shape",
+     "right": "Alivia packages the pilot evidence into a client proposal."
+    }
+   ],
+   "script": "We would order the work by what can be fixed fastest. The fastest signal is the signal already happening every day: movement on the floor and conversations with customers. Spacesight and Echo capture that reality without waiting for a Monday spreadsheet. Once we can see and hear the operation, Harbor Wiki gives us a place to bottle the behaviours that work. Alivia then turns the evidence into a structured proposal, so the next discussion is not abstract transformation. It is a concrete view of what one store showed us."
   },
   {
    "layout": "quote",
    "quote": "I have no idea what actually happens on my shop floor. I get a spreadsheet on Monday about last week.",
    "attribution": "RetailCo COO",
-   "script": "We think this sentence is the right test for the whole proposal. If we cannot change what you know before Monday, we have not solved the core operating problem. Today, the shop floor is converted into lagging spreadsheet data after the week is already over. That makes the COO dependent on summaries, averages, and second-hand explanations. Our first move is to shorten the distance between the floor and decision-making, so we can see activity, hear customer conversations, and preserve the actions of the best managers while the week is still live."
+   "script": "We heard this as the core operating frustration. It is not that RetailCo lacks data; it is that the data arrives too late and too far away from the shop floor. By Monday, the team can explain last week, but they cannot change last week. Spacesight directly addresses that gap by showing what is happening in store. Echo complements it by adding the customer conversation layer. Together, they turn the shop floor from a blind spot into an observable system that management can discuss while the facts are still fresh."
   },
   {
-   "layout": "agenda",
-   "title": "We fix fastest first",
-   "bullets": [
-    "See the floor before the weekly spreadsheet",
-    "Hear the customer conversation directly",
-    "Bottle the 3x manager behaviors",
-    "Compress onboarding into searchable practice",
-    "Treat scheduling as an explicit open item"
+   "layout": "chevron",
+   "title": "From observed reality to Monday action",
+   "steps": [
+    {
+     "label": "See",
+     "text": "Spacesight identifies floor patterns as they happen."
+    },
+    {
+     "label": "Hear",
+     "text": "Echo captures real frontline customer conversations."
+    },
+    {
+     "label": "Compare",
+     "text": "Strong and weak moments become visible side by side."
+    },
+    {
+     "label": "Act",
+     "text": "Managers coach from evidence, not memory."
+    }
    ],
-   "script": "We are deliberately ordering this around what can change the fastest. The fastest fix is visibility, because Spacesight can make store activity observable instead of anecdotal. The next fastest is conversation quality, because Echo lets us hear and score what frontline staff actually say to customers. From there, we bottle what the best store managers do in AI Wiki, and use that same knowledge base to support onboarding. Scheduling is important, and we are not going to pretend these products are a roster optimizer. We will handle that honestly as an open item."
+   "script": "We are proposing a simple operating loop. First, we see the floor through Spacesight. Then, we hear the staff and customer interaction through Echo. Once those two signals sit together, RetailCo can compare what high-performing moments look like against weaker ones. That matters because coaching becomes specific. We are no longer asking a manager to remember what happened, defend an anecdote, or wait for a weekly report. We are giving the store team evidence they can use to adjust behaviour while the week is still unfolding."
+  },
+  {
+   "layout": "stack",
+   "title": "Bottle the 3x manager gap",
+   "rows": [
+    {
+     "left": "Best manager",
+     "right": "Echo and Spacesight reveal the repeatable behaviours."
+    },
+    {
+     "left": "Known pattern",
+     "right": "Harbor Wiki converts it into a searchable playbook."
+    },
+    {
+     "left": "New manager",
+     "right": "The answer is available without waiting for coaching."
+    },
+    {
+     "left": "Whole network",
+     "right": "Alivia packages what to scale after the pilot."
+    }
+   ],
+   "script": "The three-times gap between best and worst store managers is the biggest clue that RetailCo already has answers inside the business. The issue is that those answers are trapped in people, habits, and local context. We would use Spacesight and Echo to identify what the best managers do differently, then use Harbor Wiki to make those behaviours searchable and reusable. The goal is not to replace managerial judgement. It is to give every manager access to the moves that already work inside RetailCo."
   },
   {
    "layout": "three",
-   "title": "First fix: replace Monday hindsight with floor visibility",
+   "title": "Make onboarding depend on the playbook, not the shift",
    "cards": [
     {
-     "heading": "Product",
-     "body": "Spacesight uses in-store vision analytics to show what is happening on the shop floor."
+     "heading": "Capture",
+     "body": "Spacesight and Echo identify real examples from the floor and conversations."
     },
     {
-     "heading": "Pain addressed",
-     "body": "The COO no longer waits for a Monday spreadsheet about last week."
+     "heading": "Convert",
+     "body": "Harbor Wiki turns those examples into simple, searchable guidance."
     },
     {
-     "heading": "Operating change",
-     "body": "Store activity becomes visible while teams can still respond."
+     "heading": "Coach",
+     "body": "New hires learn from proven RetailCo behaviours, not whoever is nearby."
     }
    ],
-   "script": "Spacesight is the first answer to the Monday-morning test. It is aimed directly at the statement, 'I have no idea what actually happens on my shop floor.' Instead of waiting for a weekly spreadsheet, we make the floor observable through in-store vision analytics. That does not mean replacing manager judgment; it means giving managers and the COO a shared view of what is actually happening. The mechanism is simple: we move from delayed reporting to current visibility, so store coaching and operating decisions can happen while the moment still matters."
+   "script": "The six-week onboarding pain is closely related to the manager gap. If a new hire learns only from whoever happens to be working that day, quality will vary by store, shift, and luck. We would change the dependency. Real examples from Spacesight and Echo become the raw material. Harbor Wiki turns those examples into guidance that new hires can search and managers can reinforce. That means onboarding can still feel local and practical, but the core behaviours come from RetailCo’s best observed practice rather than informal handover."
   },
   {
-   "layout": "three",
-   "title": "Second fix: hear the words that drive the sale",
-   "cards": [
+   "layout": "stack",
+   "title": "Be honest about scheduling",
+   "rows": [
     {
-     "heading": "Product",
-     "body": "Echo captures and scores frontline conversations with customers."
+     "left": "Roster pain",
+     "right": "No listed product is a workforce scheduling engine."
     },
     {
-     "heading": "Pain addressed",
-     "body": "RetailCo can compare what staff actually say across stores."
+     "left": "Coordination work",
+     "right": "Alivia can document the pain inside the proposal."
     },
     {
-     "heading": "Operating change",
-     "body": "Coaching is based on real conversations, not recollection."
+     "left": "Pilot learning",
+     "right": "We can map who coordinates, when, and why."
+    },
+    {
+     "left": "Next decision",
+     "right": "Treat scheduling as an adjacent workstream, not a hidden claim."
     }
    ],
-   "script": "Spacesight tells us what happens around the customer. Echo adds the missing layer: what staff actually say to the customer. That matters because a store can look busy and still miss the behaviors that convert interest into purchase. With Echo, RetailCo can capture and score frontline conversations, so coaching is grounded in real language rather than memory or manager interpretation. We can identify the phrases, questions, and service patterns that show up in stronger interactions, and we can make those patterns available to teams without waiting for a regional review cycle."
+   "script": "We should call out scheduling plainly. RetailCo told us that getting one roster set takes coordination across many people and teams. Spacesight, Echo, and Harbor Wiki do not become a rostering platform just because scheduling is painful. So our proposal should separate what we can solve now from what we should scope next. Alivia can capture the scheduling workflow and include it as an adjacent workstream in the proposal. That gives RetailCo a clear decision: prove the floor intelligence loop first, while documenting the roster problem properly."
   },
   {
-   "layout": "quote",
-   "quote": "My best store managers outsell my worst ones by 3x. I cannot bottle what they do.",
-   "attribution": "RetailCo COO",
-   "script": "This is where the proposal shifts from observation to replication. A 3x spread between best and worst store managers tells us RetailCo already has excellence inside the business. The problem is that the excellence is trapped in people’s habits, local routines, and coaching styles. Spacesight and Echo help us identify what the best managers and teams are doing differently. AI Wiki then gives us the place to bottle it, so the operating model is not dependent on copying one manager informally or hoping their practices travel by word of mouth."
-  },
-  {
-   "layout": "three",
-   "title": "Third fix: turn top-manager habits into a RetailCo playbook",
-   "cards": [
+   "layout": "table",
+   "title": "Use one real store to build the proposal",
+   "leftHead": "Pilot evidence",
+   "rightHead": "Alivia output",
+   "rows": [
     {
-     "heading": "Product",
-     "body": "AI Wiki, also Harbor Wiki, makes best practice searchable and reusable."
+     "left": "What Spacesight sees",
+     "right": "Floor visibility section"
     },
     {
-     "heading": "Pain addressed",
-     "body": "The 3x performance gap becomes a source of repeatable practice."
+     "left": "What Echo hears",
+     "right": "Conversation quality section"
     },
     {
-     "heading": "Operating change",
-     "body": "Any manager can look up what strong execution looks like."
+     "left": "What top managers repeat",
+     "right": "Harbor Wiki playbook section"
+    },
+    {
+     "left": "What scheduling blocks",
+     "right": "Open workstream section"
     }
    ],
-   "script": "AI Wiki is the bottling mechanism. Once Spacesight shows the floor patterns and Echo captures the conversation patterns, AI Wiki gives RetailCo a living place to store the best answers. That can include how strong managers open the day, how they coach a weak interaction, how they handle common objections, or how they run a busy trading period. The value is not a static manual. It is that anyone can look up the current RetailCo way of doing the work, using knowledge that comes from the best stores rather than from generic training content."
+   "script": "We recommend building the proposal from one real store rather than from assumptions. In that store, Spacesight gives us floor evidence, Echo gives us conversation evidence, and Harbor Wiki shows how the best behaviours can be converted into reusable guidance. Alivia then assembles the case back to RetailCo in a format that is grounded in actual store reality. Scheduling stays visible in that output as an open workstream. This keeps the proposal practical: what we proved, what we can scale, and what still needs a dedicated solution."
   },
   {
-   "layout": "quote",
-   "quote": "Onboarding a new hire takes six weeks and depends entirely on whoever happens to be working that day.",
-   "attribution": "RetailCo COO",
-   "script": "This onboarding pain is closely connected to the 3x manager gap. If a new hire depends entirely on whoever happens to be working that day, then onboarding quality changes by shift, by store, and by manager. We would use AI Wiki to make the best RetailCo practices available to every new hire and every coach. Echo can support that by showing what good customer conversations sound like, and Spacesight can connect the training back to real floor behaviors. The goal is to reduce dependence on chance, not to remove human coaching."
-  },
-  {
-   "layout": "bullets",
-   "title": "What scheduling needs, and what this proposal covers",
-   "subtitle": "We should be precise about the boundary",
-   "bullets": [
-    "Scheduling pain is real",
-    "These products are not roster optimizers",
-    "Spacesight can inform staffing conversations",
-    "Alivia can document the adjacent requirement"
-   ],
-   "script": "We also need to be clear about scheduling. You said getting one roster set takes coordination across many people and teams. That is a real operating pain, but Spacesight, Echo, AI Wiki, and Alivia are not, on their own, workforce scheduling or roster optimization products. What we can do is make the adjacent decision better: Spacesight can show store activity patterns that inform staffing discussions, and Alivia can capture the scheduling requirement explicitly in the client proposal. We should not hide this gap; we should define it as a connected workstream."
-  },
-  {
-   "layout": "bullets",
-   "title": "Alivia turns the loop into one proposal",
-   "subtitle": "From floor signals to an executable RetailCo plan",
-   "bullets": [
-    "Spacesight: see store activity",
-    "Echo: hear customer conversations",
-    "AI Wiki: scale best practice",
-    "Alivia: package the client proposal"
-   ],
-   "script": "Alivia is how we make this feel like one RetailCo proposal rather than a set of disconnected product ideas. The inputs are clear. Spacesight gives us the floor view. Echo gives us the conversation view. AI Wiki gives us the way to bottle and distribute what works. Alivia turns those elements into a client proposal that can be reviewed, scoped, and tested. That matters because the first step should not be a broad transformation promise. It should be a concrete proposal that says what we will observe, what we will capture, what we will document, and what remains out of scope."
-  },
-  {
-   "layout": "metrics",
-   "title": "The Monday-morning answer changes",
-   "metrics": [
-    {
-     "value": "Now",
-     "label": "Spreadsheet about last week"
-    },
-    {
-     "value": "Next",
-     "label": "Floor and conversation signals"
-    },
-    {
-     "value": "Then",
-     "label": "Best practice available to all stores"
-    }
-   ],
-   "script": "The change we are proposing is best understood as a new Monday-morning answer. Today, Monday starts with a spreadsheet about last week and a lot of interpretation. Next, with Spacesight and Echo, Monday can start with direct signals from the floor and from customer conversations. Then, with AI Wiki, those signals do not just explain performance; they become reusable practice for managers and new hires. We are not inventing a performance number here. We are changing the management mechanism: less delay, less guesswork, and less dependence on whichever manager happens to be nearby."
+   "layout": "statement",
+   "text": "The proposal is not another report; it is a feedback loop from floor reality to manager playbook.",
+   "kicker": "See it. Hear it. Bottle it. Propose it.",
+   "script": "We want this to feel different from another analytics report. The value is the loop. Spacesight sees the floor. Echo hears the conversation. Harbor Wiki bottles the behaviours that explain stronger performance. Alivia turns that evidence into a proposal RetailCo can actually evaluate. That loop directly answers three of the four pains: Monday visibility, the three-times manager gap, and inconsistent six-week onboarding. The fourth pain, scheduling, is not swept away. It is carried forward honestly as an adjacent workstream with evidence from the pilot."
   },
   {
    "layout": "closing",
-   "title": "Let’s test this in one real store",
-   "subtitle": "Prove the operating loop before discussing scale",
+   "title": "Our ask: test this in one real store",
+   "subtitle": "Prove the Monday-morning difference before scaling the conversation.",
    "bullets": [
-    "Select one representative RetailCo store",
-    "Run the proposal through Alivia",
-    "Validate Spacesight, Echo, and AI Wiki together",
-    "Confirm scheduling as an adjacent workstream"
+    "Select one representative APAC store",
+    "Run Spacesight, Echo, and Harbor Wiki around real workflows",
+    "Use Alivia to produce the scale proposal",
+    "Review scheduling as a documented adjacent workstream"
    ],
-   "script": "Our ask is intentionally narrow. Before we talk about all 120 APAC stores, we should run this proposal against one real RetailCo store. We would use Alivia to shape the proposal, apply Spacesight to see what is happening on the floor, use Echo to understand what staff actually say to customers, and create an AI Wiki layer that captures the practices worth reusing. At the same time, we would document the scheduling pain as an adjacent requirement rather than pretending it is solved by these tools. If the loop works in one store, the scale conversation becomes grounded."
+   "script": "Our ask is deliberately small and concrete. Let us run this against one real store before we scale the conversation across 120. We would use that store to test the Monday-morning difference: what RetailCo can see, what it can hear, what it can bottle, and what still needs a separate scheduling answer. Then Alivia turns the findings into the proposal for the next decision. If the pilot does not make the operating reality clearer, we should learn that early. If it does, we have a grounded path to discuss scale."
   }
  ],
- "accent": "2F6B45",
+ "accent": "0F766E",
+ "themeId": "forest",
+ "structureId": "ledger",
  "approach": {
   "angle": "Lead with the Monday-morning test: what the COO knows on Monday today, versus what they would know under this proposal.",
   "device": "Structure around the things the customer said, but re-ordered by what you can fix fastest.",
@@ -184,7 +229,44 @@
    "hex": "0F766E",
    "name": "teal"
   },
+  "theme": {
+   "id": "forest",
+   "name": "deep green / serif",
+   "bg": "F6F8F5",
+   "ink": "14261B",
+   "body": "3E5647",
+   "muted": "748A7C",
+   "panel": "E7EFE8",
+   "rule": "CBDBCF",
+   "accent": "2F6B45",
+   "quoteBg": "14261B",
+   "coverBg": "14261B",
+   "coverInk": "FFFFFF",
+   "coverSub": "A9C4B2",
+   "coverStyle": "center",
+   "head": "Georgia",
+   "text": "Arial",
+   "chrome": "rule",
+   "cards": "filled",
+   "metrics": "underline",
+   "bullet": "dot",
+   "titleSize": 30,
+   "coverSize": 44
+  },
+  "themeId": "forest",
+  "structure": {
+   "id": "ledger",
+   "grid": "band",
+   "label": "banner headers, mapped rows",
+   "uses": [
+    "stack",
+    "table",
+    "chevron",
+    "three"
+   ],
+   "brief": "Built out of STACKS — rows mapping one thing to another: problem to product, symptom to mechanism. Use \"stack\" at least three times."
+  },
+  "structureId": "ledger",
   "slides": 12
- },
- "themeId": "forest"
+ }
 }

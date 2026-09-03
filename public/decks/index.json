@@ -1,5 +1,5 @@
 {
- "builtAt": "2026-09-03T07:14:05.267Z",
+ "builtAt": "2026-09-03T07:57:00.388Z",
  "decks": [
   {
    "name": "Jasper GOH",
@@ -7,142 +7,164 @@
    "slides": 11,
    "accent": {
     "hex": "2563EB",
-    "name": "navy / clean"
+    "name": "blue"
    },
-   "title": "Closing the Same-Day Loop",
-   "angle": "The real problem is not missing data, it is that nothing reaches the COO in time to act. Argue for closing the loop from floor to decision inside a single day.",
    "themeId": "ink",
-   "themeName": "navy / clean"
+   "themeName": "navy / clean",
+   "structureId": "classic",
+   "structureLabel": "title above, content below",
+   "title": "Closing the Loop from Shop Floor to COO",
+   "angle": "The real problem is not missing data, it is that nothing reaches the COO in time to act. Argue for closing the loop from floor to decision inside a single day."
   },
   {
    "name": "Sara TEO",
    "slug": "sara-teo",
    "slides": 12,
    "accent": {
-    "hex": "A8571B",
-    "name": "cream / serif"
+    "hex": "0F766E",
+    "name": "teal"
    },
-   "title": "Replicating RetailCo’s Best Stores",
-   "angle": "The real problem is variance, not average performance. Argue that the customer already has the answers - they live in the best store managers - and the job is replication.",
    "themeId": "paper",
-   "themeName": "cream / serif"
+   "themeName": "cream / serif",
+   "structureId": "timeline",
+   "structureLabel": "banner headers, phase timelines",
+   "title": "Replicating Your Best Stores",
+   "angle": "The real problem is variance, not average performance. Argue that the customer already has the answers - they live in the best store managers - and the job is replication."
   },
   {
    "name": "Smile HUANG",
    "slug": "smile-huang",
    "slides": 10,
    "accent": {
-    "hex": "2DD4BF",
-    "name": "all-dark / teal"
+    "hex": "B45309",
+    "name": "bronze"
    },
-   "title": "From Last Week’s Spreadsheet to This Week’s Shop Floor",
-   "angle": "Lead with the cost of the status quo. Invent no numbers you were not given, but make the reader feel what a week of blind operating costs across the estate.",
    "themeId": "slate",
-   "themeName": "all-dark / teal"
+   "themeName": "all-dark / teal",
+   "structureId": "matrix",
+   "structureLabel": "side titles, comparison tables",
+   "title": "From Monday Blindness to Same-Day Store Truth",
+   "angle": "Lead with the cost of the status quo. Invent no numbers you were not given, but make the reader feel what a week of blind operating costs across the estate."
   },
   {
    "name": "Veronica LEE",
    "slug": "veronica-lee",
    "slides": 11,
    "accent": {
-    "hex": "B91C1C",
-    "name": "white / editorial"
+    "hex": "7C3AED",
+    "name": "violet"
    },
-   "title": "Prove the Frontline Loop in Weeks",
-   "angle": "Argue speed to value: a narrow pilot in a handful of stores that proves the loop in weeks, not a platform programme that lands next year.",
    "themeId": "editorial",
-   "themeName": "white / editorial"
+   "themeName": "white / editorial",
+   "structureId": "statement",
+   "structureLabel": "full-bleed statements",
+   "title": "Proving the Frontline Loop in Weeks",
+   "angle": "Argue speed to value: a narrow pilot in a handful of stores that proves the loop in weeks, not a platform programme that lands next year."
   },
   {
    "name": "Delia TANUWIDJAJA",
    "slug": "delia-tanuwidjaja",
-   "slides": 13,
+   "slides": 12,
    "accent": {
-    "hex": "1D4ED8",
-    "name": "blue-grey / technical"
+    "hex": "BE123C",
+    "name": "crimson"
    },
-   "title": "RetailCo Frontline Operating System",
-   "angle": "Take the frontline employee's point of view. A new hire's first six weeks is the sharpest version of every problem the COO raised.",
    "themeId": "blueprint",
-   "themeName": "blue-grey / technical"
+   "themeName": "blue-grey / technical",
+   "structureId": "split",
+   "structureLabel": "rotated rail, split panels",
+   "title": "RetailCo Frontline Acceleration",
+   "angle": "Take the frontline employee's point of view. A new hire's first six weeks is the sharpest version of every problem the COO raised."
   },
   {
    "name": "William Jacob WIJAYA",
    "slug": "william-jacob-wijaya",
    "slides": 10,
    "accent": {
-    "hex": "10814A",
-    "name": "bold block / green"
+    "hex": "15803D",
+    "name": "green"
    },
-   "title": "From Day One to Store-Ready",
-   "angle": "Take the store manager's point of view. They are the pivot between what head office wants and what actually happens, and today they are unsupported.",
    "themeId": "block",
-   "themeName": "bold block / green"
+   "themeName": "bold block / green",
+   "structureId": "sections",
+   "structureLabel": "chaptered, title under content",
+   "title": "From Day One to Competent: Supporting the Store Manager at the Pivot Point",
+   "angle": "Take the store manager's point of view. They are the pivot between what head office wants and what actually happens, and today they are unsupported."
   },
   {
    "name": "Yixun LI (Ethan)",
    "slug": "yixun-li-ethan",
    "slides": 11,
    "accent": {
-    "hex": "6D28D9",
-    "name": "off-white / violet"
+    "hex": "2563EB",
+    "name": "blue"
    },
-   "title": "RetailCo Store Operating System",
-   "angle": "Frame it as one operating system rather than four tools. The products are worth more joined up than bought separately, and that is the whole pitch.",
    "themeId": "mono",
-   "themeName": "off-white / violet"
+   "themeName": "off-white / violet",
+   "structureId": "numbers",
+   "structureLabel": "side titles, one big number a page",
+   "title": "RetailCo Store Performance Operating System",
+   "angle": "Frame it as one operating system rather than four tools. The products are worth more joined up than bought separately, and that is the whole pitch."
   },
   {
    "name": "Nicole LIM",
    "slug": "nicole-lim",
-   "slides": 13,
+   "slides": 12,
    "accent": {
-    "hex": "2F6B45",
-    "name": "deep green / serif"
+    "hex": "0F766E",
+    "name": "teal"
    },
-   "title": "The Monday-Morning Test",
-   "angle": "Lead with the Monday-morning test: what the COO knows on Monday today, versus what they would know under this proposal.",
    "themeId": "forest",
-   "themeName": "deep green / serif"
+   "themeName": "deep green / serif",
+   "structureId": "ledger",
+   "structureLabel": "banner headers, mapped rows",
+   "title": "The Monday-Morning Test",
+   "angle": "Lead with the Monday-morning test: what the COO knows on Monday today, versus what they would know under this proposal."
   },
   {
    "name": "Lis LIM",
    "slug": "lis-lim",
    "slides": 11,
    "accent": {
-    "hex": "B0203C",
-    "name": "split / crimson"
+    "hex": "B45309",
+    "name": "bronze"
    },
-   "title": "Turning Shop-Floor Unknowns into Managed Risk",
-   "angle": "Frame it as risk. Not knowing what happens across the estate is an exposure - brand, compliance, customer experience - not just an inconvenience.",
    "themeId": "crimson",
-   "themeName": "split / crimson"
+   "themeName": "split / crimson",
+   "structureId": "story",
+   "structureLabel": "corner titles, narrative",
+   "title": "RetailCo Store Risk-to-Action Proposal",
+   "angle": "Frame it as risk. Not knowing what happens across the estate is an exposure - brand, compliance, customer experience - not just an inconvenience."
   },
   {
    "name": "Jia Chai LOW",
    "slug": "jia-chai-low",
    "slides": 12,
    "accent": {
-    "hex": "C9A227",
-    "name": "midnight / gold"
+    "hex": "7C3AED",
+    "name": "violet"
    },
-   "title": "One RetailCo, 120 Stores",
-   "angle": "Argue standardisation: the stores are running as many different businesses as there are branches. Make consistency the prize and the products the means.",
    "themeId": "midnight",
-   "themeName": "midnight / gold"
+   "themeName": "midnight / gold",
+   "structureId": "brief",
+   "structureLabel": "content first, title beneath",
+   "title": "One RetailCo, 120 Stores",
+   "angle": "Argue standardisation: the stores are running as many different businesses as there are branches. Make consistency the prize and the products the means."
   },
   {
    "name": "Feijin CHEN",
    "slug": "feijin-chen",
-   "slides": 11,
+   "slides": 10,
    "accent": {
-    "hex": "D2691E",
-    "name": "white grid / orange"
+    "hex": "BE123C",
+    "name": "crimson"
    },
-   "title": "RetailCo Frontline Adoption Proposal",
-   "angle": "Lead with adoption. All of this fails if the frontline will not use it, so make change management the spine of the proposal.",
    "themeId": "grid",
-   "themeName": "white grid / orange"
+   "themeName": "white grid / orange",
+   "structureId": "panel",
+   "structureLabel": "rotated rail, flows",
+   "title": "RetailCo Frontline Adoption Proposal",
+   "angle": "Lead with adoption. All of this fails if the frontline will not use it, so make change management the spine of the proposal."
   }
  ]
 }

@@ -72,6 +72,7 @@
 
 <script src="/vendor/pptxgen.bundle.js"></script>
 <script src="/themes.js"></script>
+<script src="/structures.js"></script>
 <script>
 const CACHE = {};
 
@@ -146,7 +147,8 @@ async function toggleScripts(entry, box, btn){
           '<div class="nm">' + esc(entry.name) + '</div>' +
           '<div class="tl">' + esc(entry.title) + '</div>' +
           '<div class="an">Your line: ' + esc(firstSentence(entry.angle)) + '</div>' +
-          '<div class="meta">' + entry.slides + ' slides &middot; ' + esc(entry.accent.name) + '</div>' +
+          '<div class="meta">' + entry.slides + ' slides &middot; ' + esc(entry.accent.name) +
+            (entry.structureLabel ? ' &middot; ' + esc(entry.structureLabel) : '') + '</div>' +
         '</div>' +
         '<button class="dl">↓ Download .pptx</button>' +
       '</div>' +
@@ -172,15 +174,35 @@ const W = 13.333, H = 7.5, MX = 0.85;
 function txt(a){ return (a==null?'':String(a)); }
 function arr(a){ return Array.isArray(a)?a:[]; }
 
+function isDark(hex) {
+  const h = String(hex || '').replace('#','');
+  if (h.length !== 6) return false;
+  const r = parseInt(h.slice(0,2),16), g = parseInt(h.slice(2,4),16), b = parseInt(h.slice(4,6),16);
+  return (0.299*r + 0.587*g + 0.114*b) < 140;
+}
+
+// Model-written values sit next to each other ("Monday" beside "3x"), so size a
+// figure to the column it must fit rather than letting it wrap onto its label.
+function fitSize(value, widthInches, max) {
+  const len = Math.max(1, String(value).length);
+  const usable = Math.max(0.5, widthInches - 0.25);
+  return Math.max(16, Math.min(max, Math.floor((usable * 72) / (0.74 * len))));
+}
+
 function themeOf(deck) {
   const list = (typeof THEMES !== 'undefined' && THEMES) || [];
-  const byId = list.find(t => t.id === deck.themeId);
-  return byId || list[0];
+  return list.find(t => t.id === deck.themeId) || list[0];
+}
+function structOf(deck) {
+  const list = (typeof STRUCTURES !== 'undefined' && STRUCTURES) || [];
+  return list.find(s => s.id === deck.structureId) || list[0];
 }
 
 function buildPptx(deck) {
   const T = themeOf(deck);
+  const S = structOf(deck);
   const A = T.accent;
+  const GRID = S.grid;
   const pptx = new PptxGenJS();
   pptx.layout = 'LAYOUT_WIDE';
   const m = deck.meta || {};
@@ -190,48 +212,114 @@ function buildPptx(deck) {
 
   const slides = arr(deck.slides);
   const total = slides.length;
-  const dark = isDark(T.bg);
 
-  /* ---- page furniture: differs per theme, so two decks never read alike ---- */
-  function chrome(sl, title, n) {
-    sl.background = { color: T.bg };
-    let ty = 0.85, tx = MX, tw = W - MX*2;
-
-    if (T.chrome === 'bar') {
-      sl.addShape('rect', { x:MX, y:0.62, w:0.5, h:0.055, fill:{color:A} });
-    } else if (T.chrome === 'rule') {
-      ty = 0.72;
-    } else if (T.chrome === 'sidebar') {
-      sl.addShape('rect', { x:0, y:0, w:0.22, h:H, fill:{color:A} });
-      tx = MX + 0.25; tw = W - tx - MX;
-    } else if (T.chrome === 'number') {
-      sl.addText(String(n).padStart(2,'0'), {
-        x:MX, y:0.6, w:1.1, h:0.6, fontFace:T.head, fontSize:30, bold:true, color:A, valign:'top',
-      });
-      tx = MX + 1.15; tw = W - tx - MX; ty = 0.68;
-    }
-
-    sl.addText(txt(title), {
-      x:tx, y:ty, w:tw, h:1.0, fontFace:T.head, fontSize:T.titleSize, bold:true,
-      color:T.ink, valign:'top', lineSpacing:Math.round(T.titleSize * 1.18),
-    });
-
-    if (T.chrome === 'rule') {
-      sl.addShape('rect', { x:tx, y:1.92, w:tw, h:0.02, fill:{color:A} });
-    }
-
+  function foot(sl, n, color) {
     sl.addText(txt(m.client) + (txt(m.client) ? '   ·   ' : '') + n + ' / ' + total, {
-      x:MX, y:H-0.62, w:W-MX*2, h:0.3, fontFace:T.text, fontSize:10, color:T.muted,
-      align: T.chrome === 'sidebar' ? 'left' : 'right',
+      x:MX, y:H-0.55, w:W-MX*2, h:0.3, fontFace:T.text, fontSize:9.5,
+      color: color || T.muted, align: GRID === 'corner' ? 'left' : 'right',
     });
-    return { tx, tw };
   }
 
-  function coverish(sl, title, subtitle, footL, footR, isCover) {
+  /* The page grid — where the title lives and where content may start. This is
+     what stops two decks reading as the same template. */
+  function frame(sl, title, n) {
+    sl.background = { color: T.bg };
+    let x = MX, w = W - MX*2, top = 2.35;
+
+    if (GRID === 'band') {
+      const bandDark = isDark(A);
+      sl.addShape('rect', { x:0, y:0, w:W, h:1.62, fill:{color:A} });
+      sl.addText(txt(title), {
+        x:MX, y:0.42, w:W-MX*2-1.4, h:0.85, fontFace:T.head, fontSize:T.titleSize - 3,
+        bold:true, color: bandDark ? 'FFFFFF' : '10151F', valign:'middle',
+      });
+      sl.addText(String(n).padStart(2,'0'), {
+        x:W-MX-1.2, y:0.42, w:1.2, h:0.85, fontFace:T.head, fontSize:20, bold:true,
+        color: bandDark ? 'FFFFFF' : '10151F', align:'right', valign:'middle',
+      });
+      top = 2.25;
+
+    } else if (GRID === 'sidecol') {
+      sl.addShape('rect', { x:MX, y:0.95, w:0.4, h:0.05, fill:{color:A} });
+      sl.addText(txt(title), {
+        x:MX, y:1.2, w:3.55, h:3.4, fontFace:T.head, fontSize:T.titleSize - 2,
+        bold:true, color:T.ink, valign:'top', lineSpacing:Math.round((T.titleSize-2)*1.2),
+      });
+      sl.addShape('rect', { x:MX+3.95, y:0.95, w:0.012, h:H-2.0, fill:{color:T.rule} });
+      x = MX + 4.35; w = W - x - MX; top = 1.15;
+
+    } else if (GRID === 'rail') {
+      sl.addShape('rect', { x:0, y:0, w:1.15, h:H, fill:{color:A} });
+      // Rotated, so the box's WIDTH is the slide's height: a long title runs off
+      // the bottom unless it is sized to that 6.4in run.
+      sl.addText(txt(title), {
+        x:-2.35, y:3.0, w:6.4, h:0.7, fontFace:T.head,
+        fontSize:Math.min(T.titleSize - 5, fitSize(txt(title), 6.4, 20)),
+        bold:true, color: isDark(A) ? 'FFFFFF' : '10151F', align:'center', valign:'middle', rotate:270,
+      });
+      x = 1.15 + 0.7; w = W - x - MX; top = 1.15;
+
+    } else if (GRID === 'bottom') {
+      sl.addShape('rect', { x:MX, y:H-1.42, w:W-MX*2, h:0.02, fill:{color:T.rule} });
+      sl.addText(txt(title), {
+        x:MX, y:H-1.24, w:W-MX*2-1.6, h:0.8, fontFace:T.head, fontSize:T.titleSize - 4,
+        bold:true, color:T.ink, valign:'top',
+      });
+      sl.addText(String(n).padStart(2,'0') + ' / ' + total, {
+        x:W-MX-1.6, y:H-1.2, w:1.6, h:0.5, fontFace:T.text, fontSize:11, color:A, align:'right',
+      });
+      top = 0.95;
+      return { x, w, top, bottom: H - 1.65, noFoot: true };
+
+    } else if (GRID === 'corner') {
+      sl.addText(txt(title), {
+        x:W-MX-6.4, y:H-1.55, w:6.4, h:1.0, fontFace:T.head, fontSize:T.titleSize - 4,
+        bold:true, color:T.ink, align:'right', valign:'bottom',
+      });
+      sl.addShape('rect', { x:W-MX-0.62, y:H-1.72, w:0.62, h:0.05, fill:{color:A} });
+      top = 0.95;
+      return { x, w, top, bottom: H - 1.85, noFoot: false };
+
+    } else if (GRID === 'centered') {
+      sl.addText(txt(title), {
+        x:1.5, y:0.75, w:W-3.0, h:1.0, fontFace:T.head, fontSize:T.titleSize - 1,
+        bold:true, color:T.ink, align:'center', valign:'top',
+      });
+      sl.addShape('rect', { x:W/2-0.3, y:1.92, w:0.6, h:0.045, fill:{color:A} });
+      x = 1.5; w = W - 3.0; top = 2.45;
+
+    } else { // 'top'
+      sl.addShape('rect', { x:MX, y:0.62, w:0.5, h:0.055, fill:{color:A} });
+      sl.addText(txt(title), {
+        x:MX, y:0.85, w:W-MX*2, h:1.0, fontFace:T.head, fontSize:T.titleSize,
+        bold:true, color:T.ink, valign:'top', lineSpacing:Math.round(T.titleSize*1.18),
+      });
+    }
+    return { x, w, top, bottom: H - 0.85, noFoot: false };
+  }
+
+  function bulletList(sl, items, x, w, top, bottom) {
+    const list = items.slice(0, 6);
+    const step = Math.min(0.85, Math.max(0.55, (bottom - top) / Math.max(list.length, 1)));
+    list.forEach((b, j) => {
+      const y = top + j*step;
+      if (T.bullet === 'square')      sl.addShape('rect',    { x, y:y+0.16, w:0.13, h:0.13, fill:{color:A} });
+      else if (T.bullet === 'dot')    sl.addShape('ellipse', { x, y:y+0.15, w:0.15, h:0.15, fill:{color:A} });
+      else if (T.bullet === 'dash')   sl.addShape('rect',    { x, y:y+0.21, w:0.26, h:0.035, fill:{color:A} });
+      else if (T.bullet === 'arrow')  sl.addText('▸', { x:x-0.04, y:y-0.05, w:0.4, h:0.4, fontFace:T.text, fontSize:16, color:A });
+      else if (T.bullet === 'number') sl.addText(String(j+1), { x, y:y-0.05, w:0.35, h:0.4, fontFace:T.head, fontSize:14, bold:true, color:A });
+      const inset = T.bullet === 'dash' ? 0.5 : 0.45;
+      sl.addText(txt(b), {
+        x:x+inset, y:y-0.06, w:w-inset-0.15, h:Math.min(step, 0.75),
+        fontFace:T.text, fontSize:17, color:T.ink, valign:'top', lineSpacing:23,
+      });
+    });
+  }
+
+  function cover(sl, title, subtitle, footL, footR, isCover) {
     const style = T.coverStyle;
     sl.background = { color: T.coverBg };
     const onDark = isDark(T.coverBg);
-    const ink = T.coverInk, sub = T.coverSub;
     let tx = MX, tw = W - MX*2 - 1.2, ty = isCover ? 2.7 : 1.9, align = 'left';
 
     if (style === 'block') {
@@ -242,8 +330,6 @@ function buildPptx(deck) {
       sl.addShape('rect', { x:0, y:0, w:0.32, h:H, fill:{color:A} });
       tx = MX + 0.4; tw = W - tx - MX - 1.0;
     } else if (style === 'split') {
-      // Guard against a theme whose accent equals its cover background: the
-      // two halves would paint the same colour and the split would vanish.
       const panel = (A.toUpperCase() === T.coverBg.toUpperCase()) ? T.ink : A;
       sl.addShape('rect', { x:0, y:0, w:W*0.38, h:H, fill:{color:panel} });
       sl.addShape('rect', { x:W*0.38, y:0, w:W*0.62, h:H, fill:{color:T.coverBg} });
@@ -253,65 +339,90 @@ function buildPptx(deck) {
       sl.addShape('rect', { x:W/2-0.36, y:ty-0.45, w:0.72, h:0.05, fill:{color:A} });
     }
 
+    const size = isCover ? T.coverSize : T.coverSize - 8;
     sl.addText(txt(title), {
-      x:tx, y:ty, w:tw, h:2.0, fontFace:T.head, fontSize:isCover ? T.coverSize : T.coverSize - 8,
-      bold:true, color:ink, valign:'top', align, lineSpacing:Math.round((isCover ? T.coverSize : T.coverSize-8) * 1.16),
+      x:tx, y:ty, w:tw, h:2.0, fontFace:T.head, fontSize:size, bold:true,
+      color:T.coverInk, valign:'top', align, lineSpacing:Math.round(size*1.16),
     });
     if (txt(subtitle)) {
       sl.addText(txt(subtitle), {
         x:tx, y:ty + (isCover ? 1.9 : 1.5), w:Math.min(tw, W-tx-1.0), h:1.0,
-        fontFace:T.text, fontSize:16, color:sub, align, lineSpacing:25,
+        fontFace:T.text, fontSize:16, color:T.coverSub, align, lineSpacing:25,
       });
     }
-    if (txt(footL)) sl.addText(txt(footL), { x:tx, y:H-1.05, w:6, h:0.35, fontFace:T.text, fontSize:13, color:sub, align });
-    if (txt(footR)) sl.addText(txt(footR), { x:W-MX-5, y:H-1.05, w:5, h:0.35, fontFace:T.text, fontSize:13, color:sub, align:'right' });
-  }
-
-  function bulletList(sl, items, x, w, top) {
-    const step = 0.85;
-    items.slice(0, 5).forEach((b, j) => {
-      const y = top + j*step;
-      if (T.bullet === 'square') {
-        sl.addShape('rect', { x, y:y+0.17, w:0.13, h:0.13, fill:{color:A} });
-      } else if (T.bullet === 'dot') {
-        sl.addShape('ellipse', { x, y:y+0.16, w:0.15, h:0.15, fill:{color:A} });
-      } else if (T.bullet === 'dash') {
-        sl.addShape('rect', { x, y:y+0.22, w:0.26, h:0.035, fill:{color:A} });
-      } else if (T.bullet === 'arrow') {
-        sl.addText('▸', { x:x-0.04, y:y-0.04, w:0.4, h:0.4, fontFace:T.text, fontSize:17, color:A });
-      } else if (T.bullet === 'number') {
-        sl.addText(String(j+1), { x, y:y-0.04, w:0.35, h:0.4, fontFace:T.head, fontSize:15, bold:true, color:A });
-      }
-      const inset = T.bullet === 'dash' ? 0.5 : 0.45;
-      sl.addText(txt(b), {
-        x:x+inset, y:y-0.04, w:w-inset-0.2, h:0.72,
-        fontFace:T.text, fontSize:18, color:T.ink, valign:'top', lineSpacing:25,
-      });
-    });
+    if (txt(footL)) sl.addText(txt(footL), { x:tx, y:H-1.05, w:6, h:0.35, fontFace:T.text, fontSize:13, color:T.coverSub, align });
+    if (txt(footR)) sl.addText(txt(footR), { x:W-MX-5, y:H-1.05, w:5, h:0.35, fontFace:T.text, fontSize:13, color:T.coverSub, align:'right' });
   }
 
   slides.forEach((s, i) => {
     const sl = pptx.addSlide();
-    const layout = txt(s.layout).toLowerCase();
+    const L = txt(s.layout).toLowerCase();
     const n = i + 1;
 
-    if (layout === 'title') {
-      coverish(sl, txt(s.title) || txt(m.title), txt(s.subtitle) || txt(m.subtitle),
+    /* ---- full-bleed layouts: no page grid at all ---- */
+    if (L === 'title') {
+      cover(sl, txt(s.title) || txt(m.title), txt(s.subtitle) || txt(m.subtitle),
         txt(m.presenter), txt(m.client) ? 'Prepared for ' + txt(m.client) : '', true);
 
-    } else if (layout === 'closing') {
-      coverish(sl, txt(s.title), txt(s.subtitle), '', '', false);
+    } else if (L === 'closing') {
+      cover(sl, txt(s.title), txt(s.subtitle), '', '', false);
       const onDark = isDark(T.coverBg);
       const bx = T.coverStyle === 'split' ? W*0.38 + 0.7 : (T.coverStyle === 'edge' ? MX + 0.4 : MX);
-      const bw = W - bx - MX - 0.5;
       arr(s.bullets).slice(0, 4).forEach((b, j) => {
-        const y = 4.35 + j*0.62;
-        sl.addText(String(j+1), { x:bx, y, w:0.4, h:0.42, fontFace:T.head, fontSize:15, bold:true,
-          color: onDark ? A : T.coverInk });
-        sl.addText(txt(b), { x:bx+0.45, y, w:bw, h:0.42, fontFace:T.text, fontSize:16, color:T.coverInk, valign:'top' });
+        const y = 4.35 + j*0.6;
+        sl.addText(String(j+1), { x:bx, y, w:0.4, h:0.42, fontFace:T.head, fontSize:14, bold:true, color: onDark ? A : T.coverInk });
+        sl.addText(txt(b), { x:bx+0.42, y, w:W-bx-MX-0.5, h:0.42, fontFace:T.text, fontSize:15, color:T.coverInk, valign:'top' });
       });
 
-    } else if (layout === 'quote') {
+    } else if (L === 'section') {
+      const bg = isDark(T.bg) ? T.panel : A;
+      sl.background = { color: bg };
+      const onDark = isDark(bg);
+      sl.addText(String(n).padStart(2,'0'), {
+        x:MX, y:2.05, w:3, h:1.5, fontFace:T.head, fontSize:76, bold:true,
+        color: onDark ? 'FFFFFF' : '10151F', valign:'top',
+      });
+      sl.addShape('rect', { x:MX, y:3.65, w:1.1, h:0.06, fill:{color: onDark ? 'FFFFFF' : '10151F'} });
+      sl.addText(txt(s.title), {
+        x:MX, y:3.95, w:W-MX*2-1.5, h:1.6, fontFace:T.head, fontSize:34, bold:true,
+        color: onDark ? 'FFFFFF' : '10151F', valign:'top', lineSpacing:42,
+      });
+      if (txt(s.subtitle)) sl.addText(txt(s.subtitle), {
+        x:MX, y:5.5, w:W-MX*2-2.0, h:0.7, fontFace:T.text, fontSize:15,
+        color: onDark ? 'D8DEE8' : '3A4250',
+      });
+
+    } else if (L === 'statement') {
+      const bg = isDark(T.bg) ? T.panel : T.ink;
+      sl.background = { color: bg };
+      const body = txt(s.text) || txt(s.title);
+      sl.addShape('rect', { x:MX, y:2.05, w:0.9, h:0.07, fill:{color:A} });
+      sl.addText(body, {
+        x:MX, y:2.45, w:W-MX*2-0.8, h:3.0, fontFace:T.head,
+        fontSize: body.length > 110 ? 30 : body.length > 60 ? 38 : 46,
+        bold:true, color:'FFFFFF', valign:'top', lineSpacing: body.length > 110 ? 42 : 52,
+      });
+      if (txt(s.kicker)) sl.addText(txt(s.kicker), {
+        x:MX, y:5.75, w:W-MX*2-1.0, h:0.6, fontFace:T.text, fontSize:15, color:'B9C4D4',
+      });
+      foot(sl, n, '7C879A');
+
+    } else if (L === 'spotlight') {
+      sl.background = { color: A };
+      const onDark = isDark(A);
+      const ink = onDark ? 'FFFFFF' : '10151F';
+      const word = txt(s.value) || txt(s.title);
+      sl.addText(word, {
+        x:MX, y:1.55, w:W-MX*2, h:3.2, fontFace:T.head,
+        fontSize: fitSize(word, W-MX*2, 150), bold:true, color:ink, valign:'middle',
+      });
+      sl.addShape('rect', { x:MX, y:4.95, w:1.3, h:0.06, fill:{color:ink} });
+      sl.addText(txt(s.label) || txt(s.subtitle), {
+        x:MX, y:5.25, w:W-MX*2-1.5, h:1.2, fontFace:T.text, fontSize:19, color:ink, valign:'top', lineSpacing:27,
+      });
+      foot(sl, n, ink);
+
+    } else if (L === 'quote') {
       sl.background = { color: T.quoteBg };
       const onDark = isDark(T.quoteBg);
       const qInk = onDark ? T.coverInk : T.ink;
@@ -324,117 +435,192 @@ function buildPptx(deck) {
       sl.addText('— ' + (txt(s.attribution) || txt(m.client)), {
         x:MX+0.05, y:5.5, w:W-MX*2, h:0.4, fontFace:T.text, fontSize:14, color:qMut,
       });
-      sl.addText(txt(m.client) + '   ·   ' + n + ' / ' + total, {
-        x:MX, y:H-0.62, w:W-MX*2, h:0.3, fontFace:T.text, fontSize:10, color:qMut, align:'right',
-      });
+      foot(sl, n, qMut);
 
-    } else if (layout === 'three') {
-      const { tx, tw } = chrome(sl, s.title, n);
-      const cards = arr(s.cards).slice(0, 3);
-      const gap = 0.35, cw = (tw - gap*(cards.length-1)) / Math.max(cards.length, 1);
-      cards.forEach((c, j) => {
-        const x = tx + j*(cw+gap);
-        let hy = 3.22, by = 4.1;
-        if (T.cards === 'filled') {
-          sl.addShape('roundRect', { x, y:2.55, w:cw, h:3.3, fill:{color:T.panel}, line:{color:T.rule,width:1}, rectRadius:0.09 });
-          sl.addShape('rect', { x:x+0.42, y:3.0, w:0.34, h:0.05, fill:{color:A} });
-        } else if (T.cards === 'outline') {
-          sl.addShape('rect', { x, y:2.55, w:cw, h:3.3, fill:{color:T.bg}, line:{color:A,width:1.25} });
-          sl.addShape('rect', { x:x+0.42, y:3.0, w:0.34, h:0.05, fill:{color:A} });
-        } else if (T.cards === 'top-rule') {
-          sl.addShape('rect', { x, y:2.55, w:cw, h:0.045, fill:{color:A} });
-          hy = 2.95; by = 3.85;
-        } else if (T.cards === 'numbered') {
-          sl.addText(String(j+1).padStart(2,'0'), {
-            x, y:2.5, w:1.2, h:0.7, fontFace:T.head, fontSize:34, bold:true, color:A, valign:'top',
-          });
-          hy = 3.35; by = 4.2;
+    } else if (L === 'split') {
+      sl.background = { color: T.bg };
+      const pw = W * 0.42;
+      sl.addShape('rect', { x:0, y:0, w:pw, h:H, fill:{color:A} });
+      const onDark = isDark(A);
+      sl.addText(txt(s.statement) || txt(s.title), {
+        x:0.75, y:1.9, w:pw-1.4, h:3.4, fontFace:T.head, fontSize:30, bold:true,
+        color: onDark ? 'FFFFFF' : '10151F', valign:'top', lineSpacing:38,
+      });
+      sl.addText(txt(s.title) !== (txt(s.statement) || txt(s.title)) ? txt(s.title) : '', {
+        x:0.75, y:0.85, w:pw-1.4, h:0.6, fontFace:T.text, fontSize:13,
+        color: onDark ? 'FFFFFFCC' : '2A3140',
+      });
+      bulletList(sl, arr(s.bullets), pw + 0.75, W - pw - 0.75 - MX, 2.0, H - 1.1);
+      foot(sl, n);
+
+    /* ---- grid-framed layouts ---- */
+    } else {
+      const f = frame(sl, s.title, n);
+      const { x, w, top } = f;
+      const bottom = f.bottom;
+
+      if (L === 'three') {
+        const cards = arr(s.cards).slice(0, 3);
+        const gap = 0.3, cw = (w - gap*(cards.length-1)) / Math.max(cards.length, 1);
+        const ch = Math.min(3.3, bottom - top - 0.15);
+        cards.forEach((c, j) => {
+          const cx = x + j*(cw+gap);
+          let hy = top + 0.62, by = top + 1.5;
+          if (T.cards === 'filled') {
+            sl.addShape('roundRect', { x:cx, y:top, w:cw, h:ch, fill:{color:T.panel}, line:{color:T.rule,width:1}, rectRadius:0.09 });
+            sl.addShape('rect', { x:cx+0.38, y:top+0.42, w:0.34, h:0.05, fill:{color:A} });
+          } else if (T.cards === 'outline') {
+            sl.addShape('rect', { x:cx, y:top, w:cw, h:ch, fill:{color:T.bg}, line:{color:A,width:1.25} });
+            sl.addShape('rect', { x:cx+0.38, y:top+0.42, w:0.34, h:0.05, fill:{color:A} });
+          } else if (T.cards === 'top-rule') {
+            sl.addShape('rect', { x:cx, y:top, w:cw, h:0.045, fill:{color:A} });
+            hy = top + 0.32; by = top + 1.2;
+          } else if (T.cards === 'numbered') {
+            sl.addText(String(j+1).padStart(2,'0'), { x:cx, y:top-0.05, w:1.2, h:0.7, fontFace:T.head, fontSize:32, bold:true, color:A, valign:'top' });
+            hy = top + 0.78; by = top + 1.6;
+          }
+          const pad = (T.cards === 'filled' || T.cards === 'outline') ? 0.38 : 0;
+          sl.addText(txt(c.heading), { x:cx+pad, y:hy, w:cw-pad*2, h:0.8, fontFace:T.head, fontSize:17, bold:true, color:T.ink, valign:'top', lineSpacing:22 });
+          sl.addText(txt(c.body), { x:cx+pad, y:by, w:cw-pad*2, h:ch-(by-top)-0.15, fontFace:T.text, fontSize:13.5, color:T.body, valign:'top', lineSpacing:20 });
+        });
+
+      } else if (L === 'metrics') {
+        const ms = arr(s.metrics).slice(0, 3);
+        const gap = T.metrics === 'boxed' ? 0.28 : 0;
+        const cw = (w - gap*(ms.length-1)) / Math.max(ms.length, 1);
+        ms.forEach((mm, j) => {
+          const mx = x + j*(cw+gap);
+          if (T.metrics === 'boxed') sl.addShape('rect', { x:mx, y:top, w:cw, h:Math.min(2.6, bottom-top), fill:{color:T.panel}, line:{color:T.rule,width:1} });
+          else if (j > 0) sl.addShape('rect', { x:mx-0.02, y:top+0.25, w:0.012, h:Math.min(2.1, bottom-top-0.4), fill:{color:T.rule} });
+          const pad = T.metrics === 'boxed' ? 0.36 : 0.08;
+          sl.addText(txt(mm.value), { x:mx+pad, y:top+0.22, w:cw-pad*2, h:1.2, fontFace:T.head, fontSize:fitSize(txt(mm.value), cw-pad*2, 52), bold:true, color:A, valign:'top' });
+          if (T.metrics === 'underline') sl.addShape('rect', { x:mx+pad, y:top+1.5, w:1.4, h:0.035, fill:{color:A} });
+          sl.addText(txt(mm.label), { x:mx+pad, y:top+1.68, w:cw-pad*2, h:1.2, fontFace:T.text, fontSize:14, color:T.body, valign:'top', lineSpacing:21 });
+        });
+
+      } else if (L === 'bignum') {
+        const v = txt(s.value);
+        sl.addText(v, { x, y:top+0.1, w:w*0.46, h:2.3, fontFace:T.head, fontSize:fitSize(v, w*0.46, 108), bold:true, color:A, valign:'top' });
+        sl.addShape('rect', { x:x+w*0.5, y:top+0.25, w:0.012, h:Math.min(2.4, bottom-top-0.4), fill:{color:T.rule} });
+        sl.addText(txt(s.label) || txt(s.subtitle), { x:x+w*0.54, y:top+0.15, w:w*0.46, h:1.1, fontFace:T.head, fontSize:21, bold:true, color:T.ink, valign:'top', lineSpacing:27 });
+        sl.addText(txt(s.note) || arr(s.bullets).join('  ·  '), { x:x+w*0.54, y:top+1.35, w:w*0.46, h:1.6, fontFace:T.text, fontSize:14, color:T.body, valign:'top', lineSpacing:21 });
+
+      } else if (L === 'timeline') {
+        const steps = arr(s.steps).slice(0, 4);
+        const cw = w / Math.max(steps.length, 1);
+        const ly = top + 0.75;
+        sl.addShape('rect', { x, y:ly, w:w-cw*0.35, h:0.028, fill:{color:T.rule} });
+        steps.forEach((st, j) => {
+          const sx = x + j*cw;
+          sl.addShape('ellipse', { x:sx, y:ly-0.11, w:0.26, h:0.26, fill:{color:A} });
+          sl.addText(txt(st.label), { x:sx, y:top-0.02, w:cw-0.3, h:0.6, fontFace:T.head, fontSize:15, bold:true, color:A, valign:'bottom' });
+          sl.addText(txt(st.text), { x:sx, y:ly+0.42, w:cw-0.4, h:2.2, fontFace:T.text, fontSize:14, color:T.body, valign:'top', lineSpacing:21 });
+        });
+
+      } else if (L === 'chevron') {
+        // A true chevron shape cuts a notch proportional to its height at BOTH
+        // ends, which left under an inch of usable text column at four steps.
+        // Boxes joined by arrows read as the same flow and stay legible.
+        const steps = arr(s.steps).slice(0, 4);
+        const aw = 0.5;
+        const cw = (w - aw*(steps.length-1)) / Math.max(steps.length, 1);
+        const ch = Math.min(2.2, bottom - top - 0.3);
+        const cy = top + Math.max(0, (bottom - top - ch) / 2);
+        steps.forEach((st, j) => {
+          const sx = x + j*(cw + aw);
+          const lead = j % 2 === 0;
+          sl.addShape('rect', { x:sx, y:cy, w:cw, h:ch,
+            fill:{color: lead ? A : T.panel}, line:{color: lead ? A : T.rule, width:1} });
+          const ink = lead ? (isDark(A) ? 'FFFFFF' : '10151F') : T.ink;
+          const sub = lead ? (isDark(A) ? 'FFFFFFDD' : '2A3140') : T.body;
+          sl.addText(txt(st.label), { x:sx+0.3, y:cy+0.26, w:cw-0.6, h:0.5,
+            fontFace:T.head, fontSize:15, bold:true, color:ink, valign:'top' });
+          sl.addText(txt(st.text), { x:sx+0.3, y:cy+0.82, w:cw-0.6, h:ch-0.98,
+            fontFace:T.text, fontSize:12.5, color:sub, valign:'top', lineSpacing:17 });
+          if (j < steps.length - 1) {
+            sl.addText('▶', { x:sx+cw, y:cy+ch/2-0.25, w:aw, h:0.5,
+              fontFace:T.text, fontSize:15, color:A, align:'center', valign:'middle' });
+          }
+        });
+
+      } else if (L === 'ladder') {
+        const steps = arr(s.steps).slice(0, 4);
+        const bh = 0.62, gap = 0.16;
+        steps.forEach((st, j) => {
+          const y = bottom - 0.25 - (steps.length - j) * (bh + gap);
+          const bw = w * (0.42 + 0.19*j);
+          sl.addShape('rect', { x, y, w:Math.min(bw, w), h:bh, fill:{color: j === steps.length-1 ? A : T.panel}, line:{color:T.rule,width:1} });
+          const ink = j === steps.length-1 ? (isDark(A) ? 'FFFFFF' : '10151F') : T.ink;
+          sl.addText(txt(st.label), { x:x+0.3, y:y+0.05, w:2.4, h:bh-0.1, fontFace:T.head, fontSize:14, bold:true, color:ink, valign:'middle' });
+          sl.addText(txt(st.text), { x:x+2.8, y:y+0.05, w:Math.min(bw,w)-3.1, h:bh-0.1, fontFace:T.text, fontSize:13, color:ink, valign:'middle' });
+        });
+
+      } else if (L === 'table') {
+        const rows = arr(s.rows).slice(0, 5);
+        const lw = w * 0.46, rw = w * 0.54;
+        sl.addText(txt(s.leftHead) || 'Today', { x, y:top, w:lw-0.2, h:0.45, fontFace:T.head, fontSize:13, bold:true, color:T.muted });
+        sl.addText(txt(s.rightHead) || 'With this in place', { x:x+lw, y:top, w:rw-0.2, h:0.45, fontFace:T.head, fontSize:13, bold:true, color:A });
+        sl.addShape('rect', { x, y:top+0.48, w, h:0.022, fill:{color:T.rule} });
+        const rh = Math.min(0.92, (bottom - top - 0.7) / Math.max(rows.length, 1));
+        rows.forEach((r, j) => {
+          const y = top + 0.62 + j*rh;
+          sl.addText(txt(r.left),  { x, y, w:lw-0.3, h:rh-0.08, fontFace:T.text, fontSize:14, color:T.body, valign:'top', lineSpacing:19 });
+          sl.addText(txt(r.right), { x:x+lw, y, w:rw-0.2, h:rh-0.08, fontFace:T.text, fontSize:14, color:T.ink, valign:'top', lineSpacing:19 });
+          sl.addShape('rect', { x, y:y+rh-0.09, w, h:0.008, fill:{color:T.rule} });
+        });
+        sl.addShape('rect', { x:x+lw-0.16, y:top, w:0.012, h:bottom-top-0.1, fill:{color:T.rule} });
+
+      } else if (L === 'quad') {
+        const cells = arr(s.cards).slice(0, 4);
+        const gap = 0.26;
+        const cw = (w - gap) / 2, ch = Math.min(1.9, (bottom - top - gap) / 2);
+        cells.forEach((c, j) => {
+          const cx = x + (j % 2) * (cw + gap);
+          const cy = top + Math.floor(j / 2) * (ch + gap);
+          sl.addShape('rect', { x:cx, y:cy, w:cw, h:ch, fill:{color: j === 0 ? A : T.panel}, line:{color:T.rule,width:1} });
+          const ink = j === 0 ? (isDark(A) ? 'FFFFFF' : '10151F') : T.ink;
+          const sub = j === 0 ? (isDark(A) ? 'FFFFFFDD' : '2A3140') : T.body;
+          sl.addText(txt(c.heading), { x:cx+0.34, y:cy+0.24, w:cw-0.68, h:0.55, fontFace:T.head, fontSize:16, bold:true, color:ink, valign:'top' });
+          sl.addText(txt(c.body), { x:cx+0.34, y:cy+0.82, w:cw-0.68, h:ch-0.95, fontFace:T.text, fontSize:13, color:sub, valign:'top', lineSpacing:18 });
+        });
+
+      } else if (L === 'stack') {
+        const rows = arr(s.rows).slice(0, 5);
+        const rh = Math.min(0.86, (bottom - top - 0.1) / Math.max(rows.length, 1));
+        rows.forEach((r, j) => {
+          const y = top + j*rh;
+          sl.addShape('rect', { x, y, w:0.05, h:rh-0.12, fill:{color:A} });
+          sl.addText(txt(r.left), { x:x+0.28, y, w:w*0.34, h:rh-0.12, fontFace:T.head, fontSize:15, bold:true, color:T.ink, valign:'middle' });
+          sl.addText('→', { x:x+w*0.36, y, w:0.4, h:rh-0.12, fontFace:T.text, fontSize:15, color:A, valign:'middle' });
+          sl.addText(txt(r.right), { x:x+w*0.42, y, w:w*0.58, h:rh-0.12, fontFace:T.text, fontSize:14, color:T.body, valign:'middle', lineSpacing:19 });
+        });
+
+      } else if (L === 'agenda') {
+        const items = arr(s.bullets).slice(0, 5);
+        const rh = Math.min(0.86, (bottom - top - 0.1) / Math.max(items.length, 1));
+        items.forEach((b, j) => {
+          const y = top + j*rh;
+          sl.addText(String(j+1).padStart(2,'0'), { x, y, w:0.62, h:0.5, fontFace:T.head, fontSize:16, bold:true, color:A });
+          sl.addText(txt(b), { x:x+0.72, y:y-0.02, w:w-0.8, h:0.55, fontFace:T.text, fontSize:17, color:T.ink, valign:'top' });
+          sl.addShape('rect', { x, y:y+rh-0.14, w, h:0.008, fill:{color:T.rule} });
+        });
+
+      } else { // bullets
+        let t = top;
+        if (txt(s.subtitle)) {
+          sl.addText(txt(s.subtitle), { x, y:top-0.42, w:w-0.5, h:0.5, fontFace:T.text, fontSize:15, color:T.muted, valign:'top' });
+          t = top + 0.2;
         }
-        const pad = (T.cards === 'filled' || T.cards === 'outline') ? 0.42 : 0;
-        sl.addText(txt(c.heading), {
-          x:x+pad, y:hy, w:cw-pad*2, h:0.85, fontFace:T.head, fontSize:18, bold:true,
-          color:T.ink, valign:'top', lineSpacing:23,
-        });
-        sl.addText(txt(c.body), {
-          x:x+pad, y:by, w:cw-pad*2, h:1.6, fontFace:T.text, fontSize:14,
-          color:T.body, valign:'top', lineSpacing:21,
-        });
-      });
-
-    } else if (layout === 'metrics') {
-      const { tx, tw } = chrome(sl, s.title, n);
-      const ms = arr(s.metrics).slice(0, 3);
-      const gap = T.metrics === 'boxed' ? 0.3 : 0;
-      const cw = (tw - gap*(ms.length-1)) / Math.max(ms.length, 1);
-      ms.forEach((mm, j) => {
-        const x = tx + j*(cw+gap);
-        if (T.metrics === 'boxed') {
-          sl.addShape('rect', { x, y:2.7, w:cw, h:2.6, fill:{color:T.panel}, line:{color:T.rule,width:1} });
-        } else if (T.metrics === 'plain' && j > 0) {
-          sl.addShape('rect', { x:x-0.02, y:3.0, w:0.012, h:2.15, fill:{color:T.rule} });
-        }
-        const pad = T.metrics === 'boxed' ? 0.4 : 0.1;
-        sl.addText(txt(mm.value), {
-          x:x+pad, y:2.95, w:cw-pad*2, h:1.25, fontFace:T.head, fontSize:metricSize(txt(mm.value), cw-pad*2),
-          bold:true, color:A, valign:'top',
-        });
-        if (T.metrics === 'underline') {
-          sl.addShape('rect', { x:x+pad, y:4.22, w:1.5, h:0.035, fill:{color:A} });
-        }
-        sl.addText(txt(mm.label), {
-          x:x+pad, y:T.metrics === 'underline' ? 4.45 : 4.4, w:cw-pad*2, h:1.3,
-          fontFace:T.text, fontSize:15, color:T.body, valign:'top', lineSpacing:22,
-        });
-      });
-
-    } else if (layout === 'agenda') {
-      const { tx, tw } = chrome(sl, s.title, n);
-      arr(s.bullets).slice(0, 5).forEach((b, j) => {
-        const y = 2.55 + j*0.86;
-        sl.addText(String(j+1).padStart(2,'0'), {
-          x:tx, y, w:0.62, h:0.55, fontFace:T.head, fontSize:17, bold:true, color:A,
-        });
-        sl.addText(txt(b), {
-          x:tx+0.72, y:y-0.02, w:tw-0.8, h:0.6, fontFace:T.text, fontSize:18, color:T.ink, valign:'top',
-        });
-        sl.addShape('rect', { x:tx, y:y+0.6, w:tw, h:0.008, fill:{color:T.rule} });
-      });
-
-    } else { // bullets
-      const { tx, tw } = chrome(sl, s.title, n);
-      let top = 2.5;
-      if (txt(s.subtitle)) {
-        sl.addText(txt(s.subtitle), {
-          x:tx, y:2.02, w:tw-0.6, h:0.5, fontFace:T.text, fontSize:16, color:T.muted, valign:'top',
-        });
-        top = 2.95;
+        bulletList(sl, arr(s.bullets), x, w, t, bottom);
       }
-      bulletList(sl, arr(s.bullets), tx, tw, top);
+
+      if (!f.noFoot) foot(sl, n);
     }
 
     if (txt(s.script)) sl.addNotes(txt(s.script));
   });
 
   return pptx;
-}
-
-// Metric values are model-written, so "Monday" turns up next to "3x". Size the
-// value to the column it has to sit in rather than letting it wrap onto its label.
-function metricSize(value, widthInches) {
-  const len = Math.max(1, String(value).length);
-  // 0.74em per character covers the widest face in use (Tahoma / Courier New),
-  // and 0.25in comes off for PptxGenJS's internal text-box insets. Measured
-  // against "Monday", which wrapped onto its own label at a looser estimate.
-  const usable = Math.max(0.5, widthInches - 0.25);
-  const fit = (usable * 72) / (0.74 * len);
-  return Math.max(20, Math.min(54, Math.floor(fit)));
-}
-
-function isDark(hex) {
-  const h = String(hex || '').replace('#','');
-  if (h.length !== 6) return false;
-  const r = parseInt(h.slice(0,2),16), g = parseInt(h.slice(2,4),16), b = parseInt(h.slice(4,6),16);
-  return (0.299*r + 0.587*g + 0.114*b) < 140;
 }
 
 function fileName(deck) {

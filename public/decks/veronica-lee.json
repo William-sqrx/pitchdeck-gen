@@ -1,162 +1,127 @@
 {
  "meta": {
   "client": "RetailCo",
-  "title": "Prove the Frontline Loop in Weeks",
-  "subtitle": "A narrow APAC store pilot for shop-floor visibility, manager playbooks, and faster onboarding",
+  "title": "Proving the Frontline Loop in Weeks",
+  "subtitle": "A narrow pilot for 120 APAC stores and 2,000 frontline staff",
   "presenter": "Veronica LEE"
  },
  "slides": [
   {
    "layout": "title",
-   "title": "Prove the Frontline Loop in Weeks",
-   "subtitle": "A narrow APAC store pilot for shop-floor visibility, manager playbooks, and faster onboarding",
-   "script": "We are not asking RetailCo to start a platform programme that lands next year. We are proposing a narrow pilot in a handful of stores that proves the operating loop in weeks. The loop is simple: we see what happens on the floor with Spacesight, we hear what staff actually say with Echo, we capture the best routines in Harbor Wiki, and we use Alivia to turn the pilot evidence into the rollout proposal. The goal is speed to value, with a checkpoint before we scale across 120 stores."
+   "title": "Proving the Frontline Loop in Weeks",
+   "subtitle": "A narrow pilot for 120 APAC stores and 2,000 frontline staff",
+   "script": "We are here to make this practical for RetailCo. We are not proposing a long platform programme that only becomes useful next year. We are proposing a tight first phase in a handful of stores, built around the four pains we heard from the COO: floor visibility, the 3x gap between managers, six-week onboarding, and painful roster coordination. The point is to prove a working loop quickly: see what happens, hear what is said, capture what works, and turn that proof into the rollout proposal."
+  },
+  {
+   "layout": "statement",
+   "text": "We can prove the frontline loop in weeks, not wait for a platform programme next year.",
+   "kicker": "The sentence to remember",
+   "script": "We believe the fastest route to confidence is a deliberately narrow pilot. RetailCo already has 120 stores and 2,000 frontline staff, so a big-bang transformation would create complexity before it creates learning. Instead, we start where the operating questions are clearest. We pick a small store set, instrument the moments that matter, compare what strong teams do differently, and package the evidence. That gives us a decision point in weeks: expand, adjust, or stop based on RetailCo’s own frontline proof."
   },
   {
    "layout": "quote",
-   "quote": "The sentence to remember: RetailCo can learn from today’s shop floor before next Monday’s spreadsheet arrives.",
-   "attribution": "Proposal principle",
-   "script": "We want this sentence to anchor the whole conversation: RetailCo can learn from today’s shop floor before next Monday’s spreadsheet arrives. That matters because every pain you raised has a delay inside it. The Monday spreadsheet delays visibility. The 3x spread delays the transfer of what great managers do. Six-week onboarding delays productivity. Scheduling delays the store team before the week even starts. Our proposal starts where delay is most expensive: a small live pilot that closes the observe, learn, and standardise loop quickly."
-  },
-  {
-   "layout": "agenda",
-   "title": "The pilot logic: problem, cost, fix, proof",
-   "bullets": [
-    "Start with the Monday blind spot",
-    "Expose the 3x manager gap",
-    "Compress the six-week onboarding path",
-    "Name scheduling as a separate open item",
-    "Checkpoint before any wider rollout"
-   ],
-   "script": "We will keep the argument deliberately tight. For each issue, we start with the problem in your words, then name what it actually costs operationally, then show which product fixes it, and finally define what proof we would expect from a pilot. That structure is important because it avoids a generic transformation story. We are not trying to boil the ocean across 120 stores and 2,000 frontline staff. We are trying to prove, in selected stores, whether the loop creates better decisions soon enough to justify scaling."
-  },
-  {
-   "layout": "three",
-   "title": "Monday’s spreadsheet is a visibility delay",
-   "cards": [
-    {
-     "heading": "Problem",
-     "body": "Shop-floor reality is reported after the week has already finished."
-    },
-    {
-     "heading": "Cost",
-     "body": "COO decisions lag customer behaviour, staff practice, and in-store execution."
-    },
-    {
-     "heading": "Fix",
-     "body": "Spacesight shows floor activity while stores are still operating."
-    }
-   ],
-   "script": "Your first problem was the cleanest signal: “I have no idea what actually happens on my shop floor. I get a spreadsheet on Monday about last week.” The cost is not just reporting inconvenience. It means leadership is managing through a rear-view mirror. If a display is ignored, a queue builds, or a routine is skipped, the first structured view arrives after the opportunity has passed. Spacesight is the fix here. It gives the pilot stores an in-store vision analytics layer so we can observe patterns while the store is still live."
-  },
-  {
-   "layout": "metrics",
-   "title": "Pilot proof for shop-floor visibility",
-   "metrics": [
-    {
-     "value": "120",
-     "label": "Stores to scale only after proof"
-    },
-    {
-     "value": "Today",
-     "label": "Floor signals before Monday"
-    },
-    {
-     "value": "Few",
-     "label": "Stores in first phase"
-    }
-   ],
-   "script": "The proof we want from Spacesight is not a beautiful dashboard. It is whether RetailCo can act sooner. In the pilot, we would select a small number of stores, define the floor events that matter most, and compare the operating conversation before and after live visibility. The question is practical: can store leadership see the same day what previously waited until Monday? If the answer is yes, then scaling to the broader 120-store estate becomes an evidence-based decision rather than a leap of faith."
-  },
-  {
-   "layout": "three",
-   "title": "The 3x manager gap is uncaptured know-how",
-   "cards": [
-    {
-     "heading": "Problem",
-     "body": "Best store managers outsell the worst ones by 3x."
-    },
-    {
-     "heading": "Cost",
-     "body": "RetailCo depends on individual talent instead of repeatable operating habits."
-    },
-    {
-     "heading": "Fix",
-     "body": "Echo captures conversations; Harbor Wiki turns winning behaviours into playbooks."
-    }
-   ],
-   "script": "The second problem is the performance gap you already quantified: your best store managers outsell your worst ones by 3x, and you cannot bottle what they do. We should treat that as a knowledge-capture problem, not only a sales-performance problem. Echo lets us hear what frontline staff actually say to customers and score the conversations. Harbor Wiki then becomes the place where the best prompts, routines, objection handling, and manager habits are written down so other teams can find them. That is how know-how becomes transferable."
-  },
-  {
-   "layout": "quote",
-   "quote": "My best store managers outsell my worst ones by 3x. I cannot bottle what they do.",
+   "quote": "I have no idea what actually happens on my shop floor. I get a spreadsheet on Monday about last week.",
    "attribution": "RetailCo COO",
-   "script": "This quote gives the pilot a very specific burden of proof. We do not need to claim we can erase the whole 3x spread in a pilot, and we should not pretend that software alone makes every manager identical. What we can prove is whether the behaviours behind stronger performance can be observed, scored, and documented. Echo helps identify the frontline language and coaching patterns. Harbor Wiki makes those patterns searchable and reusable. The pilot succeeds if RetailCo can point to practices that were previously trapped inside individual managers."
+   "script": "This is the first problem because it sets the clock speed for every other decision. If we only understand last week on Monday, we are always managing after the fact. We can see missed service moments, queue pressure, conversion behaviours, and staff activity only once the chance to correct them has passed. Spacesight changes that timing. It gives RetailCo a way to see what is happening on the floor while it still matters, so store conversations can move from opinion to observed reality."
   },
   {
-   "layout": "bullets",
-   "title": "Six-week onboarding becomes a guided learning loop",
-   "subtitle": "Problem, cost, fix, proof for new hires",
-   "bullets": [
-    "Problem: onboarding takes six weeks",
-    "Cost: learning depends on the shift team",
-    "Fix: Harbor Wiki gives one source of truth",
-    "Proof: new hires follow captured best practice"
-   ],
-   "script": "Your onboarding issue is closely related to the manager gap. Today, a new hire takes six weeks to onboard, and the experience depends entirely on whoever happens to be working that day. The hidden cost is variability: two new hires can enter the same RetailCo brand and learn two different versions of the job. Harbor Wiki gives us a controlled source of truth built from real store evidence, not abstract policy. Echo and Spacesight feed the examples, Harbor Wiki organises them, and the pilot tests whether new hires can follow the same proven routines from day one."
+   "layout": "statement",
+   "text": "The cost of lag is decisions made after the customer has already left.",
+   "kicker": "Problem, then cost",
+   "script": "When the signal arrives late, the cost is not only reporting frustration. It is the lost ability to coach in the moment, test a change during the trading week, or spot a pattern before it becomes normal. A Monday spreadsheet may explain what happened, but it cannot help a store manager recover the Saturday peak. That is why the pilot should not begin with dashboards for headquarters. It should begin with a practical loop in stores where the data can change behaviour the same day."
   },
   {
-   "layout": "three",
-   "title": "Scheduling is real, but it is not solved by pretending",
-   "cards": [
+   "layout": "spotlight",
+   "value": "Today",
+   "label": "Floor events visible while they still matter",
+   "script": "Spacesight is the first fix in the loop because it gives RetailCo eyes on the shop floor. We use in-store vision analytics to surface what is actually happening during trading, not as a retrospective spreadsheet. The value mechanism is simple: if a pattern is visible today, the store leader can respond today. We would use the pilot to identify which floor signals matter most for RetailCo, how they are reviewed, and what action store teams can realistically take without adding another layer of admin."
+  },
+  {
+   "layout": "statement",
+   "text": "The 3x gap is not a talent mystery; it is an operating system waiting to be captured.",
+   "kicker": "From variance to repeatability",
+   "script": "The second problem is the difference between the best and worst store managers. RetailCo described that gap as 3x, which is too large to treat as personality alone. Somewhere inside the best stores are routines, language, coaching habits, and customer interactions that others could copy if we could capture them clearly. Echo and Harbor Wiki work together here. Echo helps us hear and score the customer conversation. Harbor Wiki turns the best observed behaviours into a living playbook that managers and staff can actually use."
+  },
+  {
+   "layout": "stack",
+   "title": "Every COO pain has a named answer",
+   "rows": [
     {
-     "heading": "Problem",
-     "body": "One roster requires coordination across many people and teams."
+     "left": "Monday spreadsheet",
+     "right": "Spacesight shows what happens in-store during trading."
     },
     {
-     "heading": "What we cover",
-     "body": "Spacesight and Echo can provide store activity and staffing context."
+     "left": "3x manager gap",
+     "right": "Echo and Harbor Wiki capture repeatable selling behaviours."
     },
     {
-     "heading": "Open item",
-     "body": "Roster optimisation itself needs a scheduling workflow or integration decision."
+     "left": "Six-week onboarding",
+     "right": "Harbor Wiki gives new hires one trusted operating playbook."
+    },
+    {
+     "left": "Roster coordination",
+     "right": "Open item: scheduling workflow, no roster product in scope."
+    },
+    {
+     "left": "Rollout proposal",
+     "right": "Alivia packages pilot evidence into the client proposal."
     }
    ],
-   "script": "We also want to be explicit about scheduling. You said getting one roster set takes coordination across many people and teams. The products in this proposal do not, by themselves, replace a workforce management or roster optimisation system. What they can do is make the scheduling conversation better informed by actual store activity, customer interactions, and frontline patterns. So we would treat scheduling as an adjacent pilot workstream: capture the evidence that should inform rosters, identify where coordination breaks, and agree whether RetailCo wants an integration or a separate scheduling solution."
+   "script": "We are being explicit about the mapping because this is where pilots either stay useful or become theatre. Spacesight answers the visibility gap. Echo and Harbor Wiki answer the 3x manager gap by capturing what strong performance sounds like and how it is done. Harbor Wiki also reduces dependence in onboarding by giving new hires a trusted place to learn the RetailCo way. Scheduling is different. We do not have a roster engine in this product set, so we would treat roster coordination as an open workflow item and connect pilot findings to that decision separately."
   },
   {
-   "layout": "metrics",
-   "title": "The joined-up pilot loop",
-   "metrics": [
+   "layout": "statement",
+   "text": "New hires should learn from RetailCo’s best day, not whoever happens to be rostered.",
+   "kicker": "Onboarding cost",
+   "script": "The onboarding pain is especially important because RetailCo has 2,000 frontline staff across APAC. When a new hire takes six weeks to become productive and the experience depends on whoever is working that day, the business is relying on chance. Harbor Wiki gives us a place to bottle the routines from the best managers, the strongest customer conversations, and the store practices that Spacesight and Echo reveal. We are not replacing local coaching; we are giving local coaches one consistent source of truth to work from."
+  },
+  {
+   "layout": "bignum",
+   "title": "Pilot proof target",
+   "value": "5",
+   "label": "stores in the first phase",
+   "note": "A small sample is enough to prove the loop before broader rollout.",
+   "script": "We would recommend five stores for the first phase because the goal is proof, not coverage. Five is enough to include different store contexts, compare stronger and weaker operating patterns, and keep the work close enough that we can learn quickly. The proof we want is not a generic ROI model. It is RetailCo evidence: what Spacesight surfaced, what Echo heard, what Harbor Wiki captured, and whether managers and new hires could use that knowledge during the week rather than waiting for Monday’s spreadsheet."
+  },
+  {
+   "layout": "chevron",
+   "title": "The loop we prove before scaling",
+   "steps": [
     {
-     "value": "See",
-     "label": "Spacesight observes shop-floor activity"
+     "label": "Observe",
+     "text": "Spacesight shows floor reality during trading."
     },
     {
-     "value": "Hear",
-     "label": "Echo captures customer conversations"
+     "label": "Hear",
+     "text": "Echo scores the customer conversation."
     },
     {
-     "value": "Bottle",
-     "label": "Harbor Wiki preserves best practice"
+     "label": "Bottle",
+     "text": "Harbor Wiki turns best actions into guidance."
+    },
+    {
+     "label": "Package",
+     "text": "Alivia converts evidence into a proposal."
     }
    ],
-   "script": "The joined-up proposal is stronger than the individual tools because each product plays a different role in the same loop. Spacesight shows what is happening physically in the store. Echo captures what staff say to customers and how those conversations perform. Harbor Wiki turns the best evidence into a practical operating memory that managers and new hires can use. Alivia then packages the pilot results into a client proposal for the next phase. That keeps the whole effort commercial and decision-oriented: learn quickly, document what worked, and decide what scales."
+   "script": "This is the operating loop we want the pilot to prove. First, we observe the floor with Spacesight so we know what is actually happening. Then we hear the customer interaction through Echo, because the difference between good and great often lives in the conversation. Next, we bottle the best repeatable behaviours in Harbor Wiki, so staff and managers have something concrete to use. Finally, Alivia turns the evidence into a proposal for the next phase, including what we learned about the adjacent scheduling workflow."
   },
   {
    "layout": "closing",
-   "title": "Close with a phased rollout, not a big-bang programme",
-   "subtitle": "Phase 1 proves the loop; the checkpoint decides scale",
+   "title": "Approve Phase 1, then decide at checkpoint",
+   "subtitle": "A narrow start, a clear proof point, and no commitment to a year-long programme upfront",
    "bullets": [
-    "Phase 1: pilot a handful of stores for several weeks",
-    "Checkpoint: review visibility, captured behaviours, onboarding content, scheduling findings",
-    "Phase 2: expand only the proven store loop",
-    "Decision: confirm integration path for scheduling"
+    "Select five APAC stores for pilot",
+    "Run Spacesight, Echo, and Harbor Wiki together",
+    "Review proof and scheduling open item",
+    "Use Alivia for the rollout proposal"
    ],
-   "script": "Our ask is to begin with Phase 1: a narrow pilot in a handful of stores over several weeks, focused on the loop rather than a full estate deployment. At the checkpoint, we review four things together: whether Spacesight reduced the Monday blind spot, whether Echo surfaced repeatable behaviours, whether Harbor Wiki made those behaviours usable for onboarding, and what we learned about scheduling coordination. If the proof is strong, Alivia helps turn that evidence into the Phase 2 rollout proposal. If a gap remains, we name it before scaling."
+   "script": "Our ask is to approve Phase 1 as a focused pilot, not a full rollout. We jointly select five APAC stores, run Spacesight, Echo, and Harbor Wiki as one loop, and agree the evidence we need before we start. At the checkpoint, we review what became visible, what top managers do differently, whether the onboarding playbook is usable, and how the roster coordination issue should be handled. If the proof is strong, Alivia packages the rollout proposal so RetailCo can scale with confidence."
   }
  ],
- "accent": "B91C1C",
+ "accent": "7C3AED",
+ "themeId": "editorial",
+ "structureId": "statement",
  "approach": {
   "angle": "Argue speed to value: a narrow pilot in a handful of stores that proves the loop in weeks, not a platform programme that lands next year.",
   "device": "Problem, then what it actually costs, then what fixes it, then proof. Repeat tightly.",
@@ -166,7 +131,44 @@
    "hex": "7C3AED",
    "name": "violet"
   },
+  "theme": {
+   "id": "editorial",
+   "name": "white / editorial",
+   "bg": "FFFFFF",
+   "ink": "111111",
+   "body": "3C3C3C",
+   "muted": "8A8A8A",
+   "panel": "FFFFFF",
+   "rule": "D6D6D6",
+   "accent": "B91C1C",
+   "quoteBg": "FFFFFF",
+   "coverBg": "FFFFFF",
+   "coverInk": "111111",
+   "coverSub": "6B6B6B",
+   "coverStyle": "plain",
+   "head": "Times New Roman",
+   "text": "Arial",
+   "chrome": "rule",
+   "cards": "top-rule",
+   "metrics": "underline",
+   "bullet": "number",
+   "titleSize": 32,
+   "coverSize": 48
+  },
+  "themeId": "editorial",
+  "structure": {
+   "id": "statement",
+   "grid": "centered",
+   "label": "full-bleed statements",
+   "uses": [
+    "statement",
+    "spotlight",
+    "quote",
+    "bignum"
+   ],
+   "brief": "Built out of STATEMENTS. Alternate a full-bleed one-sentence slide with a slide that backs it up. Use \"statement\" at least four times. Almost no bullets."
+  },
+  "structureId": "statement",
   "slides": 11
- },
- "themeId": "editorial"
+ }
 }

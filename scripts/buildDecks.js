@@ -25,13 +25,15 @@ async function buildOne(name) {
       const deck = await generateDeck({ scenario: SCENARIO, presenter: name, approach, lang: LANG });
       deck.accent = approach.accent.hex;
       deck.themeId = approach.themeId;
+      deck.structureId = approach.structureId;
       deck.approach = approach;
       if (!deck.meta) deck.meta = {};
       deck.meta.presenter = name;
       fs.writeFileSync(path.join(OUT, slug(name) + '.json'), JSON.stringify(deck, null, 1));
-      console.log(`  ✓ ${name.padEnd(24)} ${deck.slides.length} slides · ${approach.theme.name}`);
+      console.log(`  ✓ ${name.padEnd(24)} ${deck.slides.length} slides · ${approach.theme.name} · ${approach.structure.label}`);
       return { name, slug: slug(name), slides: deck.slides.length, accent: approach.accent,
                themeId: approach.themeId, themeName: approach.theme.name,
+               structureId: approach.structureId, structureLabel: approach.structure.label,
                title: deck.meta.title || '', angle: approach.angle };
     } catch (e) {
       console.log(`  ! ${name} attempt ${attempt} failed: ${e.message}`);

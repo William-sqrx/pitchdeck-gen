@@ -1,16 +1,16 @@
 {
  "meta": {
   "client": "RetailCo",
-  "title": "Replicating RetailCo’s Best Stores",
-  "subtitle": "A 30 / 60 / 90 day proposal to reduce variance across 120 APAC stores",
+  "title": "Replicating Your Best Stores",
+  "subtitle": "A 30 / 60 / 90 day path to reduce variance across 120 APAC stores",
   "presenter": "Sara TEO"
  },
  "slides": [
   {
    "layout": "title",
-   "title": "Replicating RetailCo’s Best Stores",
-   "subtitle": "A 30 / 60 / 90 day proposal to reduce variance across 120 APAC stores",
-   "script": "We are starting from a simple belief: RetailCo does not need to invent excellence from scratch. We already have it inside the business. The issue is that it shows up unevenly, store by store, manager by manager, shift by shift. When the best store managers outsell the worst ones by 3x, the real opportunity is replication. Our proposal is to see what happens, hear what works, capture the playbook, and make it usable by every frontline team across APAC."
+   "title": "Replicating Your Best Stores",
+   "subtitle": "A 30 / 60 / 90 day path to reduce variance across 120 APAC stores",
+   "script": "We believe the opportunity at RetailCo is not to chase an abstract average. It is to find what already works inside your best stores, make it visible, and replicate it consistently across the network. You have 120 stores, 2,000 frontline staff, and a three-times gap between your strongest and weakest store managers. That tells us the answer is already in the business. Our proposal is to capture the signals, codify the winning behaviors, and turn them into an operating system your teams can actually use."
   },
   {
    "layout": "metrics",
@@ -26,148 +26,202 @@
     },
     {
      "value": "3x",
-     "label": "gap between best and worst managers"
+     "label": "manager performance gap"
     }
    ],
-   "script": "We should size the problem before we size the technology. RetailCo is operating 120 stores across APAC with 2,000 frontline staff, and the performance spread is not marginal. Your best store managers outsell your worst ones by 3x. That tells us the answers are already present somewhere in the network. The challenge is that today, those answers are trapped in local habits, local coaching, and local memory. At RetailCo’s scale, even small differences in daily behavior become meaningful operational variance."
+   "script": "We start with the scale because it changes the shape of the problem. At 120 stores, small differences in manager routines, floor coverage, customer conversations, and onboarding habits do not stay small. Across 2,000 frontline staff, those differences become the operating reality customers experience every day. The three-times gap between your best and worst store managers is the signal that matters most. It says RetailCo does not lack talent or know-how. The challenge is that the know-how is trapped locally, unevenly transferred, and often invisible until a Monday spreadsheet arrives."
   },
   {
-   "layout": "quote",
-   "quote": "My best store managers outsell my worst ones by 3x. I cannot bottle what they do.",
-   "attribution": "RetailCo COO",
-   "script": "We want to anchor the whole proposal on this sentence because it reframes the work. We are not chasing an abstract average or asking every store to adopt a generic retail manual. We are looking for the specific behaviors that already separate your strongest managers from the rest. That means the job is discovery, capture, and replication. We need to identify what the best people do on the floor, what they say to customers, how they coach new hires, and then turn that into an accessible operating system."
+   "layout": "statement",
+   "kicker": "Our core thesis",
+   "text": "RetailCo’s biggest opportunity is reducing variance by replicating what your best managers already do.",
+   "script": "We would frame this as a variance problem, not a performance problem. Average performance can hide the fact that some stores have already solved the operating questions others are struggling with. Your best managers know how to deploy people, coach a sales conversation, read the shop floor, and bring new hires up to speed. Today, that knowledge is carried in habits and judgment. Our job is to make those patterns observable, comparable, and teachable, so the network can learn from its own best examples rather than relying on generic playbooks."
   },
   {
-   "layout": "agenda",
-   "title": "The 30 / 60 / 90 day path",
-   "bullets": [
-    "30 days: make the floor observable",
-    "60 days: bottle the best-store playbook",
-    "90 days: scale learning and expose roster gaps",
-    "Two-week discovery to confirm scope"
-   ],
-   "script": "We propose a 30, 60, and 90 day path because the first win is visibility, the second is repeatability, and the third is scale. In the first 30 days, we focus on seeing and hearing what is actually happening in store. By 60 days, we convert the best observed practices into a living playbook. By 90 days, we use that playbook to support onboarding and frontline consistency. Scheduling is important, and we will address it honestly: our products inform the roster problem, but they are not a roster engine."
-  },
-  {
-   "layout": "three",
-   "title": "Day 30: turn store activity into evidence",
-   "cards": [
+   "layout": "timeline",
+   "title": "30 / 60 / 90: from visibility to replication",
+   "steps": [
     {
-     "heading": "Spacesight",
-     "body": "Shows what is happening on the shop floor, not one week later."
+     "label": "30 days",
+     "text": "See and hear real store behavior with Spacesight and Echo."
     },
     {
-     "heading": "Echo",
-     "body": "Captures and scores real customer conversations from frontline staff."
+     "label": "60 days",
+     "text": "Bottle best-practice routines inside Harbor Wiki."
     },
     {
-     "heading": "Baseline",
-     "body": "Compares top-performing stores with others using observed behaviors."
+     "label": "90 days",
+     "text": "Package the operating proposal with Alivia and define scheduling next steps."
     }
    ],
-   "script": "The first 30 days are about replacing delayed opinion with direct evidence. Spacesight gives us visibility into what is happening on the shop floor, while Echo lets us hear what frontline staff actually say to customers. Together, they let us compare the stores that are already winning with the stores that are not yet matching them. We are not waiting for a Monday spreadsheet about last week. We are building an evidence base from real floor activity and real customer interactions, so the variance becomes observable."
+   "script": "We are proposing a three-horizon plan because each horizon answers a different question. In the first 30 days, we establish what is really happening in stores, not what appears in a delayed spreadsheet. In the next 60 days, we compare the behaviors of stronger and weaker stores and bottle the practices that deserve to travel. By 90 days, we turn that into a practical proposal, supported by Alivia, and we are explicit about scheduling. The current product set informs that pain, but it does not fully solve rostering by itself."
+  },
+  {
+   "layout": "stack",
+   "title": "Each COO pain mapped to the right response",
+   "rows": [
+    {
+     "left": "Floor visibility",
+     "right": "Spacesight shows what happens in-store before Monday."
+    },
+    {
+     "left": "Manager variance",
+     "right": "Spacesight plus Echo identify what best managers do differently."
+    },
+    {
+     "left": "Onboarding inconsistency",
+     "right": "Harbor Wiki turns proven routines into searchable guidance."
+    },
+    {
+     "left": "Roster pain",
+     "right": "Open item: discovery maps workflow, handoffs, and integration options."
+    },
+    {
+     "left": "Proposal packaging",
+     "right": "Alivia turns the findings into a client-ready proposal."
+    }
+   ],
+   "script": "We want to be very clear about coverage. Spacesight directly answers the visibility problem by showing what is happening on the shop floor. Echo adds the customer conversation layer, so we can hear how staff actually sell, explain, and recover. Harbor Wiki addresses the onboarding and replication issue by turning best practice into something searchable and repeatable. Alivia helps convert the combined findings into a coherent proposal. Scheduling is different. The products can reveal demand patterns and coordination pain, but a roster engine is an open item for discovery, not something we should pretend is solved."
+  },
+  {
+   "layout": "timeline",
+   "title": "First 30 days: make the floor observable",
+   "steps": [
+    {
+     "label": "Instrument",
+     "text": "Deploy Spacesight in selected stores to capture floor activity."
+    },
+    {
+     "label": "Listen",
+     "text": "Use Echo to capture and score customer conversations."
+    },
+    {
+     "label": "Compare",
+     "text": "Contrast strong and weak stores on observable behaviors."
+    },
+    {
+     "label": "Read out",
+     "text": "Show same-week signals instead of waiting for Monday."
+    }
+   ],
+   "script": "In the first 30 days, we focus on replacing hindsight with visibility. Your current pain is very specific: you get a spreadsheet on Monday about last week. Spacesight changes that by making floor activity observable during the week. Echo complements it by showing what frontline staff actually say to customers, not just whether a sale happened. We would select a practical store sample, including high and low performers, and compare behaviors side by side. The output is not a dashboard for its own sake; it is the first evidence base for replication."
+  },
+  {
+   "layout": "ladder",
+   "title": "How signals become standards",
+   "steps": [
+    {
+     "label": "Observe",
+     "text": "Capture real store and conversation patterns."
+    },
+    {
+     "label": "Identify",
+     "text": "Find behaviors that separate stronger managers."
+    },
+    {
+     "label": "Codify",
+     "text": "Write those behaviors into usable store guidance."
+    },
+    {
+     "label": "Reinforce",
+     "text": "Use the guidance in onboarding and coaching."
+    }
+   ],
+   "script": "The important move is that we do not stop at observation. A camera feed or conversation score is only useful if it climbs the ladder into a standard. First, we observe what is actually happening. Then we identify which behaviors correlate with the stores and managers you already trust. Next, we codify those behaviors in plain language, so they are not trapped in one manager’s head. Finally, we reinforce them through onboarding and coaching. That is how we move from insight to a repeatable operating habit across the network."
+  },
+  {
+   "layout": "timeline",
+   "title": "Next 60 days: bottle the best managers",
+   "steps": [
+    {
+     "label": "Select",
+     "text": "Choose routines worth copying from high-performing stores."
+    },
+    {
+     "label": "Write",
+     "text": "Create Harbor Wiki pages for common store moments."
+    },
+    {
+     "label": "Train",
+     "text": "Use the wiki in new-hire and manager coaching."
+    },
+    {
+     "label": "Refresh",
+     "text": "Update guidance as new patterns emerge."
+    }
+   ],
+   "script": "By day 60, the focus shifts from finding differences to spreading what works. Harbor Wiki becomes the place where RetailCo bottles the habits of its best managers. That might include how they open a shift, coach a slow hour, handle a product question, or guide a new hire through the first customer interaction. This directly addresses your onboarding concern: today it takes six weeks and depends on whoever happens to be working that day. The wiki gives every store a common reference point, while still allowing local managers to contribute what proves effective."
+  },
+  {
+   "layout": "table",
+   "title": "The operating shift RetailCo should feel",
+   "leftHead": "Today",
+   "rightHead": "With the proposal",
+   "rows": [
+    {
+     "left": "Monday spreadsheet about last week",
+     "right": "Same-week floor and conversation signals"
+    },
+    {
+     "left": "Best managers operate from instinct",
+     "right": "Winning routines are visible and teachable"
+    },
+    {
+     "left": "Onboarding depends on who is working",
+     "right": "New hires use shared Harbor Wiki guidance"
+    },
+    {
+     "left": "Scheduling needs many handoffs",
+     "right": "Discovery defines workflow, data, and integration needs"
+    }
+   ],
+   "script": "This is the practical change we are aiming for. Instead of learning on Monday what happened last week, leaders can see patterns while they are still actionable. Instead of accepting that one manager outsells another by three times without knowing why, we can isolate the behaviors worth copying. Instead of new hires receiving different training depending on the shift they join, they get a shared source of truth. And on scheduling, we separate evidence from automation. We can map the handoffs and demand signals, then determine what tooling or integration is required."
+  },
+  {
+   "layout": "timeline",
+   "title": "By 90 days: turn the learning into a decision",
+   "steps": [
+    {
+     "label": "Validate",
+     "text": "Confirm which behaviors and signals leaders trust."
+    },
+    {
+     "label": "Package",
+     "text": "Use Alivia to shape the proposal and options."
+    },
+    {
+     "label": "Decide",
+     "text": "Agree the rollout path across APAC stores."
+    },
+    {
+     "label": "Plan",
+     "text": "Define the separate scheduling workstream."
+    }
+   ],
+   "script": "By 90 days, we should not just have observations; we should have a decision-ready proposal. Alivia helps package the evidence, recommended rollout path, and practical operating changes into a proposal RetailCo can evaluate. We would validate which signals store leaders trust, which Harbor Wiki content is being used, and where the replication model is strongest. We would also come back to scheduling as its own workstream. The discovery should tell us whether the next step is process redesign, system integration, workforce tooling, or a combination of those options."
   },
   {
    "layout": "quote",
    "quote": "I have no idea what actually happens on my shop floor. I get a spreadsheet on Monday about last week.",
    "attribution": "RetailCo COO",
-   "script": "This is the visibility gap we close first. A Monday spreadsheet is useful for reporting, but it is too late to explain the moments that created the result. Spacesight helps us see store-floor patterns as they happen, and Echo helps us understand the customer conversations behind those patterns. When we connect those two views, we can distinguish activity from effectiveness. We can see not only whether teams were present, but what they were doing and saying when customers were deciding whether to buy."
-  },
-  {
-   "layout": "bullets",
-   "title": "Day 30 outputs RetailCo can act on",
-   "subtitle": "Visibility becomes a management asset, not a retrospective report.",
-   "bullets": [
-    "Observed floor patterns by store",
-    "Conversation examples from frontline teams",
-    "Behavior differences between stronger and weaker stores",
-    "Early hypotheses for the best-manager playbook"
-   ],
-   "script": "By the end of the first horizon, we want the operations team to have a practical baseline. That baseline should show observed floor patterns by store, real conversation examples from frontline teams, and the behavior differences between stronger and weaker stores. This is where Spacesight and Echo work together. One gives us the operational context, the other gives us the customer-facing language. The output is not a dashboard for its own sake. It is the raw material for bottling what your best managers already do."
-  },
-  {
-   "layout": "three",
-   "title": "Day 60: bottle the best-store method",
-   "cards": [
-    {
-     "heading": "Find",
-     "body": "Identify repeatable behaviors from the highest-performing managers and teams."
-    },
-    {
-     "heading": "Translate",
-     "body": "Turn those behaviors into plain-language guides, examples, and coaching prompts."
-    },
-    {
-     "heading": "Publish",
-     "body": "Use Harbor Wiki so every store can look up the playbook."
-    }
-   ],
-   "script": "The second horizon is where the proposal becomes a replication engine. We take what Spacesight and Echo reveal, then translate the best practices into Harbor Wiki. The wiki is not a static policy library. It becomes the place where a store manager or new hire can look up how the best teams greet customers, handle objections, recover quiet periods, or coach a shift. The important point is that the content comes from RetailCo’s own strongest people. We are bottling internal excellence, not importing a generic model."
-  },
-  {
-   "layout": "metrics",
-   "title": "Day 60 success measures are about reducing dependence",
-   "metrics": [
-    {
-     "value": "6 wks",
-     "label": "current new-hire onboarding time"
-    },
-    {
-     "value": "3x",
-     "label": "manager performance spread to explain"
-    },
-    {
-     "value": "1 wiki",
-     "label": "shared source for best practice"
-    }
-   ],
-   "script": "At 60 days, we should be measuring whether knowledge is becoming less dependent on whoever happens to be working that day. Today, onboarding takes six weeks and depends entirely on the person beside the new hire. Harbor Wiki gives RetailCo one shared source for the best-store method, while Echo examples make the guidance concrete. We can connect the 3x manager spread to specific observable behaviors and customer language. That is how we move from admiring the best managers to giving every store access to their method."
-  },
-  {
-   "layout": "bullets",
-   "title": "Day 90: scale consistency, and be honest on scheduling",
-   "subtitle": "Onboarding is in scope; roster automation is an open item.",
-   "bullets": [
-    "Harbor Wiki supports structured new-hire learning",
-    "Echo examples show what good sounds like",
-    "Spacesight highlights demand and coverage patterns",
-    "Scheduling workflow needs a roster system or integration"
-   ],
-   "script": "By 90 days, the focus shifts to operating consistency at scale. For onboarding, Harbor Wiki gives new hires a structured way to learn RetailCo’s own best practices, and Echo examples show what good sounds like in real customer conversations. Spacesight can also help expose where floor coverage and customer activity appear misaligned. But we should be direct about scheduling. None of these products is a full roster engine. We can inform the scheduling discussion and define integration requirements, but roster creation itself remains an adjacent workflow to address separately."
-  },
-  {
-   "layout": "three",
-   "title": "Alivia turns the work into one joined-up proposal",
-   "cards": [
-    {
-     "heading": "Scope",
-     "body": "Frames Spacesight, Echo, and Harbor Wiki around RetailCo’s four stated pains."
-    },
-    {
-     "heading": "Sequence",
-     "body": "Connects 30 / 60 / 90 day work into a delivery plan."
-    },
-    {
-     "heading": "Decision",
-     "body": "Gives leaders a clear basis for pilot, rollout, and open items."
-    }
-   ],
-   "script": "Alivia is how we package this into a proposal RetailCo can govern and decide on. It brings Spacesight, Echo, and Harbor Wiki into one coherent plan instead of three disconnected tools. It also keeps the four pains visible: floor visibility, the 3x manager gap, six-week onboarding, and the scheduling pain. For the first three, we have a direct product path. For scheduling, Alivia helps us document what we learn, what requirements emerge, and where a roster system or integration would need to sit."
+   "script": "We keep coming back to this quote because it captures the operating gap in one sentence. If leadership cannot see the shop floor until after the fact, the business is forced to manage through lagging indicators. That makes it difficult to coach, difficult to compare, and difficult to replicate excellence. Spacesight and Echo close that visibility gap, but the larger value comes when Harbor Wiki turns the learning into standards the stores can use. The goal is not more reporting. The goal is a faster loop from reality, to learning, to action."
   },
   {
    "layout": "closing",
-   "title": "Our ask: two-week discovery with RetailCo operations",
-   "subtitle": "Confirm the 30 / 60 / 90 plan before committing to rollout.",
+   "title": "Our ask: a two-week discovery with Ops",
+   "subtitle": "Prove the replication model before scaling it",
    "bullets": [
-    "Select representative APAC stores and managers",
-    "Review current reporting, onboarding, and scheduling workflows",
-    "Define Spacesight, Echo, and Harbor Wiki pilot scope",
-    "Produce an Alivia proposal with open items clearly marked"
+    "Select pilot stores and manager cohorts",
+    "Confirm Spacesight and Echo data access",
+    "Map onboarding and scheduling workflows",
+    "Define the 30 / 60 / 90 proposal in Alivia"
    ],
-   "script": "Our recommendation is to begin with a two-week discovery alongside your operations team. We would select representative APAC stores and managers, review the current reporting, onboarding, and scheduling workflows, and define the right pilot scope for Spacesight, Echo, and Harbor Wiki. The output would be an Alivia proposal that shows exactly what changes in 30, 60, and 90 days, and what remains an open scheduling item. We can then make a grounded decision together, based on RetailCo’s own stores and RetailCo’s own best people."
+   "script": "Our recommended next step is a focused two-week discovery with your operations team. We would use that time to choose the right pilot stores, confirm what Spacesight and Echo can capture, identify the managers whose practices we want to study, and map the onboarding and scheduling workflows honestly. At the end of the two weeks, we would have a clear 30, 60, and 90 day proposal built in Alivia. That gives RetailCo a practical way to test the core idea: the answers already exist in your best stores, and now we can replicate them."
   }
  ],
- "accent": "A8571B",
+ "accent": "0F766E",
+ "themeId": "paper",
+ "structureId": "timeline",
  "approach": {
   "angle": "The real problem is variance, not average performance. Argue that the customer already has the answers - they live in the best store managers - and the job is replication.",
   "device": "Structure as 30 / 60 / 90 days - three horizons of what changes.",
@@ -177,7 +231,44 @@
    "hex": "0F766E",
    "name": "teal"
   },
+  "theme": {
+   "id": "paper",
+   "name": "cream / serif",
+   "bg": "FBF7F0",
+   "ink": "2B2118",
+   "body": "5A4B3C",
+   "muted": "8A7969",
+   "panel": "F2EADD",
+   "rule": "DFD2BF",
+   "accent": "A8571B",
+   "quoteBg": "F2EADD",
+   "coverBg": "FBF7F0",
+   "coverInk": "2B2118",
+   "coverSub": "8A7969",
+   "coverStyle": "center",
+   "head": "Georgia",
+   "text": "Georgia",
+   "chrome": "rule",
+   "cards": "outline",
+   "metrics": "underline",
+   "bullet": "dash",
+   "titleSize": 30,
+   "coverSize": 42
+  },
+  "themeId": "paper",
+  "structure": {
+   "id": "timeline",
+   "grid": "band",
+   "label": "banner headers, phase timelines",
+   "uses": [
+    "timeline",
+    "stack",
+    "metrics",
+    "ladder"
+   ],
+   "brief": "Built out of TIMELINES. Most slides walk a sequence of phases left to right. Use \"timeline\" at least three times, and \"ladder\" where something escalates."
+  },
+  "structureId": "timeline",
   "slides": 12
- },
- "themeId": "paper"
+ }
 }
